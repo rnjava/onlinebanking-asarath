@@ -1,0 +1,442 @@
+.contentheader {
+	FONT: bold 10px Verdana, Arial, Helvetica, sans-serif; COLOR: #000000; BACKGROUND-COLOR: #ffffff; TEXT-DECORATION: none
+}
+.contentheaderitalic {
+	FONT: bold italic 10px Verdana, Arial, Helvetica, sans-serif; COLOR: #000000
+}
+.backgroundred {
+	FONT-SIZE: 4px; BACKGROUND-COLOR: #d90100
+}
+.backgroundblue {
+	BACKGROUND-COLOR: #919296
+}
+.backgroundfooter {
+	FONT-SIZE: 10px; COLOR: #ffffff; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #919296
+}
+.contentfooter {
+	FONT: bold 10px Verdana, Arial, Helvetica, sans-serif; COLOR: #000000; BACKGROUND-COLOR: #ffffff; TEXT-DECORATION: none
+}
+.breadcrum {
+	FONT: 10px Verdana, Arial, Helvetica, sans-serif; COLOR: #003366; TEXT-DECORATION: none
+}
+.contentheaderbig {
+	FONT: bold 14px Verdana, Arial, Helvetica, sans-serif; COLOR: #000000
+}
+.contentheaderhsbc {
+	FONT: bold 14px Verdana, Arial, Helvetica, sans-serif; COLOR: #CCCCCC
+}
+
+.bodycontentheading {
+	FONT: bold 10px Verdana, Arial, Helvetica, sans-serif; COLOR: #003366
+}
+.contentwhite {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #ffffff; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.contentbrown {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #d2d2d2
+}
+.contentbrowndark {
+	FONT-WEIGHT: bold; FONT-SIZE: 10pt; COLOR: #000000; FONT-FAMILY: Arial; BACKGROUND-COLOR: #EEEEEE;
+}
+.listmenu {
+	WIDTH: 150px; HEIGHT: 20px
+}
+.contentdarkbrown {
+	FONT-WEIGHT: bold; FONT-SIZE: 10px; COLOR: #ffffff; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #999999
+}
+.leftnavcontent {
+	FONT-WEIGHT: bold; FONT-SIZE: 10px; COLOR: #778d95; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.contentlightbrown {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #cccccc
+}
+.contentverylightbrown {
+	FONT-WEIGHT: bold; FONT-SIZE: 10px; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #f0f0f0
+}
+.contentverylightbrownNormalFont {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #cccccc
+}
+.contentbrowndarkCopy {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #ffffff; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #999999
+}
+.contentverylightbrownCopy {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #f0f0f0
+}
+.contentnewlightbrownNormalFont {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #f0f0f0
+}
+.clsNonRptLabel {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #cccccc
+}
+.clsNonRptData {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #cccccc
+}
+.clsRptLabel {
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 10pt;
+	COLOR: #000000;
+	FONT-FAMILY: Arial;
+	BACKGROUND-COLOR: #CCCCCC;
+	background-position: center;
+}
+.clsPageSummary {
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 10pt;
+	COLOR: #000000;
+	FONT-FAMILY: Arial;
+	BACKGROUND-COLOR: #FFFFFF;
+	background-position: center;
+}
+
+
+.clsRptData {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #f0f0f0
+}
+.clsRptHeader {
+	FONT-WEIGHT: bold; FONT-SIZE: 10pt; COLOR: #000000; FONT-FAMILY: Arial; BACKGROUND-COLOR: #CCCCCC
+}
+A {
+	COLOR: #ff0000; TEXT-DECORATION: none
+}
+.A1 {
+	COLOR: #778d95; TEXT-DECORATION: none
+}
+
+A:hover {
+	COLOR: #800080; TEXT-DECORATION: none
+}
+.clsError {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #ff0000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.clsSuccess {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: transparent
+}
+.clsCombo {
+	font-family: "Andale WT";
+	font-size: 10pt;
+	font-weight: normal;
+	width:150px;
+	background-color:  #FFFF99;
+}
+.clsComboMandySmall {
+	font-family: "Andale WT";
+	font-size: 10pt;
+	font-weight: normal;
+	width:98px;
+	background-color:  #FFFF99;
+}
+.clsComboMandySmallNormal {
+	font-family: "Andale WT";
+	font-size: 10pt;
+	font-weight: normal;
+	width:118px;
+	background-color:  #FFFF99;
+}
+.clsComboMandyNormal {
+	font-family: "Andale WT";
+	font-size: 10pt;
+	font-weight: normal;
+	width:128px;
+	background-color:  #FFFF99;
+}
+.clsComboInst {
+	FONT-SIZE: 10pt;
+	WIDTH: 90px;
+	FONT-FAMILY: Arial,Tahoma,Verdana;
+	background-color:  #FFFF99;
+}
+.clsComboInstTest {
+	FONT-SIZE: 10pt;
+	WIDTH: 60px;
+	FONT-FAMILY: Arial,Tahoma,Verdana;
+	background-color:  #FFFF99;
+}
+.clsComboNormal {
+	FONT-SIZE: 10pt;
+	WIDTH: 150px;
+	FONT-FAMILY: Arial,Tahoma,Verdana;
+}
+
+.clsComboNormalInst {
+	FONT-SIZE: 10pt;
+	WIDTH: 90px;
+	FONT-FAMILY: Arial,Tahoma,Verdana;
+}
+
+.clsComboSmall {
+	FONT-SIZE: 10pt;
+	WIDTH: 60px;
+	FONT-FAMILY: Arial,Tahoma,Verdana;
+}
+
+.clsTextArea {
+	FONT-SIZE: 11px; WIDTH: 150px; FONT-FAMILY: Arial,Tahoma,Verdana
+}
+.clsTextArea1 {
+	FONT-SIZE: 11px; WIDTH: 578px; FONT-FAMILY: Arial,Tahoma,Verdana
+}
+.clsTextArea2 {
+	FONT-SIZE: 11px; WIDTH: 578px; Height: 500px FONT-FAMILY: Arial,Tahoma,Verdana
+}
+.clsTextBox {
+	FONT-SIZE: 10pt; WIDTH: 150px; FONT-FAMILY: Arial,Tahoma,Verdana
+}
+
+.clsTextBoxInst {
+	FONT-SIZE: 10pt;
+	WIDTH: 90px;
+	FONT-FAMILY: "Andale WT";
+	text-align: center;
+}
+.clsTextBoxValueRight {
+	FONT-SIZE: 10pt;
+	WIDTH: 90px;
+	FONT-FAMILY: "Andale WT";
+	text-align: right;
+}
+.clsTextBoxSmallInstMandy {
+	FONT-SIZE: 10pt;
+	WIDTH: 73px;
+	FONT-FAMILY: "Andale WT";
+	text-align: center;
+	background-color:  #FFFF99;
+}
+.clsTextBoxInstMandy {
+	FONT-SIZE: 10pt;
+	WIDTH: 90px;
+	FONT-FAMILY: "Andale WT";
+	text-align: center;
+	background-color:  #FFFF99;
+}
+.clsTextBoxBigInstMandy {
+	FONT-SIZE: 10pt;
+	WIDTH: 93px;
+	FONT-FAMILY: "Andale WT";
+	text-align: center;
+	background-color:  #FFFF99;
+}
+.clsTextBoxBigInst {
+	FONT-SIZE: 10pt;
+	WIDTH: 101px;
+	FONT-FAMILY: "Andale WT";
+	text-align: center;
+	background-color:  #FFFF99;
+}
+
+.clsTextBoxSmallMandy {
+	FONT-SIZE: 10pt;
+	WIDTH: 112px;
+	FONT-FAMILY: "Andale WT";
+	text-align: center;
+	background-color:  #FFFF99;
+}
+.clsTextBoxNormalSmallMandy {
+	FONT-SIZE: 10pt;
+	WIDTH: 118px;
+	FONT-FAMILY: "Andale WT";
+	text-align: center;
+	background-color:  #FFFF99;
+}
+.clsTextBoxMormalMandy {
+	FONT-SIZE: 10pt;
+	WIDTH: 128px;
+	FONT-FAMILY: "Andale WT";
+	text-align: center;
+	background-color:  #FFFF99;
+}
+.clsTextBoxMandyInst{
+	FONT-SIZE: 10px;
+	WIDTH: 90px;
+	FONT-FAMILY: Arial,Tahoma,Verdana;
+	background-color:  #FFFF99;
+}
+.clsTextBoxMandy{
+	FONT-SIZE: 10px;
+	WIDTH: 150px;
+	FONT-FAMILY: Arial,Tahoma,Verdana;
+	background-color:  #FFFF99;
+}
+.clsTextBoxBigMandy{
+	FONT-SIZE: 10px;
+	WIDTH: 195px;
+	FONT-FAMILY: Arial,Tahoma,Verdana;
+	background-color:  #FFFF99;
+}
+
+
+
+.clsButton {
+	FONT-SIZE: 10pt;
+	WIDTH: 95px;
+	FONT-FAMILY: Arial;
+	font-weight: bold;
+}
+.mandatorytext {
+	color: #CC0000;
+}
+
+.clsOption {
+	font-family: Arial;
+	font-size: 10pt;
+	display: block;
+	border: thin solid #CCCCCC;
+}
+.clsLabel {
+	font-family: Arial;
+	font-size: 10pt;
+	font-weight: bold;
+	
+}
+.clsCheckbox {
+	font-family: Arial;
+	font-size: 10pt;
+	font-weight: bold;
+	
+}
+.listLightgrey {
+	background-color: #EEEEEE;
+}
+.clsTextBoxSmallInst{
+	FONT-SIZE: 10px;
+	WIDTH: 80px;
+	FONT-FAMILY: Arial,Tahoma,Verdana;
+}
+.clsTextMandatory {
+	font-family: "Andale WT";
+	font-size: 10pt;
+	font-weight: normal;
+	width:150px;
+	background-color:  #FFFF99;
+}
+.clsLabelDisabled {
+	background-color: #999999;
+	font-family: Arial;
+	font-size: 10px;
+}
+.clsLabelRed {
+	font-family: Arial;
+	font-size: 10pt;
+	color: #FF0000;
+	font-weight: bold;
+}
+
+.clsError {
+	font-family: Arial;
+	font-size: 10pt;
+	color: #FFFF00;
+	font-weight: bold;
+}
+.datatime {
+	font-family: Arial;
+	font-size: 10px;
+	font-weight: bold;
+	background-color: #999999;
+	letter-spacing: normal;
+	text-align: right;
+	vertical-align: middle;
+	word-spacing: normal;
+}
+.horizantalline {
+	color: #000000;
+	background-color: #000000;
+	font-weight: bolder;
+	font-family: Arial;
+	font-size: 10px;
+	line-height: normal;
+}
+.headerWhite {
+	font-family: Arial;
+	font-size: 10pt;
+	font-weight: bold;
+	color: #FFFFFF;
+	background-color: #FFFFFF;
+	font-style: normal;
+	line-height: normal;
+	font-variant: normal;
+	background-repeat: no-repeat;
+	background-position: right;
+}
+.tableHeader {
+	font-family: Arial;
+	font-size: 10pt;
+	font-weight: bold;
+	color: #FFFFFF;
+	background-color: #999999;
+	font-style: normal;
+	line-height: normal;
+	font-variant: normal;
+	background-repeat: no-repeat;
+	background-position: right;
+}
+.tableColorLigthGrey {
+	font-family: Arial;
+	font-size: 10pt;
+	font-weight: normal;
+	color: #000000;
+	background-color: #EEEEEE;
+}
+.tableRigthAlign {
+	background-position: right;
+	text-align: right;
+}
+.tableLeftAlign {
+	background-position: left;
+	text-align: left;
+}
+.clsTextBoxDisabled {
+	font-family: "Andale WT";
+	FONT-SIZE: 10pt;
+	WIDTH: 150px;
+	background-color: #999999;
+	color: #000000;
+	font-weight: bold;
+	text-align: center;
+}
+.textBoxSmall {
+	width: 45px;
+}
+.clsComboVerySmall {
+	width: 45px;
+}
+.textAndale {
+	font-family: "Andale WT";
+	font-size: 10pt;
+	text-align: center;
+}
+.clsLabelRightAlign {
+	font-family: Arial;
+	font-size: 10pt;
+	font-weight: bold;
+	text-align: right;
+}
+.clsLabelLeftAlign {
+	font-family: Arial;
+	font-size: 10pt;
+	font-weight: bold;
+	text-align: left;
+}
+.clsLabelCenterAlign {
+	font-family: Arial;
+	font-size: 10pt;
+	font-weight: bold;
+	text-align: center;
+}
+.clsTextBoxDisableInst {
+	font-family: "Andale WT";
+	font-size: 10pt;
+	background-color: #999999;
+	width: 60px;
+}
+.clsImage{
+	background-attachment: fixed;
+	background-image: url(../images/star.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+	
+}
+
+.style2 {font-family: Arial}
+.style4 {font-size: 10pt}
+.style5 {color: #999999}
+
+
