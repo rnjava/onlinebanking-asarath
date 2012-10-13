@@ -17,14 +17,26 @@
 
 	<context:component-scan base-package="com.openbank.onlinebanking.controller" />
 
-	<bean id="viewResolver"
+	<!-- bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 
 		<property name="prefix">
-			<value>/WEB-INF/views/</value>
+			<value>/WEB-INF/jsp/</value>
 		</property>
 		<property name="suffix">
 			<value>.jsp</value>
+		</property>
+	</bean-->
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		<property name="viewClass">
+			<value>org.springframework.web.servlet.view.tiles2.TilesView</value>
+		</property>
+	</bean>
+	<bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
+		<property name="definitions">
+			<list>
+				<value>/WEB-INF/tiles.xml</value>
+			</list>	
 		</property>
 	</bean>
 
