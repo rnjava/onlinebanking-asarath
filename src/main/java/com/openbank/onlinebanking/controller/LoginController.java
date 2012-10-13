@@ -1,5 +1,7 @@
 package com.openbank.onlinebanking.controller;
 
+import java.util.Map;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -8,25 +10,30 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.openbank.onlinebanking.blo.LoginService;
+import com.openbank.onlinebanking.blo.impl.LoginServiceImpl;
 import com.openbank.onlinebanking.form.LoginForm;
 
 @Controller
 @SessionAttributes
 public class LoginController {
 
-	@RequestMapping(value = "/addContact", method = RequestMethod.POST)
-	public String addContact(@ModelAttribute("login")
-							LoginForm loginForm, BindingResult result) {
-		System.out.println("Inside addContact");
+	@RequestMapping(value = "/submitLogin", method = RequestMethod.POST)
+	public String login(@ModelAttribute("login") LoginForm loginForm, BindingResult result, Map model) {
 		
-		System.out.println("First Name:" +loginForm.getUserName());
-		return "redirect:login";
+		String forward = "login";
+		LoginService service = new LoginServiceImpl();
+		boolean isLoginSuccess = service.login(loginForm);
+		
+		if (isLoginSuccess) {
+			forward = "loginsuccess";
+		}
+		model.put("loginForm", loginForm);
+		return forward;
 	}
 	
 	@RequestMapping("/login")
 	public ModelAndView showContacts() {
-		System.out.println("Inside Show contacts");
-		
 		return new ModelAndView("login", "command", new LoginForm());
 	}
 }
