@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<html>
+
 <html>
 <head>
 <title>TODO</title>
@@ -18,7 +18,7 @@
         <table width="100%"  border="0" align="center">
 
           <tr>
-            <th width="22%" scope="col"><img src="<%=contextPath%>/images/hsbclogosmall.gif" width="178" height="31"></th>
+            <th width="22%" scope="col"><img src="<%=contextPath%>/images/logo-hsbc.gif" width="178" height="31"></th>
             <th width="78%" align="left" scope="col"><table width="100%"  border="0" cellpadding="0" cellspacing="0">
                 <tr>
                   <th width="27%" scope="col"><div align="left" class="clsLabel"></div></th>
@@ -37,15 +37,11 @@
         </table>       <hr class="horizantalline">
       </td>
     </tr>
-
- 
-	<br>
-
     <tr>
       <td height="20%" >
-          <table width="100%" class="tableColorLigthGrey"  >
+          <table width="50%" class="tableColorLigthGrey" align ="center" >
             <tr class="tableHeader">
-              <td colspan="4"  scope="col">Please Login here</td>
+              <td colspan="4"  scope="col"><strong>Please Login here</strong></td>
             </tr>
 
 			<tr>
@@ -65,12 +61,15 @@
               <td width="45%" class="clsLabel"  scope="col"> <div align="right">Password</div></td>
               <td width="55%" class="tableLeftAlign" ><span class="contentverylightbrown">
                  <form:password path="password" cssStyle="clsTextMandatory" />
-              </span></td>
+              	</span>
             </tr>
-
-			
+            <tr>
+              <td align="center" colspan="4"  scope="col">
+              <p align="center"><input type="submit" value="Login" class="button"/></p>
+              </td>
+            </tr>
 	 </table>
-      <p align="center"><input type="submit" value="Login" class="button"/></p></td>
+		</td>
     </tr>
   </table>
 </form:form>

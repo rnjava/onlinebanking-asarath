@@ -33,7 +33,8 @@ public class LoginController {
 			boolean isLoginSuccess = service.login(loginForm);
 			
 			if (isLoginSuccess) {
-				forward = "loginsuccess";
+				//forward = "loginsuccess";
+				forward = "accountsoverview";
 			} else {
 				loginForm = new LoginForm();
 			}
