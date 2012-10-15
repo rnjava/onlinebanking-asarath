@@ -117,7 +117,7 @@
 						<div class="h2-bold-14">
 						</div>
 						<div class="h2-bold-14">
-							<core:out value="${loginForm.userName}" />
+							<core:out value="${accountOverviewForm.profile.firstName}" />
 							- Personal Accounts
 						</div>
 						<div class="f-11">

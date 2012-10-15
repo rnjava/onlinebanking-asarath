@@ -4,6 +4,6 @@ import com.openbank.onlinebanking.dto.User;
 
 public interface LoginDAO {
 
-	User getUserByUserId(String userName);
+	User getUserByUserId(String userName, String tenantId);
 
 }

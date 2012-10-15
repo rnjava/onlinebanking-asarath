@@ -4,12 +4,16 @@ import java.util.Map;
 
 import javax.validation.Valid;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.openbank.onlinebanking.blo.LoginService;
+import com.openbank.onlinebanking.blo.ProfileService;
+import com.openbank.onlinebanking.form.AccountOverviewForm;
 import com.openbank.onlinebanking.form.LoginForm;
 
 @Controller
@@ -17,7 +21,10 @@ import com.openbank.onlinebanking.form.LoginForm;
 @RequestMapping("login")
 public class LoginController {
 	
+	private static Logger log = LoggerFactory.getLogger(LoginController.class);
+	
 	private LoginService loginService;
+	private ProfileService profileService;
 		
 	@RequestMapping(method = RequestMethod.GET)
 	public String showForm(Map<String, LoginForm> model) {
@@ -28,18 +35,23 @@ public class LoginController {
 
 	@RequestMapping(method = RequestMethod.POST)
 	public String processForm(@Valid LoginForm loginForm, BindingResult result,
-				Map<String, LoginForm> model) {
+				Map<String, Object> model) {
 			String forward = "login";
 			//LoginService service = new LoginServiceImpl();
-			boolean isLoginSuccess = loginService.login(loginForm);
+			String profileId = loginService.login(loginForm.getUserName(), loginForm.getTenantId(), loginForm.getPassword());
 			
-			if (isLoginSuccess) {
-				//forward = "loginsuccess";
+			log.debug("ProfileId for userId [{}] is [{}]", loginForm.getUserName(), profileId);
+			
+			if (profileId != null) {
+				AccountOverviewForm form = new AccountOverviewForm();
+				form.setProfile(profileService.getProfileById(profileId, loginForm.getTenantId()));
 				forward = "accountsoverview";
+				model.put("accountOverviewForm", form);
 			} else {
 				loginForm = new LoginForm();
+				model.put("loginForm", loginForm);
 			}
-			model.put("loginForm", loginForm);
+			
 			return forward;
 		}
 
@@ -48,6 +60,13 @@ public class LoginController {
 	 */
 	public void setLoginService(LoginService loginService) {
 		this.loginService = loginService;
+	}
+
+	/**
+	 * @param profileService the profileService to set
+	 */
+	public void setProfileService(ProfileService profileService) {
+		this.profileService = profileService;
 	}
 
 

@@ -4,31 +4,31 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 
-import com.openbank.onlinebanking.doa.LoginDAO;
-import com.openbank.onlinebanking.dto.User;
+import com.openbank.onlinebanking.doa.ProfileDAO;
+import com.openbank.onlinebanking.dto.Profile;
 
-public class LoginDAOImpl implements LoginDAO {
+public class ProfileDAOImpl implements ProfileDAO {
 
-	
 	private MongoTemplate mongoTemplate;
 	private Query query = null;
 	
 	@Override
-	public User getUserByUserId(String userId, String tenantId) {
-		User user = null;
-		query = new Query(Criteria.where("_id").is(userId)
+	public Profile getProfileById(String profileId, String tenantId) {
+		Profile profile = null;
+		query = new Query(Criteria.where("_id").is(profileId)
 				.and("tenantId").is(tenantId));
-        user = mongoTemplate.findOne(query, User.class, "users");
-		return user;
+		profile = mongoTemplate.findOne(query, Profile.class, "profile");
+
+		return profile;
+		
 	}
+	
+	
 
 	/**
 	 * @param mongoTemplate the mongoTemplate to set
 	 */
 	public void setMongoTemplate(MongoTemplate mongoTemplate) {
 		this.mongoTemplate = mongoTemplate;
-	}
-
-	
-	
+	}	
 }

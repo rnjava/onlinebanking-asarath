@@ -1,8 +1,7 @@
 package com.openbank.onlinebanking.blo;
 
-import com.openbank.onlinebanking.form.LoginForm;
 
 public interface LoginService {
 
-	boolean login(LoginForm loginForm);
+	String login(String userId, String tenantId, String password);
 }
