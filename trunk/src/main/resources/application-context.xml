@@ -27,10 +27,16 @@
 	
 	<bean id="loginController" class="com.openbank.onlinebanking.controller.LoginController">
     	<property name="loginService" ref="loginService"/>
+    	<property name="profileService" ref="profileService"/>
     </bean>
     
     	   
     <bean id="loginService" class="com.openbank.onlinebanking.blo.impl.LoginServiceImpl">
     	<property name="loginDAO" ref="loginDAO"/>
     </bean>
+    
+    <bean id="profileService" class="com.openbank.onlinebanking.blo.impl.ProfileServiceImpl">
+    	<property name="profileDAO" ref="profileDAO"/>
+    </bean>
+    
 </beans>

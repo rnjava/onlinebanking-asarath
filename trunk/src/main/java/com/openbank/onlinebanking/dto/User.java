@@ -6,7 +6,7 @@ public class User {
 
 	
 	String id;
-    String passoword;
+    String password;
     String profileId;
     Date createdDate;
     String createdBy;
@@ -22,17 +22,18 @@ public class User {
 	public void setId(String id) {
 		this.id = id;
 	}
+
 	/**
-	 * @return the passoword
+	 * @return the password
 	 */
-	public String getPassoword() {
-		return passoword;
+	public String getPassword() {
+		return password;
 	}
 	/**
-	 * @param passoword the passoword to set
+	 * @param password the password to set
 	 */
-	public void setPassoword(String passoword) {
-		this.passoword = passoword;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	/**
 	 * @return the profileId

@@ -19,10 +19,13 @@
     	<property name="mongoTemplate" ref="mongoTemplate"/>
     </bean>
     
+     <bean id="profileDAO" class=" com.openbank.onlinebanking.doa.impl.ProfileDAOImpl">
+    	<property name="mongoTemplate" ref="mongoTemplate"/>
+    </bean>
         
      <mongo:mongo host="localhost" port="27017"/>
      
-     <mongo:db-factory dbname="database" mongo-ref="mongo"/>
+     <mongo:db-factory dbname="banking" mongo-ref="mongo"/>
 
 	<bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
 	  <constructor-arg name="mongoDbFactory" ref="mongoDbFactory"/>
