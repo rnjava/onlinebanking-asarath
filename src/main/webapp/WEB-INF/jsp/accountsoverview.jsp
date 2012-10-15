@@ -70,15 +70,15 @@
 				<ul class="nav2">
 					<li><a id="Accounts_topnav" name="Accounts_topnav"
 						class="modal-link selected" rel="nav-mod-content1"
-						href="https://safe.bankofamerica.com/myaccounts/accounts-overview/accounts-overview.go"
+						href=""
 						title="Accounts">Accounts</a></li>
 					<li><a id="Transfers_topnav" name="Transfers_topnav"
 						rel="nav-mod-content3"
-						href="https://safe.bankofamerica.com/myaccounts/brain/redirect.go?source=overview&returnSiteIndicator=GAIEC&target=transfer&request_locale=en-us"
+						href=""
 						title="Transfers">Transfers</a></li>
 					<li><a id="Customer_Service_topnav"
 						name="Customer_Service_topnav" rel="nav-mod-content7 "
-						href="https://safe.bankofamerica.com/myaccounts/brain/redirect.go?source=overview&returnSiteIndicator=GAIEC&target=custService&request_locale=en-us"
+						href=""
 						title="Customer Service">Customer Service</a></li>
 				</ul>
 			</div>
@@ -90,19 +90,19 @@
 					<ul>
 						<li><a id="Accounts_topnav" name="Accounts_topnav_borneo_AO"
 							class="selected"
-							href="https://safe.bankofamerica.com/myaccounts/accounts-overview/accounts-overview.go"
+							href=""
 							title="Accounts Overview">Accounts Overview</a></li>
 
 						<li><a id="Account_Details_topnav"
 							name="Account_Details_topnav"
-							href="https://safe.bankofamerica.com/myaccounts/brain/redirect.go?source=overview&returnSiteIndicator=GAIEC&target=accountDetails&request_locale=en-us"
+							href=""
 							title="Account Details">Account Details</a></li>
 
 						<li><a
-							href="https://safe.bankofamerica.com/myaccounts/brain/redirect.go?source=overview&returnSiteIndicator=GAIEC&target=eCC&request_locale=en-us"
+							href=""
 							title="Statements &amp; Documents">Statements &amp; Documents</a></li>
 						<li><a id="Alerts_topnav" name="Alerts_topnav"
-							href="https://safe.bankofamerica.com/myaccounts/brain/redirect.go?source=overview&returnSiteIndicator=GAIEC&target=alerts&request_locale=en-us"
+							href=""
 							title="Alerts">Alerts</a></li>
 					</ul>
 				</div>
@@ -124,7 +124,7 @@
 							Protect your accounts and information, <a
 								id="visit_the_Security_Center" name="visit_the_Security_Center"
 								class="bold"
-								href="https://safe.bankofamerica.com/myaccounts/brain/redirect.go?source=overview&target=security"
+								href=""
 								title="visit the Security Center">visit the Security Center</a>
 						</div>
 					</div>
@@ -152,7 +152,7 @@
 									<div class="left-column-head">Bank Accounts</div>
 									<div class="right-column-head">
 										Balance<a id="footnote_a" name="footnote_a"
-											href="https://safe.bankofamerica.com/myaccounts/brain/redirect.go?source=cashedge&target=accountsoverview#footnote1"
+											href=""
 											title="Important Information About Balances"><sup><span
 												class="ada-hidden">Footnote&nbsp;</span>a</sup></a>
 									</div>
@@ -180,7 +180,7 @@
 										<div class="image-account ">
 											<a id="MyAccess Checking - 7257"
 												name="MyAccess Checking - 7257"
-												href="https://safe.bankofamerica.com/myaccounts/brain/redirect.go?source=overview&target=acctDetails&adx=5075869d1e0b30d579ee551c8b09664f9e11b10caf8f648ea33294b950f79ff2">
+												href="">
 												MyAccess Checking - 7257</a>
 										</div>
 										<div class="clearboth"></div>
@@ -190,7 +190,7 @@
 									<div class="plt-23">
 										<!-- eccAugustSwitch is true (Location 4) -->
 										<a id="paperless-0" class="go-paperless" name="paperless-0"
-											href="https://safe.bankofamerica.com/myaccounts/brain/redirect.go?source=overview&target=eCCpaperless&adx=5075869d1e0b30d579ee551c8b09664f9e11b10caf8f648ea33294b950f79ff2">Go
+											href="">Go
 											Paperless<span class="ada-hidden">MyAccess Checking -
 												7257</span>
 										</a>
@@ -215,7 +215,7 @@
 													<div class="link-row ">
 														<a id="View account details-0"
 															name="View account details-0"
-															href="https://safe.bankofamerica.com/myaccounts/brain/redirect.go?source=overview&target=acctDetails&adx=5075869d1e0b30d579ee551c8b09664f9e11b10caf8f648ea33294b950f79ff2&options=PG=BORNEO_AO,Action=acctDetails">View
+															href="">View
 															account details<span class="raquo-link">»</span><span
 															class="ada-hidden">MyAccess Checking - 7257</span>
 														</a>
@@ -223,14 +223,14 @@
 													<!-- keyValue4 is : eCC -->
 													<div class="link-row ">
 														<a id="View Statements-0" name="View Statements-0"
-															href="https://safe.bankofamerica.com/myaccounts/brain/redirect.go?source=overview&target=eCC&adx=5075869d1e0b30d579ee551c8b09664f9e11b10caf8f648ea33294b950f79ff2&options=PG=BORNEO_AO,Action=eCC">View
+															href="">View
 															Statements<span class="raquo-link">»</span><span
 															class="ada-hidden">MyAccess Checking - 7257</span>
 														</a>
 													</div>
 													<div class="odp-view-link-row link-row " id="odpLink0">
 														<a id="odpSummary-0" name="odpSummary-0"
-															href="https://safe.bankofamerica.com/myaccounts/brain/redirect.go?source=overview&target=odpSummary&adx=5075869d1e0b30d579ee551c8b09664f9e11b10caf8f648ea33294b950f79ff2&options=PG=BORNEO_AO,Action=View/Edit%20Overdraft%20Protection">View/Edit
+															href="">View/Edit
 															Overdraft Protection<span class="raquo-link">»</span><span
 															class="ada-hidden">MyAccess Checking - 7257</span>
 														</a>
@@ -248,7 +248,7 @@
 													</div>
 													<div class="odp-special-subsection ">
 														<a id="custService-0" name="custService-0"
-															href="https://safe.bankofamerica.com/myaccounts/brain/redirect.go?source=overview&target=custService&adx=5075869d1e0b30d579ee551c8b09664f9e11b10caf8f648ea33294b950f79ff2&options=PG=BORNEO_AO,Action=More%20Services">More
+															href="">More
 															Services<span class="raquo-link">»</span><span
 															class="ada-hidden">MyAccess Checking - 7257</span>
 														</a>
@@ -285,7 +285,7 @@
 										<div class="image-account ">
 											<a id="Bank of America American Express Card - 4011"
 												name="Bank of America American Express Card - 4011"
-												href="https://safe.bankofamerica.com/myaccounts/brain/redirect.go?source=overview&target=acctDetails&adx=bea7cc86cd5ec0743fbb9ee8d1a073c45adfd38d997066a10e8b0f0b8b7f55e0">
+												href="">
 												Bank of America American Express Card - 4011</a>
 										</div>
 										<div class="clearboth"></div>
@@ -319,7 +319,7 @@
 												</div>
 												<div class="link-row ">
 													<a id="payNowCC-4" name="payNowCC-4"
-														href="https://safe.bankofamerica.com/myaccounts/brain/redirect.go?source=overview&target=payNowCC&adx=bea7cc86cd5ec0743fbb9ee8d1a073c45adfd38d997066a10e8b0f0b8b7f55e0&options=PG=BORNEO_AO,Action=Pay%20Now">Pay
+														href="">Pay
 														Now<span class="raquo-link">»</span><span
 														class="ada-hidden">Bank of America American Express
 															Card - 4011</span>
@@ -330,7 +330,7 @@
 												<div class="link-row ">
 													<a id="View account details-4"
 														name="View account details-4"
-														href="https://safe.bankofamerica.com/myaccounts/brain/redirect.go?source=overview&target=acctDetailsCC&adx=bea7cc86cd5ec0743fbb9ee8d1a073c45adfd38d997066a10e8b0f0b8b7f55e0&options=PG=BORNEO_AO,Action=acctDetailsCC">View
+														href="">View
 														account details<span class="raquo-link">»</span><span
 														class="ada-hidden">Bank of America American Express
 															Card - 4011</span>
@@ -339,7 +339,7 @@
 												<!-- keyValue4 is : eCC -->
 												<div class="link-row ">
 													<a id="View Statements-4" name="View Statements-4"
-														href="https://safe.bankofamerica.com/myaccounts/brain/redirect.go?source=overview&target=eCC&adx=bea7cc86cd5ec0743fbb9ee8d1a073c45adfd38d997066a10e8b0f0b8b7f55e0&options=PG=BORNEO_AO,Action=eCC">View
+														href="">View
 														Statements<span class="raquo-link">»</span><span
 														class="ada-hidden">Bank of America American Express
 															Card - 4011</span>
@@ -347,7 +347,7 @@
 												</div>
 												<div class="odp-view-link-row link-row " id="odpLink4">
 													<a id="odpSummary-4" name="odpSummary-4"
-														href="https://safe.bankofamerica.com/myaccounts/brain/redirect.go?source=overview&target=odpSummary&adx=bea7cc86cd5ec0743fbb9ee8d1a073c45adfd38d997066a10e8b0f0b8b7f55e0&options=PG=BORNEO_AO,Action=View/Edit%20Overdraft%20Protection">View/Edit
+														href="">View/Edit
 														Overdraft Protection<span class="raquo-link">»</span><span
 														class="ada-hidden">Bank of America American Express
 															Card - 4011</span>
@@ -366,7 +366,7 @@
 												</div>
 												<div class="odp-special-subsection ">
 													<a id="servicesCC-4" name="servicesCC-4"
-														href="https://safe.bankofamerica.com/myaccounts/brain/redirect.go?source=overview&target=servicesCC&adx=bea7cc86cd5ec0743fbb9ee8d1a073c45adfd38d997066a10e8b0f0b8b7f55e0&options=PG=BORNEO_AO,Action=More%20Services">More
+														href="">More
 														Services<span class="raquo-link">»</span><span
 														class="ada-hidden">Bank of America American Express
 															Card - 4011</span>
@@ -381,7 +381,7 @@
 													<div class="apr-content">
 														<div class="before-expand hide" id="aprAlink4">
 															<a name="learn_more"
-																href="https://safe.bankofamerica.com/myaccounts/brain/redirect.go?source=overview&target=piggyPopLearnMore&adx=bea7cc86cd5ec0743fbb9ee8d1a073c45adfd38d997066a10e8b0f0b8b7f55e0"
+																href=""
 																title="Learn More"><span class="bold"><div
 																		class="before-expand" id="aprA4"></div></span></a>
 														</div>
@@ -423,7 +423,7 @@
 														</div>
 														<div id="learn_more4">
 															<a name="learn_more"
-																href="https://safe.bankofamerica.com/myaccounts/brain/redirect.go?source=overview&target=piggyPopLearnMore&adx=bea7cc86cd5ec0743fbb9ee8d1a073c45adfd38d997066a10e8b0f0b8b7f55e0"
+																href=""
 																title="Learn more about this promotional offer on balance transfers">Learn
 																more <img
 																src="<%=contextPath%>/images/raquo.gif"
@@ -465,7 +465,7 @@
 										<div class="image-account ">
 											<a id="Bank of America Platinum Plus Visa - 0601"
 												name="Bank of America Platinum Plus Visa - 0601"
-												href="https://safe.bankofamerica.com/myaccounts/brain/redirect.go?source=overview&target=acctDetails&adx=1e482ab754000859e5a951a6faa5c03fc4b359a50c7f8c334715d799aacf8c86">
+												href="">
 												Bank of America Platinum Plus Visa - 0601</a>
 										</div>
 										<div class="clearboth"></div>
@@ -499,44 +499,40 @@
 												</div>
 												<div class="link-row ">
 													<a id="payNowCC-5" name="payNowCC-5"
-														href="https://safe.bankofamerica.com/myaccounts/brain/redirect.go?source=overview&target=payNowCC&adx=1e482ab754000859e5a951a6faa5c03fc4b359a50c7f8c334715d799aacf8c86&options=PG=BORNEO_AO,Action=Pay%20Now">Pay
+														href="">Pay
 														Now<span class="raquo-link">»</span><span
 														class="ada-hidden">Bank of America Platinum Plus
 															Visa - 0601</span>
 													</a>
 												</div>
-
-												<!-- keyValue4 is : acctDetailsCC -->
 												<div class="link-row ">
 													<a id="View account details-5"
 														name="View account details-5"
-														href="https://safe.bankofamerica.com/myaccounts/brain/redirect.go?source=overview&target=acctDetailsCC&adx=1e482ab754000859e5a951a6faa5c03fc4b359a50c7f8c334715d799aacf8c86&options=PG=BORNEO_AO,Action=acctDetailsCC">View
+														href="">View
 														account details<span class="raquo-link">»</span><span
 														class="ada-hidden">Bank of America Platinum Plus
 															Visa - 0601</span>
 													</a>
 												</div>
-												<!-- keyValue4 is : eCC -->
 												<div class="link-row ">
 													<a id="View Statements-5" name="View Statements-5"
-														href="https://safe.bankofamerica.com/myaccounts/brain/redirect.go?source=overview&target=eCC&adx=1e482ab754000859e5a951a6faa5c03fc4b359a50c7f8c334715d799aacf8c86&options=PG=BORNEO_AO,Action=eCC">View
+														href="">View
 														Statements<span class="raquo-link">»</span><span
 														class="ada-hidden">Bank of America Platinum Plus
 															Visa - 0601</span>
 													</a>
 												</div>
-												<!-- keyValue3 is : shopSafeCC -->
 												<div class="link-row ">
 													<a id="Create a ShopSafe account number-5"
 														name="Create a ShopSafe account number-5"
-														href="https://safe.bankofamerica.com/myaccounts/brain/redirect.go?source=overview&target=shopSafeCC&adx=1e482ab754000859e5a951a6faa5c03fc4b359a50c7f8c334715d799aacf8c86&options=PG=BORNEO_AO,Action=shopSafeCC"
+														href=""
 														target="_blank">Create a ShopSafe account number<span
 														class="raquo-link">»</span><span class="ada-hidden">Bank
 															of America Platinum Plus Visa - 0601</span></a>
 												</div>
 												<div class="odp-view-link-row link-row " id="odpLink5">
 													<a id="odpSummary-5" name="odpSummary-5"
-														href="https://safe.bankofamerica.com/myaccounts/brain/redirect.go?source=overview&target=odpSummary&adx=1e482ab754000859e5a951a6faa5c03fc4b359a50c7f8c334715d799aacf8c86&options=PG=BORNEO_AO,Action=View/Edit%20Overdraft%20Protection">View/Edit
+														href="">View/Edit
 														Overdraft Protection<span class="raquo-link">»</span><span
 														class="ada-hidden">Bank of America Platinum Plus
 															Visa - 0601</span>
@@ -555,7 +551,7 @@
 												</div>
 												<div class="odp-special-subsection ">
 													<a id="servicesCC-5" name="servicesCC-5"
-														href="https://safe.bankofamerica.com/myaccounts/brain/redirect.go?source=overview&target=servicesCC&adx=1e482ab754000859e5a951a6faa5c03fc4b359a50c7f8c334715d799aacf8c86&options=PG=BORNEO_AO,Action=More%20Services">More
+														href="">More
 														Services<span class="raquo-link">»</span><span
 														class="ada-hidden">Bank of America Platinum Plus
 															Visa - 0601</span>
@@ -570,7 +566,7 @@
 													<div class="apr-content">
 														<div class="before-expand hide" id="aprAlink5">
 															<a name="learn_more"
-																href="https://safe.bankofamerica.com/myaccounts/brain/redirect.go?source=overview&target=piggyPopLearnMore&adx=1e482ab754000859e5a951a6faa5c03fc4b359a50c7f8c334715d799aacf8c86"
+																href=""
 																title="Learn More"><span class="bold"><div
 																		class="before-expand" id="aprA5"></div></span></a>
 														</div>
@@ -612,7 +608,7 @@
 														</div>
 														<div id="learn_more5">
 															<a name="learn_more"
-																href="https://safe.bankofamerica.com/myaccounts/brain/redirect.go?source=overview&target=piggyPopLearnMore&adx=1e482ab754000859e5a951a6faa5c03fc4b359a50c7f8c334715d799aacf8c86"
+																href=""
 																title="Learn more about this promotional offer on balance transfers">Learn
 																more <img
 																src="./Bank of America   Online Banking   Accounts Overview_files/raquo.gif"
