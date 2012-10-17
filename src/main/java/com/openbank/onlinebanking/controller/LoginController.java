@@ -11,6 +11,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.openbank.onlinebanking.blo.AccountService;
 import com.openbank.onlinebanking.blo.LoginService;
 import com.openbank.onlinebanking.blo.ProfileService;
 import com.openbank.onlinebanking.form.AccountOverviewForm;
@@ -25,6 +26,7 @@ public class LoginController {
 	
 	private LoginService loginService;
 	private ProfileService profileService;
+	private AccountService accountService;
 		
 	@RequestMapping(method = RequestMethod.GET)
 	public String showForm(Map<String, LoginForm> model) {
@@ -45,6 +47,7 @@ public class LoginController {
 			if (profileId != null) {
 				AccountOverviewForm form = new AccountOverviewForm();
 				form.setProfile(profileService.getProfileById(profileId, loginForm.getTenantId()));
+				form.setAccountList(accountService.getAccountsByProfileId(profileId, loginForm.getTenantId()));
 				forward = "accountsoverview";
 				model.put("accountOverviewForm", form);
 			} else {
@@ -67,6 +70,13 @@ public class LoginController {
 	 */
 	public void setProfileService(ProfileService profileService) {
 		this.profileService = profileService;
+	}
+
+	/**
+	 * @param accountService the accountService to set
+	 */
+	public void setAccountService(AccountService accountService) {
+		this.accountService = accountService;
 	}
 
 
