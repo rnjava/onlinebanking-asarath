@@ -1,7 +1,25 @@
 package com.openbank.onlinebanking.doa.impl;
 
-import com.openbank.onlinebanking.doa.AccountDAO;
+import java.util.List;
 
-public class AccountDAOImpl implements AccountDAO {
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
+
+import com.openbank.onlinebanking.doa.AccountDAO;
+import com.openbank.onlinebanking.doa.BaseDAO;
+import com.openbank.onlinebanking.dto.Account;
+
+public class AccountDAOImpl extends BaseDAO implements AccountDAO  {
+	
+	private Query query = null;
+	
+	@Override
+	public List<Account> getAccountsByProfileId(String profileId, String tenantId) {
+			
+			query = new Query(Criteria.where("profileId").is(profileId)
+					.and("tenantId").is(tenantId));
+			List<Account> accountList = mongoTemplate.find(query, Account.class, "account");
+			return accountList;
+	}
 
 }

@@ -15,14 +15,16 @@
 
     <!-- util:properties id="application-properties" location="classpath:application.properties"/-->
 
-	 <bean id="loginDAO" class=" com.openbank.onlinebanking.doa.impl.LoginDAOImpl">
-    	<property name="mongoTemplate" ref="mongoTemplate"/>
-    </bean>
+	 <bean id="loginDAO" class=" com.openbank.onlinebanking.doa.impl.LoginDAOImpl"/>
     
-     <bean id="profileDAO" class=" com.openbank.onlinebanking.doa.impl.ProfileDAOImpl">
+     <bean id="profileDAO" class=" com.openbank.onlinebanking.doa.impl.ProfileDAOImpl"/>
+     
+      <bean id="accountDAO" class=" com.openbank.onlinebanking.doa.impl.AccountDAOImpl"/>
+        
+     <bean id="baseDAO" class=" com.openbank.onlinebanking.doa.BaseDAO">
     	<property name="mongoTemplate" ref="mongoTemplate"/>
     </bean>
-        
+
      <mongo:mongo host="localhost" port="27017"/>
      
      <mongo:db-factory dbname="banking" mongo-ref="mongo"/>
