@@ -10,6 +10,8 @@ public class AccountOverviewForm {
 	private String tenantId;
 	private Profile profile;
 	List<Account> accountList;
+	private String firstAccountId;
+	
 	/**
 	 * @return the tenantId
 	 */
@@ -49,6 +51,16 @@ public class AccountOverviewForm {
 	public void setAccountList(List<Account> accountList) {
 		this.accountList = accountList;
 	}
-	
-	
+	/**
+	 * @return the firstAccountId
+	 */
+	public String getFirstAccountId() {
+		return firstAccountId;
+	}
+	/**
+	 * @param firstAccountId the firstAccountId to set
+	 */
+	public void setFirstAccountId(String firstAccountId) {
+		this.firstAccountId = firstAccountId;
+	}
 }

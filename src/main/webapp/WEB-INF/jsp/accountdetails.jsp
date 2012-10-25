@@ -89,13 +89,12 @@
 
 					<ul>
 						<li><a id="Accounts_topnav" name="Accounts_topnav_borneo_AO"
-							class="selected"
-							href="accountsoverview?profileid=<core:out value="${form.profile.id}"/>&tenantid=<core:out value="${form.tenantId}"/>"
+							href="accountsoverview?profileid=<core:out value="${form.profileId}"/>&tenantid=<core:out value="${form.tenantId}"/>"
 							title="Accounts Overview">Accounts Overview</a></li>
 
-						<li><a id="Account_Details_topnav"
+						<li><a id="Account_Details_topnav" class="selected"
 							name="Account_Details_topnav"
-							href="accountdetails?accountid=<core:out value="${form.firstAccountId}"/>&tenantid=<core:out value="${form.tenantId}"/>&profileid=<core:out value="${form.profile.id}"/>"
+							href="accountdetails?accountid=<core:out value="${form.accountId}"/>&tenantid=<core:out value="${form.tenantId}"/>"
 							title="Account Details">Account Details</a></li>
 
 						<li><a
@@ -109,78 +108,65 @@
 			</div>
 			<div class="clearboth"></div>
 
-			<div class="olb-account-greeting-message-bdf-module">
-				<div class="default-skin">
-					<div class="fl-lt">
-						<a class="ada-hidden" name="skip_to_main_content"></a>
-						<h1 class="ada-hidden">Accounts Overview</h1>
-						<div class="h2-bold-14">
-						</div>
-						<div class="h2-bold-14">
-							<core:out value="${form.profile.firstName}" />&nbsp;
-							<core:out value="${form.profile.lastName}" /> 
-							- Personal Accounts
-						</div>
-						<div class="f-11">
-							Protect your accounts and information, <a
-								id="visit_the_Security_Center" name="visit_the_Security_Center"
-								class="bold"
-								href=""
-								title="visit the Security Center">visit the Security Center</a>
-						</div>
-					</div>
-					<div class="fl-rt">Last sign in: 10/12/2012 at 02:56 AM ET</div>
-					<div class="clearboth"></div>
+		
+				<div class="olb-account-page-title-appdata-module">
+				<div class="page-title-control">
+					<a name="skip-to-main-content"></a>
+						<h1 class="short-page-title page-title-head" id="skip-to-h1">
+						<span class="TL_NPI_AcctName">MyAccess Checking - 7257</span>
+						</a></h1><a href="javascript:void(0);" name="page_title_acct_switcher_0">
+				</a>
 				</div>
-			</div>
-
-		<div class="olb-account-listing-module">
-					<div class="thick-border-module">
-						<!-- Business Accts -->
-						<div class="db-outer-corners tb-top-left"></div>
-						<div class="db-outer-corners tb-top-right"></div>
-						<div class="alt-dark-blue-title">
-							<h2>
-								<div class="title-text">Accounts</div>
-							</h2>
-						</div>
-						<div class="db-inner-module">
-							<div class="db-inner-corners tb-top-left"></div>
-							<div class="db-inner-corners tb-top-right"></div>
-							<div>
-
-								<div class="title-row">
-									<div class="left-column-head">Bank Accounts</div>
-									<div class="right-column-head">
-										Balance<a id="footnote_a" name="footnote_a"
-											href=""
-											title="Important Information About Balances"><sup><span
-												class="ada-hidden">Footnote&nbsp;</span>a</sup></a>
-									</div>
-									<div class="clearboth"></div>
-								</div>
-							  <core:forEach items="${form.accountList}" var="account">
-								<div class="account-row" rel="0" lang="en-us">
-									<div class="left-column-content">
-										<div class="image-account ">
-											<a id="MyAccess Checking - 7257"
-												name="MyAccess Checking - 7257"
-												href="">
-												<core:out value="${account.type}" /></a>
-										</div>
-										<div class="clearboth"></div>
-									</div>
-									<div class="right-column-content">$<core:out value="${account.balance}" /></div>
-									<div class="clearboth"></div>
-							<div class="db-inner-corners tb-bottom-left"></div>
-							<div class="db-inner-corners tb-bottom-right"></div>
-						</div>
-						</core:forEach>
-						<div class="db-outer-corners tb-bottom-left"></div>
-						<div class="db-outer-corners tb-bottom-right"></div>
-					</div>
-				</div>
-			</div>
+			<div class="clearboth"></div>
+			
+			
+	<div class="account-summary-module">
+	<div class="ptop-10">
+      <div class="left-col">
+        <h2>Summary</h2>      
+        <div>
+          <div class="fl-lt">
+          	Available balance (as of today):
+          </div>
+          <div class="fl-rt bold  TL_NPI_Amt">$2,529.44</div>		  
+    	  
+          <div class="clearboth"></div>
+          </div>
+          </div>
+          </div>
+        </div>
+        
+       <table class="transaction-records" summary="Account Activity table, made up of Date, Description, Type, Status, Dollar Amount, and Available balance columns.">
+			<thead>
+				<tr>
+					<th class="date" scope="col" style="width: 106px; ">Date</th>					
+					<th class="desc" scope="col" style="width: 292px; ">Description</th>
+					<th class="type" scope="col" style="width: 50px; ">Type</th>
+					<th class="status" scope="col" style="width: 61px; ">Status</th>
+					<th class="amount" scope="col" style="width: 99px; ">Amount</th>
+					<th class="balance" scope="col" style="width: 113px; ">Available<br/>Balance</th>
+				</tr>
+			</thead>
+			<tbody>
+			 <core:forEach items="${form.transactionList}" var="transaction">
+				<tr class="record transType-transfer cleared">
+					<td class="date-action" rel="49">
+						<span><core:out value="${transaction.date}" /></span>
+					</td>
+					<td class="description TL_NPI_TransDesc" rel="12">
+					<span class="transTitleForEditDesc"><core:out value="${transaction.description}" /></span> 
+					</td>
+					<td class="type">
+						<span><core:out value="${transaction.type}" /></span>
+					</td>
+					<td class="status"><span><core:out value="${transaction.status}" /></span></td>
+					<td class="amount TL_NPI_Amt isDebit"><core:out value="${transaction.amount}" /></td>
+					<td class="balance TL_NPI_Amt"><core:out value="${transaction.availableBalance}" /></td>
+				</tr>
+				<div class="clearboth"></div>
+				</core:forEach>
+				</tbody>
+		</table>
 </td>
 </tr>
 </table>
