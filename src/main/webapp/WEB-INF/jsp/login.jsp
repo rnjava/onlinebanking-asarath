@@ -3,7 +3,7 @@
 
 <html>
 <head>
-<title>TODO</title>
+<title>Online Banking | Customer Login</title>
 <%
 	String contextPath = request.getContextPath();
 %>
