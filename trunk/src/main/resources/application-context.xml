@@ -16,7 +16,8 @@
        default-autowire="byName">
 
 
-	<bean id="transferController" class="com.openbank.onlinebanking.controller.TransferController">
+	<bean id="fundTransferController" class="com.openbank.onlinebanking.controller.FundTransferController">
+		<property name="fundTransferService" ref="fundTransferService"/>
     </bean>
 	
 	<bean id="loginController" class="com.openbank.onlinebanking.controller.LoginController">
@@ -40,5 +41,9 @@
     <bean id="accountService" class="com.openbank.onlinebanking.blo.impl.AccountServiceImpl">
     	<property name="accountDAO" ref="accountDAO"/>
     </bean>
+    
+   <bean id="fundTransferService" class="com.openbank.onlinebanking.blo.impl.FundTransferServiceImpl">
+   		<property name="fundTransferDAO" ref="fundTransferDAO"/>
+   </bean>
         
 </beans>

@@ -6,17 +6,14 @@
 	<%
 		String contextPath = request.getContextPath();
 	%>
-		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-		<title>TODO | Online Banking | Accounts Overview</title>
-		<meta name="Description" content="">
-		<meta name="Keywords" content="">
-		<link rel="shortcut icon" href="href="<%=contextPath%>/images/favicon.ico" type="image/ico">
+		<title>Online Banking | | Accounts | Accounts Overview</title>
+		<link rel="shortcut icon" href="href="<%=contextPath%>/images/favicon.ico" type="image/ico"/>
 		<link
 			href="<%=contextPath%>/css/pipad-jawr.css"
-			rel="stylesheet" type="text/css" media="all">
+			rel="stylesheet" type="text/css" media="all"/>
 		<link
 			href="<%=contextPath%>/css/pipad-jawr-print.css"
-			rel="stylesheet" type="text/css" media="print">
+			rel="stylesheet" type="text/css" media="print"/>
 
 	<style>
 		body {
@@ -70,11 +67,11 @@
 				<ul class="nav2">
 					<li><a id="Accounts_topnav" name="Accounts_topnav"
 						class="modal-link selected" rel="nav-mod-content1"
-						href=""
+						href="accountsoverview?profileid=<core:out value="${form.profile.id}"/>&tenantid=<core:out value="${form.tenantId}"/>"
 						title="Accounts">Accounts</a></li>
 					<li><a id="Transfers_topnav" name="Transfers_topnav"
 						rel="nav-mod-content3"
-						href="maketransfer"
+						href="maketransfer?profileid=<core:out value="${form.profile.id}"/>&tenantid=<core:out value="${form.tenantId}"/>"
 						title="Transfers">Transfers</a></li>
 					<!-- <li><a id="Customer_Service_topnav"
 						name="Customer_Service_topnav" rel="nav-mod-content7 "

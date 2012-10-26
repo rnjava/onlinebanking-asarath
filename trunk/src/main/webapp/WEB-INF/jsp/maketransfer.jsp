@@ -6,17 +6,15 @@
 	<%
 		String contextPath = request.getContextPath();
 	%>
-		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-		<title>TODO | Online Banking | Accounts Overview</title>
-		<meta name="Description" content="">
-		<meta name="Keywords" content="">
-		<link rel="shortcut icon" href="href="<%=contextPath%>/images/favicon.ico" type="image/ico">
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+		<title>Online Banking | Transfer Funds | Make Transfer</title>
+		<link rel="shortcut icon" href="href="<%=contextPath%>/images/favicon.ico" type="image/ico"/>
 		<link
 			href="<%=contextPath%>/css/pipad-jawr.css"
-			rel="stylesheet" type="text/css" media="all">
+			rel="stylesheet" type="text/css" media="all"/>
 		<link
 			href="<%=contextPath%>/css/pipad-jawr-print.css"
-			rel="stylesheet" type="text/css" media="print">
+			rel="stylesheet" type="text/css" media="print"/>
 
 	<style>
 		body {
@@ -44,13 +42,13 @@
 					<div class="common-img-container print">
 						<img alt=" Logo"
 							src="<%=contextPath%>/images/logo-hsbc.gif"
-							title=" logo">
+							title=" logo"/>
 					</div>
 					<div class="fl-rt no_print">
 						<div class="common-margin">
 							<div class="fl-lt">
 								<img alt="Online Banking"
-									src="<%=contextPath%>/images/onlineBanking_en.gif">
+									src="<%=contextPath%>/images/onlineBanking_en.gif"/>
 							</div>
 							<div class="sign-off">
 								<a id="Sign_Off_header" name="Sign_Off_header"
@@ -71,11 +69,11 @@
 				<ul class="nav2">
 					<li><a id="Accounts_topnav" name="Accounts_topnav"
 						rel="nav-mod-content1"
-						href=""
+						href="accountsoverview?profileid=<core:out value="${form.profileId}"/>&tenantid=<core:out value="${form.tenantId}"/>"
 						title="Accounts">Accounts</a></li>
 					<li><a id="Transfers_topnav" name="Transfers_topnav"
 						class="modal-link selected"  rel="nav-mod-content3"
-						href=""
+						href="maketransfer?profileid=<core:out value="${form.profileId}"/>&tenantid=<core:out value="${form.tenantId}"/>"
 						title="Transfers">Transfers</a></li>
 					<!-- <li><a id="Customer_Service_topnav"
 						name="Customer_Service_topnav" rel="nav-mod-content7 "
@@ -89,9 +87,9 @@
 			<div class="sub-nav-box">
 				<div class="sub-nav" id="nav-mod-content3">
 					<ul>
-						<li><a id="Make_Transfer" name="Make_Transfer" class="selected" href="maketransfer" title="Make Transfer">Make Transfer</a></li>
+						<li><a id="Make_Transfer" name="Make_Transfer" class="selected" href="maketransfer?profileid=<core:out value="${form.profileId}"/>&tenantid=<core:out value="${form.tenantId}"/>" title="Make Transfer">Make Transfer</a></li>
 						<!-- <li><a id="Review_Transfer" name="Review_Transfer" href="" title="Review Transfers">Review Transfers</a></li>-->
-						<li><a id="Add_Account" name="Add_Account" href="addrecipient" title="Add Recipient">Add Recipient</a></li>
+						<li><a id="Add_Account" name="Add_Account" href="addrecipient?profileid=<core:out value="${form.profileId}"/>&tenantid=<core:out value="${form.tenantId}"/>" title="Add Recipient">Add Recipient</a></li>
 						<!-- <li><a id="Manage_Account" name="Manage_Account" href="" title="Manage Accounts/Recipients">Manage Accounts/Recipients</a></li>-->
 					</ul>
 				</div>

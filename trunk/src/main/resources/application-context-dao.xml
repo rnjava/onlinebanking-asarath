@@ -20,6 +20,8 @@
      <bean id="profileDAO" class=" com.openbank.onlinebanking.doa.impl.ProfileDAOImpl"/>
      
       <bean id="accountDAO" class=" com.openbank.onlinebanking.doa.impl.AccountDAOImpl"/>
+      
+      <bean id="fundTransferDAO" class=" com.openbank.onlinebanking.doa.impl.FundTransferDAOImpl"/>
         
      <bean id="baseDAO" class=" com.openbank.onlinebanking.doa.BaseDAO">
     	<property name="mongoTemplate" ref="mongoTemplate"/>
