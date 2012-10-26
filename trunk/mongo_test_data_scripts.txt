@@ -1,0 +1,17 @@
+db.transaction.save({ _id : 'sraj', password:'password', lastLoginDate:'10/12/2009', lastLoginTime:'10:24 AM ET',profileId:'3604F6E6-87E8-41C2-BF55-06C61F63CF99', tenantId:'C63A953AE20D404F8BB1F225CBC82CF0', createdDate:new Date('03/28/2009'), createdBy:'syam' });
+
+db.transaction.save({ _id:'3604F6E6-87E8-41C2-BF55-06C61F63CF99', firstName:'Syam', lastName:'Raj', dateOfBirth:new Date('08/02/1981'), sex:'M', tenantId:'C63A953AE20D404F8BB1F225CBC82CF0', createdDate:new Date('03/28/2009'), createdBy:'syam' });
+
+db.transaction.save({ _id:'1235687898',  type:'Savings', balance:'23456.90', profileId:'3604F6E6-87E8-41C2-BF55-06C61F63CF99', tenantId:'C63A953AE20D404F8BB1F225CBC82CF0', createdDate:new Date('03/28/2009'), createdBy:'syam' });
+
+db.transaction.save({ _id:'1235687810',  type:'Checkings', balance:'345.67', profileId:'3604F6E6-87E8-41C2-BF55-06C61F63CF99', tenantId:'C63A953AE20D404F8BB1F225CBC82CF0', createdDate:new Date('03/28/2009'), createdBy:'syam' });
+
+db.transaction.save({accountId:'1235687810', date:new Date('03/28/2009'), description:'test', type:'CR', mode:'check', status:'Processed', amount:'234', availableBalance:'43434', tenantId:'C63A953AE20D404F8BB1F225CBC82CF0', createdDate:new Date('03/28/2009'), createdBy:'syam'});
+
+db.transaction.save({accountId:'1235687810', date:new Date('05/28/2009'), description:'test', type:'CR', mode:'check', status:'Processed', amount:'2340', availableBalance:'434340', tenantId:'C63A953AE20D404F8BB1F225CBC82CF0', createdDate:new Date('03/28/2009'), createdBy:'syam'});
+
+db.transaction.save({accountId:'1235687898', date:new Date('03/28/2009'), description:'test', type:'CR', mode:'check', status:'Processed', amount:'234', availableBalance:'43434', tenantId:'C63A953AE20D404F8BB1F225CBC82CF0', createdDate:new Date('03/28/2009'), createdBy:'syam'});
+
+db.transaction.save({accountId:'1235687898', date:new Date('05/28/2009'), description:'test', type:'CR', mode:'check', status:'Processed', amount:'2340', availableBalance:'434340', tenantId:'C63A953AE20D404F8BB1F225CBC82CF0', createdDate:new Date('03/28/2009'), createdBy:'syam'});
+
+
