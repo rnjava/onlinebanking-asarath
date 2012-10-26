@@ -76,10 +76,11 @@
 						rel="nav-mod-content3"
 						href=""
 						title="Transfers">Transfers</a></li>
+					<!-- 	
 					<li><a id="Customer_Service_topnav"
 						name="Customer_Service_topnav" rel="nav-mod-content7 "
 						href=""
-						title="Customer Service">Customer Service</a></li>
+						title="Customer Service">Customer Service</a></li> -->
 				</ul>
 			</div>
 
@@ -96,13 +97,13 @@
 							name="Account_Details_topnav"
 							href="accountdetails?accountid=<core:out value="${form.accountId}"/>&tenantid=<core:out value="${form.tenantId}"/>"
 							title="Account Details">Account Details</a></li>
-
+					<!-- 
 						<li><a
 							href=""
 							title="Statements &amp; Documents">Statements &amp; Documents</a></li>
 						<li><a id="Alerts_topnav" name="Alerts_topnav"
 							href=""
-							title="Alerts">Alerts</a></li>
+							title="Alerts">Alerts</a></li>  -->
 					</ul>
 				</div>
 			</div>
@@ -116,6 +117,7 @@
 						<span class="TL_NPI_AcctName">MyAccess Checking - 7257</span>
 						</a></h1><a href="javascript:void(0);" name="page_title_acct_switcher_0">
 				</a>
+				</div>
 				</div>
 			<div class="clearboth"></div>
 			

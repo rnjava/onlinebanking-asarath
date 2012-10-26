@@ -14,16 +14,10 @@
 	   		http://www.springframework.org/schema/aop
 	   		http://www.springframework.org/schema/aop/spring-aop-3.0.xsd"
        default-autowire="byName">
-	<!-- context:property-placeholder location="classpath*:application.properties,classpath*:apollo-ssoconfig.properties,classpath*:application-database.properties"  /-->
-	<!-- bean id="serviceCall" class="edu.apollogrp.platform.academics.services.impl.UnderlyingServiceCallsImpl">
-      <property name="profileUrlPrefix" value="${edu.apollogrp.platform.academics.courseOffering.profileUriPrefix}" /> 
-      <property name="courseUrlPrefix" value="${edu.apollogrp.platform.academics.courseOffering.courseUriPrefix}" />
-      <property name="OrgUrlPrefix" value="${edu.apollogrp.platform.academics.courseOffering.organizationUriPrefix}" />
-      <property name="platformUrl" value="${edu.apollogrp.platform.restgatewayUrl}" />
-      <property name="authorizationPrefix" value="${edu.apollogrp.platform.academics.courseOffering.teamAuthorizationPrefix}"/>
-      <property name="rosterServicePrefix" value="${edu.apollogrp.platform.academics.courseOffering.teamRosterServicePrefix}"/>
-      <property name="restTemplate" ref = "simpleRestTemplate"/>
-	</bean-->
+
+
+	<bean id="transferController" class="com.openbank.onlinebanking.controller.TransferController">
+    </bean>
 	
 	<bean id="loginController" class="com.openbank.onlinebanking.controller.LoginController">
     	<property name="loginService" ref="loginService"/>
