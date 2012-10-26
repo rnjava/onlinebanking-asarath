@@ -44,13 +44,13 @@
 					<div class="common-img-container print">
 						<img alt=" Logo"
 							src="<%=contextPath%>/images/logo-hsbc.gif"
-							title=" logo">
+							title="logo"/>
 					</div>
 					<div class="fl-rt no_print">
 						<div class="common-margin">
 							<div class="fl-lt">
 								<img alt="Online Banking"
-									src="<%=contextPath%>/images/onlineBanking_en.gif">
+									src="<%=contextPath%>/images/onlineBanking_en.gif"/>
 							</div>
 							<div class="sign-off">
 								<a id="Sign_Off_header" name="Sign_Off_header"
@@ -74,12 +74,12 @@
 						title="Accounts">Accounts</a></li>
 					<li><a id="Transfers_topnav" name="Transfers_topnav"
 						rel="nav-mod-content3"
-						href=""
+						href="maketransfer"
 						title="Transfers">Transfers</a></li>
-					<li><a id="Customer_Service_topnav"
+					<!-- <li><a id="Customer_Service_topnav"
 						name="Customer_Service_topnav" rel="nav-mod-content7 "
-						href=""
-						title="Customer Service">Customer Service</a></li>
+						href="customercare"
+						title="Customer Service">Customer Service</a></li> -->
 				</ul>
 			</div>
 
@@ -97,13 +97,13 @@
 							name="Account_Details_topnav"
 							href="accountdetails?accountid=<core:out value="${form.firstAccountId}"/>&tenantid=<core:out value="${form.tenantId}"/>&profileid=<core:out value="${form.profile.id}"/>"
 							title="Account Details">Account Details</a></li>
-
+<!-- 
 						<li><a
 							href=""
 							title="Statements &amp; Documents">Statements &amp; Documents</a></li>
 						<li><a id="Alerts_topnav" name="Alerts_topnav"
 							href=""
-							title="Alerts">Alerts</a></li>
+							title="Alerts">Alerts</a></li>-->
 					</ul>
 				</div>
 			</div>
@@ -141,7 +141,7 @@
 						<div class="db-outer-corners tb-top-right"></div>
 						<div class="alt-dark-blue-title">
 							<h2>
-								<div class="title-text">Accounts</div>
+								<span class="title-text">Accounts</span>
 							</h2>
 						</div>
 						<div class="db-inner-module">
@@ -163,10 +163,8 @@
 								<div class="account-row" rel="0" lang="en-us">
 									<div class="left-column-content">
 										<div class="image-account ">
-											<a id="MyAccess Checking - 7257"
-												name="MyAccess Checking - 7257"
-												href="">
-												<core:out value="${account.type}" /></a>
+											<a href="accountdetails?accountid=<core:out value="${account.id}"/>&tenantid=<core:out value="${form.tenantId}"/>&profileid=<core:out value="${form.profile.id}"/>">
+											<core:out value="${account.type}" /></a>
 										</div>
 										<div class="clearboth"></div>
 									</div>
@@ -181,6 +179,7 @@
 					</div>
 				</div>
 			</div>
+	 </div>
 </td>
 </tr>
 </table>
