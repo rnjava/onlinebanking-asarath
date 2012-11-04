@@ -24,21 +24,21 @@ public class AccountController {
 				form.setTenantId(tenantId);
 				form.setProfile(profileService.getProfileById(profileId, tenantId));
 				form.setAccountList(accountService.getAccountsByProfileId(profileId, tenantId));
-				form.setFirstAccountId(form.getAccountList().get(0).getId());
-				
+				if(form.getAccountList() != null && !form.getAccountList().isEmpty()) {
+					form.setFirstAccountNo(form.getAccountList().get(0).getAccountNo());
+				}
 				ModelAndView modelAndView = new ModelAndView("accountsoverview");
 				modelAndView.addObject("form", form);
 				return modelAndView;
 		}
 	
 	@RequestMapping(value="/accountdetails", method=RequestMethod.GET)
-	public ModelAndView getAccountDetails(@RequestParam(value = "accountid") String accountId, 
+	public ModelAndView getAccountDetails(@RequestParam(value = "accountno") String accountId, 
 			@RequestParam (value = "tenantid") String tenantId, @RequestParam(value = "profileid") String profileId ) {
 				AccountDetailsForm form = new AccountDetailsForm();
-				
 				form.setTenantId(tenantId);
 				form.setProfileId(profileId);
-				form.setAccountId(accountId);
+				form.setAccountNo(accountId);
 				form.setTransactionList(accountService.getTransactionByAccountId(accountId, tenantId));
 				ModelAndView modelAndView = new ModelAndView("accountdetails");
 				modelAndView.addObject("form", form);

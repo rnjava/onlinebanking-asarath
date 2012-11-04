@@ -1,30 +1,32 @@
 package com.openbank.onlinebanking.dto;
 
 
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
 public class Account {
 
-	@Id
-	private String id;
+	
+	private String accountNo;
 	private String type;
 	private double balance;
 	private String currencySymbol;
-	/**
-	 * @return the id
+
+	  
+	
+   /**
+	 * @return the accountNo
 	 */
-	public String getId() {
-		return id;
+	public String getAccountNo() {
+		return accountNo;
 	}
 	/**
-	 * @param id the id to set
+	 * @param accountNo the accountNo to set
 	 */
-	public void setId(String id) {
-		this.id = id;
+	public void setAccountNo(String accountNo) {
+		this.accountNo = accountNo;
 	}
-	/**
+/**
 	 * @return the type
 	 */
 	public String getType() {

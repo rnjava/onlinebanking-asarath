@@ -4,10 +4,10 @@ public class TransferForm {
 	
 	private String tenantId;
 	private String profileId;
-	private String accountId;
+	private String accountNo;
 	private String lastName;
 	private String nickName;
-	private String recipientAccountId;	
+	private String recipientAccountNo;	
 	
 	/**
 	 * @return the tenantId
@@ -33,19 +33,21 @@ public class TransferForm {
 	public void setProfileId(String profileId) {
 		this.profileId = profileId;
 	}
-	/**
-	 * @return the accountId
+
+	
+ /**
+	 * @return the accountNo
 	 */
-	public String getAccountId() {
-		return accountId;
+	public String getAccountNo() {
+		return accountNo;
 	}
 	/**
-	 * @param accountId the accountId to set
+	 * @param accountNo the accountNo to set
 	 */
-	public void setAccountId(String accountId) {
-		this.accountId = accountId;
+	public void setAccountNo(String accountNo) {
+		this.accountNo = accountNo;
 	}
-	/**
+/**
 	 * @return the lastName
 	 */
 	public String getLastName() {
@@ -70,18 +72,16 @@ public class TransferForm {
 		this.nickName = nickName;
 	}
 	/**
-	 * @return the recipientAccountId
+	 * @return the recipientAccountNo
 	 */
-	public String getRecipientAccountId() {
-		return recipientAccountId;
+	public String getRecipientAccountNo() {
+		return recipientAccountNo;
 	}
 	/**
-	 * @param recipientAccountId the recipientAccountId to set
+	 * @param recipientAccountNo the recipientAccountNo to set
 	 */
-	public void setRecipientAccountId(String recipientAccountId) {
-		this.recipientAccountId = recipientAccountId;
+	public void setRecipientAccountNo(String recipientAccountNo) {
+		this.recipientAccountNo = recipientAccountNo;
 	}
-	
-	
-	
+
 }

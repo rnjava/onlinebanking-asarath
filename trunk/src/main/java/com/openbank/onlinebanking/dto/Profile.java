@@ -3,24 +3,28 @@ package com.openbank.onlinebanking.dto;
 import java.util.Date;
 
 public class Profile {
-	 private String id;
+	
+	 private String profileId;
 	 private String firstName;
      private String lastName;
      private Date dateOfBirth;
      private String sex;
      private Date createdDate;
      private String createdBy;
+     
+     
+
 	/**
-	 * @return the id
+	 * @return the profileId
 	 */
-	public String getId() {
-		return id;
+	public String getProfileId() {
+		return profileId;
 	}
 	/**
-	 * @param id the id to set
+	 * @param profileId the profileId to set
 	 */
-	public void setId(String id) {
-		this.id = id;
+	public void setProfileId(String profileId) {
+		this.profileId = profileId;
 	}
 	/**
 	 * @return the firstName

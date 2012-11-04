@@ -18,7 +18,7 @@
         <table width="100%"  border="0" align="center">
 
           <tr>
-            <th width="22%" scope="col"><img src="<%=contextPath%>/images/logo-hsbc.gif" width="178" height="31"></th>
+            <th width="22%" scope="col"><img src="<%=contextPath%>/images/${loginForm.tenantId}.gif" width="178" height="31"></th>
             <th width="78%" align="left" scope="col"><table width="100%"  border="0" cellpadding="0" cellspacing="0">
                 <tr>
                   <th width="27%" scope="col"><div align="left" class="clsLabel"></div></th>
@@ -31,6 +31,7 @@
                 </tr>
             </table></th>
           </tr>
+          <form:hidden path="tenantId" value="${loginForm.tenantId}"/>
           <tr>
             <th ></th>
           </tr>

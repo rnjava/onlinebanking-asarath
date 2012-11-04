@@ -14,7 +14,7 @@ public class LoginDAOImpl extends BaseDAO implements LoginDAO {
 	@Override
 	public User getUserByUserId(String userId, String tenantId) {
 		User user = null;
-		query = new Query(Criteria.where("_id").is(userId)
+		query = new Query(Criteria.where("userId").is(userId)
 				.and("tenantId").is(tenantId));
         user = mongoTemplate.findOne(query, User.class, "users");
 		return user;

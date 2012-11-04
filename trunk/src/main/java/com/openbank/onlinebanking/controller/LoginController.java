@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.openbank.onlinebanking.blo.LoginService;
@@ -27,9 +28,10 @@ public class LoginController {
 //	private ProfileService profileService;
 //	private AccountService accountService;
 		
-	@RequestMapping(method = RequestMethod.GET)
-	public String showForm(Map<String, LoginForm> model) {
+	@RequestMapping(method = RequestMethod.GET )
+	public String showForm(Map<String, LoginForm> model, @RequestParam(value = "tenantid") String tenantId) {
 			LoginForm loginForm = new LoginForm();
+			loginForm.setTenantId(tenantId);
 			model.put("loginForm", loginForm);
 			return "login";
 	}

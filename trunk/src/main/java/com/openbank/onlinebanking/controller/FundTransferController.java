@@ -47,7 +47,7 @@ public class FundTransferController {
 		fundRecipient.setLastName(form.getLastName());
 		fundRecipient.setNickName(form.getNickName());
 		fundRecipient.setProfileId(form.getProfileId());
-		fundRecipient.setRecipientAccountId(form.getRecipientAccountId());
+		fundRecipient.setRecipientAccountNo(form.getRecipientAccountNo());
 		fundRecipient.setTenantId(form.getTenantId());
 		
 		fundTransferService.createFundRecipient(fundRecipient);

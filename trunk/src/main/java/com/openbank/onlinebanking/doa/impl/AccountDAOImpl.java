@@ -25,7 +25,7 @@ public class AccountDAOImpl extends BaseDAO implements AccountDAO  {
 
 	@Override
 	public List<Transaction> getTransactionByAccountId(String accountId, String tenantId) {
-		query = new Query(Criteria.where("accountId").is(accountId)
+		query = new Query(Criteria.where("accountNo").is(accountId)
 				.and("tenantId").is(tenantId));
 		List<Transaction> transactionList = mongoTemplate.find(query, Transaction.class, "transaction");
 		return transactionList;

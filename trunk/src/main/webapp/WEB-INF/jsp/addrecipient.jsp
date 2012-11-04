@@ -44,7 +44,7 @@
 				<div class="olb-skin">
 					<div class="common-img-container print">
 						<img alt=" Logo"
-							src="<%=contextPath%>/images/logo-hsbc.gif"
+							src="<%=contextPath%>/images/${form.tenantId}.gif"
 							title=" logo"/>
 					</div>
 					<div class="fl-rt no_print">
@@ -55,7 +55,7 @@
 							</div>
 							<div class="sign-off">
 								<a id="Sign_Off_header" name="Sign_Off_header"
-									href="login.html"
+									href="login?tenantid=<core:out value="${form.tenantId}"/>"
 									title="Sign Off">Sign Off</a>
 							</div>
 						</div>
@@ -124,7 +124,7 @@
 					 <label id="recipient-account-number_label" for="recipient-account-number">Account number *</label>
 				</div>
 				<div class="data-input">
-					<form:input path="recipientAccountId" value=""/>
+					<form:input path="recipientAccountNo" value=""/>
 				</div>
 				<form:hidden path="profileId" value="${form.profileId}"/>
 				<form:hidden path="tenantId" value="${form.tenantId}"/>
