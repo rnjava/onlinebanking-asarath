@@ -10,7 +10,7 @@ public class AccountOverviewForm {
 	private String tenantId;
 	private Profile profile;
 	List<Account> accountList;
-	private String firstAccountId;
+	private String firstAccountNo;
 	
 	/**
 	 * @return the tenantId
@@ -52,15 +52,17 @@ public class AccountOverviewForm {
 		this.accountList = accountList;
 	}
 	/**
-	 * @return the firstAccountId
+	 * @return the firstAccountNo
 	 */
-	public String getFirstAccountId() {
-		return firstAccountId;
+	public String getFirstAccountNo() {
+		return firstAccountNo;
 	}
 	/**
-	 * @param firstAccountId the firstAccountId to set
+	 * @param firstAccountNo the firstAccountNo to set
 	 */
-	public void setFirstAccountId(String firstAccountId) {
-		this.firstAccountId = firstAccountId;
+	public void setFirstAccountNo(String firstAccountNo) {
+		this.firstAccountNo = firstAccountNo;
 	}
+
+
 }

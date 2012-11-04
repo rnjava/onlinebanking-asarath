@@ -8,7 +8,7 @@ public class AccountDetailsForm {
 
 	private String tenantId;
 	private String profileId;
-	private String accountId;
+	private String accountNo;
 	private List<Transaction> transactionList;
 	/**
 	 * @return the tenantId
@@ -34,17 +34,19 @@ public class AccountDetailsForm {
 	public void setProfileId(String profileId) {
 		this.profileId = profileId;
 	}
+
+	
 	/**
-	 * @return the accountId
+	 * @return the accountNo
 	 */
-	public String getAccountId() {
-		return accountId;
+	public String getAccountNo() {
+		return accountNo;
 	}
 	/**
-	 * @param accountId the accountId to set
+	 * @param accountNo the accountNo to set
 	 */
-	public void setAccountId(String accountId) {
-		this.accountId = accountId;
+	public void setAccountNo(String accountNo) {
+		this.accountNo = accountNo;
 	}
 	/**
 	 * @return the transactionList

@@ -6,7 +6,7 @@ public class FundRecipient {
 	private String profileId;
 	private String lastName;
 	private String nickName;
-	private String recipientAccountId;
+	private String recipientAccountNo;
 	/**
 	 * @return the tenantId
 	 */
@@ -56,18 +56,16 @@ public class FundRecipient {
 		this.nickName = nickName;
 	}
 	/**
-	 * @return the recipientAccountId
+	 * @return the recipientAccountNo
 	 */
-	public String getRecipientAccountId() {
-		return recipientAccountId;
+	public String getRecipientAccountNo() {
+		return recipientAccountNo;
 	}
 	/**
-	 * @param recipientAccountId the recipientAccountId to set
+	 * @param recipientAccountNo the recipientAccountNo to set
 	 */
-	public void setRecipientAccountId(String recipientAccountId) {
-		this.recipientAccountId = recipientAccountId;
+	public void setRecipientAccountNo(String recipientAccountNo) {
+		this.recipientAccountNo = recipientAccountNo;
 	}
-	
-	
 
 }

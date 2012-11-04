@@ -14,7 +14,7 @@ public class ProfileDAOImpl extends BaseDAO implements ProfileDAO {
 	@Override
 	public Profile getProfileById(String profileId, String tenantId) {
 		Profile profile = null;
-		query = new Query(Criteria.where("_id").is(profileId)
+		query = new Query(Criteria.where("profileId").is(profileId)
 				.and("tenantId").is(tenantId));
 		profile = mongoTemplate.findOne(query, Profile.class, "profile");
 

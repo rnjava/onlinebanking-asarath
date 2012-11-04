@@ -40,7 +40,7 @@
 				<div class="olb-skin">
 					<div class="common-img-container print">
 						<img alt=" Logo"
-							src="<%=contextPath%>/images/logo-hsbc.gif"
+							src="<%=contextPath%>/images/${form.tenantId}.gif"
 							title="logo"/>
 					</div>
 					<div class="fl-rt no_print">
@@ -51,7 +51,7 @@
 							</div>
 							<div class="sign-off">
 								<a id="Sign_Off_header" name="Sign_Off_header"
-									href="login.html"
+									href="login?tenantid=<core:out value="${loginForm.tenantId}"/>"
 									title="Sign Off">Sign Off</a>
 							</div>
 						</div>
@@ -67,11 +67,11 @@
 				<ul class="nav2">
 					<li><a id="Accounts_topnav" name="Accounts_topnav"
 						class="modal-link selected" rel="nav-mod-content1"
-						href="accountsoverview?profileid=<core:out value="${form.profile.id}"/>&tenantid=<core:out value="${form.tenantId}"/>"
+						href="accountsoverview?profileid=<core:out value="${form.profile.profileId}"/>&tenantid=<core:out value="${form.tenantId}"/>"
 						title="Accounts">Accounts</a></li>
 					<li><a id="Transfers_topnav" name="Transfers_topnav"
 						rel="nav-mod-content3"
-						href="maketransfer?profileid=<core:out value="${form.profile.id}"/>&tenantid=<core:out value="${form.tenantId}"/>"
+						href="maketransfer?profileid=<core:out value="${form.profile.profileId}"/>&tenantid=<core:out value="${form.tenantId}"/>"
 						title="Transfers">Transfers</a></li>
 					<!-- <li><a id="Customer_Service_topnav"
 						name="Customer_Service_topnav" rel="nav-mod-content7 "
@@ -87,12 +87,12 @@
 					<ul>
 						<li><a id="Accounts_topnav" name="Accounts_topnav_borneo_AO"
 							class="selected"
-							href="accountsoverview?profileid=<core:out value="${form.profile.id}"/>&tenantid=<core:out value="${form.tenantId}"/>"
+							href="accountsoverview?profileid=<core:out value="${form.profile.profileId}"/>&tenantid=<core:out value="${form.tenantId}"/>"
 							title="Accounts Overview">Accounts Overview</a></li>
 
 						<li><a id="Account_Details_topnav"
 							name="Account_Details_topnav"
-							href="accountdetails?accountid=<core:out value="${form.firstAccountId}"/>&tenantid=<core:out value="${form.tenantId}"/>&profileid=<core:out value="${form.profile.id}"/>"
+							href="accountdetails?accountno=<core:out value="${form.firstAccountNo}"/>&tenantid=<core:out value="${form.tenantId}"/>&profileid=<core:out value="${form.profile.profileId}"/>"
 							title="Account Details">Account Details</a></li>
 <!-- 
 						<li><a
@@ -160,7 +160,7 @@
 								<div class="account-row" rel="0" lang="en-us">
 									<div class="left-column-content">
 										<div class="image-account ">
-											<a href="accountdetails?accountid=<core:out value="${account.id}"/>&tenantid=<core:out value="${form.tenantId}"/>&profileid=<core:out value="${form.profile.id}"/>">
+											<a href="accountdetails?accountno=<core:out value="${account.accountNo}"/>&tenantid=<core:out value="${form.tenantId}"/>&profileid=<core:out value="${form.profile.profileId}"/>">
 											<core:out value="${account.type}" /></a>
 										</div>
 										<div class="clearboth"></div>

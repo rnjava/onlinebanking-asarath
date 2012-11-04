@@ -1,0 +1,1 @@
+db.dbname.load("C:\mongo_test_data_scripts.js")
