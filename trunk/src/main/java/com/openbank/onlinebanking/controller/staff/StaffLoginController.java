@@ -1,4 +1,4 @@
-package com.openbank.onlinebanking.controller;
+package com.openbank.onlinebanking.controller.staff;
 
 import java.util.Map;
 
@@ -18,22 +18,19 @@ import com.openbank.onlinebanking.form.LoginForm;
 
 @Controller
 //@SessionAttributes
-@RequestMapping("/login")
-public class LoginController {
+@RequestMapping("/stafflogin")
+public class StaffLoginController {
 	
-	private static Logger log = LoggerFactory.getLogger(LoginController.class);
+	private static Logger log = LoggerFactory.getLogger(StaffLoginController.class);
 	
 	private LoginService loginService;
-	private AccountController accountController; 
-//	private ProfileService profileService;
-//	private AccountService accountService;
 		
 	@RequestMapping(method = RequestMethod.GET )
 	public String showForm(Map<String, LoginForm> model, @RequestParam(value = "tenantid") String tenantId) {
 			LoginForm loginForm = new LoginForm();
 			loginForm.setTenantId(tenantId);
 			model.put("loginForm", loginForm);
-			return "login";
+			return "stafflogin";
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
@@ -45,9 +42,9 @@ public class LoginController {
 			log.debug("ProfileId for userId [{}] is [{}]", loginForm.getUserName(), profileId);
 			
 			if (profileId != null) {
-				modelAndView = accountController.getAccountOverview(profileId, loginForm.getTenantId()); 
+				//modelAndView = accountController.getAccountOverview(profileId, loginForm.getTenantId()); 
 			} else {
-				modelAndView = new ModelAndView("login");
+				modelAndView = new ModelAndView("stafflogin");
 				loginForm = new LoginForm();
 				modelAndView.addObject("form", loginForm);
 			}
@@ -62,12 +59,4 @@ public class LoginController {
 		this.loginService = loginService;
 	}
 
-	/**
-	 * @param accountController the accountController to set
-	 */
-	public void setAccountController(AccountController accountController) {
-		this.accountController = accountController;
-	}
-
-	
 }

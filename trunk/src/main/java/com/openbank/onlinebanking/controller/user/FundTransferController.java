@@ -1,4 +1,4 @@
-package com.openbank.onlinebanking.controller;
+package com.openbank.onlinebanking.controller.user;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,6 +11,7 @@ import com.openbank.onlinebanking.dto.FundRecipient;
 import com.openbank.onlinebanking.form.TransferForm;
 
 @Controller
+//@RequestMapping("/user")
 public class FundTransferController {
 	
 	private FundTransferService fundTransferService;

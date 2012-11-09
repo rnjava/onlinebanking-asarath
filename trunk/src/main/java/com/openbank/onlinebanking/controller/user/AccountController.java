@@ -1,4 +1,4 @@
-package com.openbank.onlinebanking.controller;
+package com.openbank.onlinebanking.controller.user;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,6 +12,7 @@ import com.openbank.onlinebanking.form.AccountDetailsForm;
 import com.openbank.onlinebanking.form.AccountOverviewForm;
 
 @Controller
+//@RequestMapping("/user")
 public class AccountController {
 	
 	private ProfileService profileService;

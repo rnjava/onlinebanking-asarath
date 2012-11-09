@@ -16,16 +16,16 @@
        default-autowire="byName">
 
 
-	<bean id="fundTransferController" class="com.openbank.onlinebanking.controller.FundTransferController">
+	<bean id="fundTransferController" class="com.openbank.onlinebanking.controller.user.FundTransferController">
 		<property name="fundTransferService" ref="fundTransferService"/>
     </bean>
 	
-	<bean id="loginController" class="com.openbank.onlinebanking.controller.LoginController">
+	<bean id="loginController" class="com.openbank.onlinebanking.controller.user.LoginController">
     	<property name="loginService" ref="loginService"/>
     	<property name="accountController" ref="accountController"/>
     </bean>
    
-	<bean id="accountController" class="com.openbank.onlinebanking.controller.AccountController">
+	<bean id="accountController" class="com.openbank.onlinebanking.controller.user.AccountController">
     	<property name="profileService" ref="profileService"/>
     	<property name="accountService" ref="accountService"/>
     </bean>
@@ -45,5 +45,17 @@
    <bean id="fundTransferService" class="com.openbank.onlinebanking.blo.impl.FundTransferServiceImpl">
    		<property name="fundTransferDAO" ref="fundTransferDAO"/>
    </bean>
+
+<!-- ==================================  ADMIN =============================================== -->
+
+
+	<bean id="adminLoginController" class="com.openbank.onlinebanking.controller.admin.AdminLoginController">
+    	<property name="loginService" ref="loginService"/>
+    </bean>
+    
+<!-- ==================================   STAFF  =============================================== -->    
+    	<bean id="staffLoginController" class="com.openbank.onlinebanking.controller.staff.StaffLoginController">
+    	<property name="loginService" ref="loginService"/>
+    </bean>
         
 </beans>
