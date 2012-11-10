@@ -11,7 +11,6 @@ public class LoginDAOImpl extends BaseDAO implements LoginDAO {
 
 	private Query query = null;
 	
-	@Override
 	public User getUserByUserId(String userId, String tenantId) {
 		User user = null;
 		query = new Query(Criteria.where("userId").is(userId)

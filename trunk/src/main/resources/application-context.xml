@@ -54,8 +54,14 @@
     </bean>
     
 <!-- ==================================   STAFF  =============================================== -->    
-    	<bean id="staffLoginController" class="com.openbank.onlinebanking.controller.staff.StaffLoginController">
+    <bean id="staffLoginController" class="com.openbank.onlinebanking.controller.staff.StaffLoginController">
     	<property name="loginService" ref="loginService"/>
+    	<property name="profileService" ref="profileService"/>
+    </bean>
+    
+    <bean id="searchAccountController" class="com.openbank.onlinebanking.controller.staff.SearchAccountController">
+    	<property name="accountService" ref="accountService"/>
+    	<property name="profileService" ref="profileService"/>
     </bean>
         
 </beans>

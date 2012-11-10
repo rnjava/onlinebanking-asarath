@@ -10,6 +10,8 @@ public class User {
     String profileId;
     Date createdDate;
     String createdBy;
+    
+    Role role;
 
 	/**
 	 * @return the userId
@@ -70,6 +72,18 @@ public class User {
 	 */
 	public void setCreatedBy(String createdBy) {
 		this.createdBy = createdBy;
+	}
+	/**
+	 * @return the role
+	 */
+	public Role getRole() {
+		return role;
+	}
+	/**
+	 * @param role the role to set
+	 */
+	public void setRole(Role role) {
+		this.role = role;
 	}
     
     

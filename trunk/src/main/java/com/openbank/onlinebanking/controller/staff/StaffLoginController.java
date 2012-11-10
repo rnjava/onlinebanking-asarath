@@ -14,7 +14,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.openbank.onlinebanking.blo.LoginService;
+import com.openbank.onlinebanking.blo.ProfileService;
+import com.openbank.onlinebanking.dto.Profile;
+import com.openbank.onlinebanking.dto.User;
 import com.openbank.onlinebanking.form.LoginForm;
+import com.openbank.onlinebanking.form.staff.CustomerSearchForm;
 
 @Controller
 //@SessionAttributes
@@ -24,6 +28,7 @@ public class StaffLoginController {
 	private static Logger log = LoggerFactory.getLogger(StaffLoginController.class);
 	
 	private LoginService loginService;
+	private ProfileService profileService;
 		
 	@RequestMapping(method = RequestMethod.GET )
 	public String showForm(Map<String, LoginForm> model, @RequestParam(value = "tenantid") String tenantId) {
@@ -37,11 +42,32 @@ public class StaffLoginController {
 	public ModelAndView processForm(@Valid LoginForm loginForm, BindingResult result) {
 			
 			ModelAndView modelAndView = null;
-			String profileId = loginService.login(loginForm.getUserName(), loginForm.getTenantId(), loginForm.getPassword());
+			User user = loginService.login(loginForm.getUserName(), loginForm.getTenantId(), loginForm.getPassword());
 			
-			log.debug("ProfileId for userId [{}] is [{}]", loginForm.getUserName(), profileId);
+			//log.debug("ProfileId for userId [{}] is [{}]", loginForm.getUserName(), profileId);
 			
-			if (profileId != null) {
+			if (user != null && user.getProfileId() != null) {
+				if("STAFF".equalsIgnoreCase(user.getRole().getPrimary())) {
+					System.out.println("Correct userId");
+					modelAndView = new ModelAndView("staffloginsuccess");
+					CustomerSearchForm customerSearchForm = new CustomerSearchForm();
+					customerSearchForm.setTenantId(loginForm.getTenantId());
+					Profile profile = profileService.getProfileById(user.getProfileId(), loginForm.getTenantId());
+					if(profile != null) {
+						customerSearchForm.setProfileId(profile.getProfileId());
+						customerSearchForm.setFirstName(profile.getFirstName());
+						customerSearchForm.setLastName(profile.getLastName());
+					}
+					
+					modelAndView.addObject("form", customerSearchForm);
+					
+				} else {
+					System.out.println("Not a staff");
+					modelAndView = new ModelAndView("stafflogin");
+					loginForm = new LoginForm();
+					modelAndView.addObject("form", loginForm);
+				}
+				
 				//modelAndView = accountController.getAccountOverview(profileId, loginForm.getTenantId()); 
 			} else {
 				modelAndView = new ModelAndView("stafflogin");
@@ -59,4 +85,12 @@ public class StaffLoginController {
 		this.loginService = loginService;
 	}
 
+	/**
+	 * @param profileService the profileService to set
+	 */
+	public void setProfileService(ProfileService profileService) {
+		this.profileService = profileService;
+	}
+
+	
 }

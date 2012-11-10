@@ -11,6 +11,7 @@ public class Account {
 	private String type;
 	private double balance;
 	private String currencySymbol;
+	private String profileId;
 
 	  
 	
@@ -61,6 +62,18 @@ public class Account {
 	 */
 	public void setCurrencySymbol(String currencySymbol) {
 		this.currencySymbol = currencySymbol;
+	}
+	/**
+	 * @return the profileId
+	 */
+	public String getProfileId() {
+		return profileId;
+	}
+	/**
+	 * @param profileId the profileId to set
+	 */
+	public void setProfileId(String profileId) {
+		this.profileId = profileId;
 	}
 	
 	

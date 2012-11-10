@@ -10,5 +10,7 @@ public interface AccountDAO {
 	List<Account> getAccountsByProfileId(String profileId, String tenantId);
 
 	List<Transaction> getTransactionByAccountId(String accountId, String tenantId);
+	
+	Account getAccountByAccountNo(String accountNo, String tenantId);
 
 }
