@@ -16,7 +16,7 @@ public class FundTransferController {
 	
 	private FundTransferService fundTransferService;
 	
-	@RequestMapping(value="/maketransfer", method=RequestMethod.GET)
+	@RequestMapping(value="/maketransfer", method=RequestMethod.POST)
 	public ModelAndView makeTransfer(@RequestParam(value = "profileid") String profileId, 
 			@RequestParam (value = "tenantid") String tenantId) {
 

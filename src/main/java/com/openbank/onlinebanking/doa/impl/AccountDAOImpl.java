@@ -14,7 +14,6 @@ public class AccountDAOImpl extends BaseDAO implements AccountDAO  {
 	
 	private Query query = null;
 	
-	@Override
 	public List<Account> getAccountsByProfileId(String profileId, String tenantId) {
 			
 			query = new Query(Criteria.where("profileId").is(profileId)
@@ -23,12 +22,20 @@ public class AccountDAOImpl extends BaseDAO implements AccountDAO  {
 			return accountList;
 	}
 
-	@Override
 	public List<Transaction> getTransactionByAccountId(String accountId, String tenantId) {
 		query = new Query(Criteria.where("accountNo").is(accountId)
 				.and("tenantId").is(tenantId));
 		List<Transaction> transactionList = mongoTemplate.find(query, Transaction.class, "transaction");
 		return transactionList;
+	}
+
+	public Account getAccountByAccountNo(String accountNo, String tenantId) {
+		query = new Query(Criteria.where("accountNo").is(accountNo)
+				.and("tenantId").is(tenantId));
+		Account account = mongoTemplate.findOne(query, Account.class, "account");
+		System.out.println(query);
+		return account;
+
 	}
 
 }

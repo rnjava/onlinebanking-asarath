@@ -8,14 +8,13 @@ public class LoginServiceImpl implements LoginService {
 
 	private LoginDAO loginDAO;
 	
-	@Override
-	public String login(String userId, String tenantId, String password) {
-		String profileId = null;
+	public User login(String userId, String tenantId, String password) {
 		User user = loginDAO.getUserByUserId(userId, tenantId);
-		if(user!= null && user.getPassword().equals(password)) {
-			profileId = user.getProfileId();
+		if(user == null || !(user.getPassword().equals(password))) {
+			//profileId = user.getProfileId();
+			user = null;
 		}
-		return profileId;
+		return user;
 	}
 
 	/**

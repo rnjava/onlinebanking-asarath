@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.openbank.onlinebanking.blo.LoginService;
+import com.openbank.onlinebanking.dto.User;
 import com.openbank.onlinebanking.form.LoginForm;
 
 @Controller
@@ -40,12 +41,12 @@ public class LoginController {
 	public ModelAndView processForm(@Valid LoginForm loginForm, BindingResult result) {
 			
 			ModelAndView modelAndView = null;
-			String profileId = loginService.login(loginForm.getUserName(), loginForm.getTenantId(), loginForm.getPassword());
+			User user = loginService.login(loginForm.getUserName(), loginForm.getTenantId(), loginForm.getPassword());
 			
-			log.debug("ProfileId for userId [{}] is [{}]", loginForm.getUserName(), profileId);
+			//log.debug("ProfileId for userId [{}] is [{}]", loginForm.getUserName(), profileId);
 			
-			if (profileId != null) {
-				modelAndView = accountController.getAccountOverview(profileId, loginForm.getTenantId()); 
+			if (user != null && user.getProfileId() != null) {
+				modelAndView = accountController.getAccountOverview(user.getProfileId(), loginForm.getTenantId()); 
 			} else {
 				modelAndView = new ModelAndView("login");
 				loginForm = new LoginForm();

@@ -3,7 +3,7 @@
 
 <html>
 <head>
-<title>Online Banking | Customer Login</title>
+<title>Online Banking | Staff Login</title>
 <%
 	String contextPath = request.getContextPath();
 %>
@@ -11,7 +11,7 @@
 <link href="<%=contextPath%>/css/nokia.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<form:form method="post" action="login" commandName="loginForm">
+<form:form method="post" action="stafflogin" commandName="loginForm">
   <table width="100%"  border="0">
     <tr>
       <td height="28">
