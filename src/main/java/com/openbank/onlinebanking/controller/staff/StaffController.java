@@ -79,11 +79,25 @@ public class StaffController {
 			profileService.deleteProfile(profileId, tenantId);
 			
 		}
+		modelAndView.addObject("successMessage", "Account '"+accountNo+"' successfully created !!!");
+		resetForm(createAccountForm);
 		modelAndView.addObject("form", createAccountForm);
 		log.debug("Existing..........");
 		return modelAndView;
 	}
 	
+	private void resetForm(CreateAccountForm createAccountForm) {
+		createAccountForm.setAccountType(null);
+		createAccountForm.setFirstName(null);
+		createAccountForm.setLastName(null);
+		createAccountForm.setDateOfBirth(null);
+		createAccountForm.setBranchCode(null);
+		createAccountForm.setSex(null);
+		createAccountForm.setUserName(null);
+		
+		
+	}
+
 	private User createUser(CreateAccountForm createAccountForm, String profileId) {
 		User user = new User();
 		user.setUserId(createAccountForm.getUserName());
