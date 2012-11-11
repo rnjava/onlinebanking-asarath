@@ -12,6 +12,9 @@
 		<link
 			href="<%=contextPath%>/css/pipad-jawr.css"
 			rel="stylesheet" type="text/css" media="all"/>
+				<link
+			href="<%=contextPath%>/css/style.css"
+			rel="stylesheet" type="text/css" media="all"/>	
 		<link
 			href="<%=contextPath%>/css/pipad-jawr-print.css"
 			rel="stylesheet" type="text/css" media="print"/>
@@ -73,7 +76,7 @@
 					<li><a id="Transfers_topnav" name="Transfers_topnav"
 						class="modal-link selected rel="nav-mod-content3"
 						href="staffcreateaccount?profileid=<core:out value="${form.staffProfileId}"/>&tenantid=<core:out value="${form.tenantId}"/>"
-						title="Create New Accounts">Create New Accounts</a></li>
+						title="Create New Accounts">Create New Account</a></li>
 				</ul>
 			</div>
 
@@ -112,7 +115,11 @@
 						</div>
 						<div class="h2-bold-14">
 							</div>
-						<!-- div class="f-11">
+	<!-- 
+						<div class="f-11">
+						</div>
+
+		
 							Protect your accounts and information, <a
 								id="visit_the_Security_Center" name="visit_the_Security_Center"
 								class="bold"
@@ -129,6 +136,16 @@
 					<div class="thick-border-module">
 		  <form:form method="post" action="staffcreateaccount" commandName="form"  onsubmit="return true;" name="createAccount">
 	        <table>
+	            <tr>
+	             	<td colspan="4" align="center">
+	             	 	<core:if test="${not empty errorMessage}">
+    						<div class="clsError">${errorMessage}</div>
+						</core:if>
+						<core:if test="${not empty successMessage}">
+    						<div class="clsSuccess" >${successMessage}</div>
+						</core:if>
+	             	</td>
+	            </tr>
 		        <tr>
 		        	<td><label id="first-name-label" for="first-name-label">First Name *</label></td>
 		        	<td><form:input path="firstName" maxlength="50" value=""/></td>
@@ -149,13 +166,12 @@
 		        </tr>
 		        
 		        <tr>	
-		        	<td class="button-cont"><a id="add-account-continue-button" class="button mrt-15" href="javascript:document.createAccount.submit();" title="createAccount">
-							Create Account</a>
-					</td>
-					<td>
-						<a id="add-account-cancel-button" class="button" 
+		        	<td colspan="4" align="right">
+		        		<a class="button" href="javascript:document.createAccount.submit();" title="createAccount">
+							<span>Create Account</span></a>
+						<a class="button" 
 							href="staffcreateaccount?profileid=<core:out value="${form.staffProfileId}"/>&tenantid=<core:out value="${form.tenantId}"/>" 
-							title="Cancel">Cancel</a>
+							title="Cancel"><span>Cancel</span></a>
 					</td>
 		        	<form:hidden path="staffProfileId" value="${form.staffProfileId}"/>
 					<form:hidden path="tenantId" value="${form.tenantId}"/>
