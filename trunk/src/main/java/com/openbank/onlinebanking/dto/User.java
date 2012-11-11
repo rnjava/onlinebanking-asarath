@@ -10,6 +10,7 @@ public class User {
     String profileId;
     Date createdDate;
     String createdBy;
+    String tenantId;
     
     Role role;
 
@@ -85,6 +86,29 @@ public class User {
 	public void setRole(Role role) {
 		this.role = role;
 	}
-    
-    
+	
+	
+	/**
+	 * @return the tenantId
+	 */
+	public String getTenantId() {
+		return tenantId;
+	}
+	/**
+	 * @param tenantId the tenantId to set
+	 */
+	public void setTenantId(String tenantId) {
+		this.tenantId = tenantId;
+	}
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "User [userId=" + userId + ", password=" + password
+				+ ", profileId=" + profileId + ", createdDate=" + createdDate
+				+ ", createdBy=" + createdBy + ", tenantId=" + tenantId
+				+ ", role=" + role + "]";
+	}
+
 }

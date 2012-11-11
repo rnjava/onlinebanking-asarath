@@ -9,6 +9,7 @@ public class Profile {
      private String lastName;
      private Date dateOfBirth;
      private String sex;
+     private String tenantId;
      private Date createdDate;
      private String createdBy;
      
@@ -98,7 +99,27 @@ public class Profile {
 	public void setCreatedBy(String createdBy) {
 		this.createdBy = createdBy;
 	}
+	/**
+	 * @return the tenantId
+	 */
+	public String getTenantId() {
+		return tenantId;
+	}
+	/**
+	 * @param tenantId the tenantId to set
+	 */
+	public void setTenantId(String tenantId) {
+		this.tenantId = tenantId;
+	}
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Profile [profileId=" + profileId + ", firstName=" + firstName
+				+ ", lastName=" + lastName + ", dateOfBirth=" + dateOfBirth
+				+ ", sex=" + sex + ", tenantId=" + tenantId + ", createdDate="
+				+ createdDate + ", createdBy=" + createdBy + "]";
+	}
 
-     
-     
 }

@@ -21,6 +21,14 @@ public class AccountServiceImpl implements AccountService {
 		List<Transaction> transactionList = accountDAO.getTransactionByAccountId(accountId, tenantId);
 		return transactionList;
 	}
+	
+	public String saveAccount(Account account) {
+		
+		String accountNO =String.valueOf(System.nanoTime());
+		account.setAccountNo(accountNO); //Fix me
+		accountDAO.saveAccount(account);
+		return accountNO;
+	}
 
 	/**
 	 * @param accountDAO the accountDAO to set

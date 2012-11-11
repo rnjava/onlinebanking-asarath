@@ -12,7 +12,7 @@ public class LoginForm {
 	@Size(min = 1, max = 20)
 	private String password;
 	
-	private String tenantId; // = "C63A953AE20D404F8BB1F225CBC82CF0"; //FIX ME
+	private String tenantId; 
 
 	public void setUserName(String userName) {
 		this.userName = userName;
@@ -38,6 +38,14 @@ public class LoginForm {
 	public void setTenantId(String tenantId) {
 		this.tenantId = tenantId;
 	}
-	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "LoginForm [userName=" + userName + ", password=" + password
+				+ ", tenantId=" + tenantId + "]";
+	}
+
 	
 }
