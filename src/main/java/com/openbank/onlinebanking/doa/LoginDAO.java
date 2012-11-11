@@ -6,4 +6,7 @@ public interface LoginDAO {
 
 	User getUserByUserId(String userName, String tenantId);
 
+	void saveUser(User user);
+	void deleteUser(String userId, String tenantId);
+
 }

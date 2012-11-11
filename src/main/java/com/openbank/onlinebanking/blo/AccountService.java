@@ -12,5 +12,7 @@ public interface AccountService {
 	List<Transaction> getTransactionByAccountId(String accountId, String tenantId);
 	
 	Account getAccountByAccountNo(String accountNo, String tenantId);
+	
+	String saveAccount(Account account);
 
 }

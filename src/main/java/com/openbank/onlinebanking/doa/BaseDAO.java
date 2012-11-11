@@ -6,6 +6,8 @@ public class BaseDAO {
 
 	protected MongoTemplate mongoTemplate;
 	
+	protected static final String USERS_COLLECTION_NAME = "users";
+	
 
 	/**
 	 * @param mongoTemplate the mongoTemplate to set

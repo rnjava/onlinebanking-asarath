@@ -32,50 +32,51 @@ public class StaffLoginController {
 		
 	@RequestMapping(method = RequestMethod.GET )
 	public String showForm(Map<String, LoginForm> model, @RequestParam(value = "tenantid") String tenantId) {
-			LoginForm loginForm = new LoginForm();
-			loginForm.setTenantId(tenantId);
-			model.put("loginForm", loginForm);
-			return "stafflogin";
+		
+		log.debug("Entering showForm tenantId : {}, loginForm ; {}", new Object [] {tenantId, model.toString()} );
+		LoginForm loginForm = new LoginForm();
+		loginForm.setTenantId(tenantId);
+		model.put("loginForm", loginForm);
+		log.debug("Exiting showForm to 'stafflogin' ");
+		return "stafflogin";
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
 	public ModelAndView processForm(@Valid LoginForm loginForm, BindingResult result) {
-			
-			ModelAndView modelAndView = null;
-			User user = loginService.login(loginForm.getUserName(), loginForm.getTenantId(), loginForm.getPassword());
-			
-			//log.debug("ProfileId for userId [{}] is [{}]", loginForm.getUserName(), profileId);
-			
-			if (user != null && user.getProfileId() != null) {
-				if("STAFF".equalsIgnoreCase(user.getRole().getPrimary())) {
-					System.out.println("Correct userId");
-					modelAndView = new ModelAndView("staffloginsuccess");
-					CustomerSearchForm customerSearchForm = new CustomerSearchForm();
-					customerSearchForm.setTenantId(loginForm.getTenantId());
-					Profile profile = profileService.getProfileById(user.getProfileId(), loginForm.getTenantId());
-					if(profile != null) {
-						customerSearchForm.setProfileId(profile.getProfileId());
-						customerSearchForm.setFirstName(profile.getFirstName());
-						customerSearchForm.setLastName(profile.getLastName());
-					}
-					
-					modelAndView.addObject("form", customerSearchForm);
-					
-				} else {
-					System.out.println("Not a staff");
-					modelAndView = new ModelAndView("stafflogin");
-					loginForm = new LoginForm();
-					modelAndView.addObject("form", loginForm);
+		log.debug("Entering processForm - loginForm = {}", loginForm.toString());
+		ModelAndView modelAndView = null;
+
+		User user = loginService.login(loginForm.getUserName(), loginForm.getTenantId(), loginForm.getPassword());
+		if (user != null && user.getProfileId() != null) {
+			if("STAFF".equalsIgnoreCase(user.getRole().getPrimary())) {
+				log.debug("User is a STAFF - {}", user.toString());
+				modelAndView = new ModelAndView("staffloginsuccess");
+				CustomerSearchForm customerSearchForm = new CustomerSearchForm();
+				customerSearchForm.setTenantId(loginForm.getTenantId());
+				Profile profile = profileService.getProfileById(user.getProfileId(), loginForm.getTenantId());
+				if(profile != null) {
+					customerSearchForm.setStaffProfileId(profile.getProfileId());
+					customerSearchForm.setStaffFirstName(profile.getFirstName());
+					customerSearchForm.setStaffLastName(profile.getLastName());
 				}
 				
-				//modelAndView = accountController.getAccountOverview(profileId, loginForm.getTenantId()); 
+				modelAndView.addObject("form", customerSearchForm);
+				
 			} else {
+				System.out.println("Not a staff");
 				modelAndView = new ModelAndView("stafflogin");
 				loginForm = new LoginForm();
 				modelAndView.addObject("form", loginForm);
 			}
 			
-			return modelAndView;
+			//modelAndView = accountController.getAccountOverview(profileId, loginForm.getTenantId()); 
+		} else {
+			modelAndView = new ModelAndView("stafflogin");
+			loginForm = new LoginForm();
+			modelAndView.addObject("form", loginForm);
+		}
+		log.debug("exiting processForm");
+		return modelAndView;
 		}
 
 	/**

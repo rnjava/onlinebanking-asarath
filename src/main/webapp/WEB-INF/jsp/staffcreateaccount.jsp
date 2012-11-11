@@ -7,7 +7,7 @@
 	<%
 		String contextPath = request.getContextPath();
 	%>
-		<title>Online Banking | Staff</title>
+		<title>Online Banking | Staff | Create Account</title>
 		<link rel="shortcut icon" href="href="<%=contextPath%>/images/favicon.ico" type="image/ico"/>
 		<link
 			href="<%=contextPath%>/css/pipad-jawr.css"
@@ -64,17 +64,16 @@
 				</div>
 
 
-
 			<div id="nav-tier-2-module" class="nav-tier-2-module no_print">
 				<ul class="nav2">
 					<li><a id="Accounts_topnav" name="Accounts_topnav"
-						class="modal-link selected" rel="nav-mod-content1"
+						" rel="nav-mod-content1"
 						href="staffloginsuccess?profileid=<core:out value="${form.staffProfileId}"/>&tenantid=<core:out value="${form.tenantId}"/>"
 						title="Customer Transaction">Customer Transaction</a></li>
 					<li><a id="Transfers_topnav" name="Transfers_topnav"
-						rel="nav-mod-content3"
+						class="modal-link selected rel="nav-mod-content3"
 						href="staffcreateaccount?profileid=<core:out value="${form.staffProfileId}"/>&tenantid=<core:out value="${form.tenantId}"/>"
-						title="Create New Accounts">Create Account</a></li>
+						title="Create New Accounts">Create New Accounts</a></li>
 				</ul>
 			</div>
 
@@ -85,15 +84,20 @@
 					<ul>
 						<li><a id="Accounts_topnav" name="Accounts_topnav_borneo_AO"
 							class="selected"
-							href="staffloginsuccess?profileid=<core:out value="${form.staffProfileId}"/>&tenantid=<core:out value="${form.tenantId}"/>"
-							title="Accounts Overview">Search Account</a></li>
+							href="staffcreateaccount?profileid=<core:out value="${form.staffProfileId}"/>&tenantid=<core:out value="${form.tenantId}"/>"
+							title="Create New Account">Create Account</a></li>
+<!-- 
 						<li><a id="Account_Details_topnav"
 							name="Account_Details_topnav"
 							href=""
-							title="Account Details">Withraw Funds</a></li>
+							title="Account Details">Transfer Funds</a></li>
+
+						<li><a
+							href=""
+							title="Statements &amp; Documents">Statements &amp; Documents</a></li>
 						<li><a id="Alerts_topnav" name="Alerts_topnav"
 							href=""
-							title="Alerts">DepositFunds</a></li>
+							title="Alerts">Alerts</a></li>-->
 					</ul>
 				</div>
 			</div>
@@ -103,14 +107,11 @@
 				<div class="default-skin">
 					<div class="fl-lt">
 						<a class="ada-hidden" name="skip_to_main_content"></a>
-						<h1 class="ada-hidden">Accounts Overview</h1>
+						<h1 class="ada-hidden">Create Account</h1>
 						<div class="h2-bold-14">
 						</div>
 						<div class="h2-bold-14">
-						    Account Information of - 
-							<core:out value="${form.userFirstName}" />&nbsp;
-							<core:out value="${form.userLastName}" /> 
-						</div>
+							</div>
 						<!-- div class="f-11">
 							Protect your accounts and information, <a
 								id="visit_the_Security_Center" name="visit_the_Security_Center"
@@ -126,16 +127,43 @@
 
 		<div class="olb-account-listing-module">
 					<div class="thick-border-module">
+		  <form:form method="post" action="staffcreateaccount" commandName="form"  onsubmit="return true;" name="createAccount">
 	        <table>
 		        <tr>
-		        	<td><label id="recipient-last-name_label" for="recipient-last-name">Account No. *</label></td>
-		        	<td><core:out value="${form.accountNo}"/></td>
-		        	<td></td>
-		        	
-					<form:hidden path="form.tenantId" value="${form.tenantId}"/>
+		        	<td><label id="first-name-label" for="first-name-label">First Name *</label></td>
+		        	<td><form:input path="firstName" maxlength="50" value=""/></td>
+		        	<td><label id="last-name-label" for="last-name-label">Last Name *</label></td>
+		        	<td><form:input path="lastName" maxlength="50" value=""/></td>
+		        </tr>
+		        <tr>
+		        	<td><label id="sex-label" for="sex-label">Sex *</label></td>
+		        	<td><form:input path="sex" maxlength="1" value=""/></td>
+		        	<td><label id="dob-label" for="dob-label">Date of Birth *</label></td>
+		        	<td><form:input path="dateOfBirth" maxlength="50" value=""/></td>
+		        </tr>
+		        <tr>
+		        	<td><label id="user-name-label" for="user-name-label">User Name *</label></td>
+		        	<td><form:input path="userName" maxlength="50" value=""/></td>
+		        	<td><label id="account-type-label" for="account-type-label">Account Type *</label></td>
+		        	<td><form:input path="accountType" maxlength="50" value=""/></td>
+		        </tr>
+		        
+		        <tr>	
+		        	<td class="button-cont"><a id="add-account-continue-button" class="button mrt-15" href="javascript:document.createAccount.submit();" title="createAccount">
+							Create Account</a>
+					</td>
+					<td>
+						<a id="add-account-cancel-button" class="button" 
+							href="staffcreateaccount?profileid=<core:out value="${form.staffProfileId}"/>&tenantid=<core:out value="${form.tenantId}"/>" 
+							title="Cancel">Cancel</a>
+					</td>
+		        	<form:hidden path="staffProfileId" value="${form.staffProfileId}"/>
+					<form:hidden path="tenantId" value="${form.tenantId}"/>
 		        </tr>
 	        </table>
 				<div class="clearboth"></div>				
+			</form:form>
+
 			</div>
 	 </div>
 </td>

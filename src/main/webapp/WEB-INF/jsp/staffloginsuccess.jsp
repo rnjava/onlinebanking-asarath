@@ -68,12 +68,12 @@
 				<ul class="nav2">
 					<li><a id="Accounts_topnav" name="Accounts_topnav"
 						class="modal-link selected" rel="nav-mod-content1"
-						href=""
+						href="staffloginsuccess?profileid=<core:out value="${form.staffProfileId}"/>&tenantid=<core:out value="${form.tenantId}"/>"
 						title="Customer Transaction">Customer Transaction</a></li>
 					<li><a id="Transfers_topnav" name="Transfers_topnav"
 						rel="nav-mod-content3"
-						href="x"
-						title="Create New Accounts">Create New Accounts</a></li>
+						href="staffcreateaccount?profileid=<core:out value="${form.staffProfileId}"/>&tenantid=<core:out value="${form.tenantId}"/>"
+						title="Create New Accounts">Create Account</a></li>
 				</ul>
 			</div>
 
@@ -84,7 +84,7 @@
 					<ul>
 						<li><a id="Accounts_topnav" name="Accounts_topnav_borneo_AO"
 							class="selected"
-							href="staffloginsuccess?profileid=<core:out value="${form.profileId}"/>&tenantid=<core:out value="${form.tenantId}"/>"
+							href="staffloginsuccess?profileid=<core:out value="${form.staffProfileId}"/>&tenantid=<core:out value="${form.tenantId}"/>"
 							title="Accounts Overview">Search Account</a></li>
 <!-- 
 						<li><a id="Account_Details_topnav"
@@ -112,8 +112,8 @@
 						</div>
 						<div class="h2-bold-14">
 						    Welcome - 
-							<core:out value="${form.firstName}" />&nbsp;
-							<core:out value="${form.lastName}" /> 
+							<core:out value="${form.staffFirstName}" />&nbsp;
+							<core:out value="${form.staffLastName}" /> 
 						</div>
 						<!-- div class="f-11">
 							Protect your accounts and information, <a
@@ -135,15 +135,16 @@
 		        <tr>
 		        	<td><label id="recipient-last-name_label" for="recipient-last-name">Account No. *</label></td>
 		        	<td><form:input path="accountNo" maxlength="40" value=""/></td>
-		        	<td>				<div class="button-cont">
-					<a id="add-account-continue-button" class="button mrt-15" href="javascript:document.searchAccount.submit();" title="searchAccount">
-							<span>Search Account</span>
-					</a>
-					<a id="add-account-cancel-button" class="button" href="" title="Cancel">
+		        </tr>
+		        <tr>	
+		        	<td class="button-cont"><a id="add-account-continue-button" class="button mrt-15" href="javascript:document.searchAccount.submit();" title="searchAccount">
+							<span>Search Account</span></a>
+					</td>
+					<td>
+						<a id="add-account-cancel-button" class="button" href="" title="Cancel">
 						<span>Cancel</span></a>
-				</div></td>
-		        	<td></td>
-		        	<form:hidden path="profileId" value="${form.profileId}"/>
+					</td>
+		        	<form:hidden path="staffProfileId" value="${form.staffProfileId}"/>
 					<form:hidden path="tenantId" value="${form.tenantId}"/>
 		        </tr>
 	        </table>

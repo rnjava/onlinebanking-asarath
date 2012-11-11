@@ -1,6 +1,8 @@
 package com.openbank.onlinebanking.dto;
 
 
+import java.util.Date;
+
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
@@ -12,6 +14,9 @@ public class Account {
 	private double balance;
 	private String currencySymbol;
 	private String profileId;
+	private String tenantId;
+    private Date createdDate;
+    private String createdBy;
 
 	  
 	
@@ -75,6 +80,54 @@ public class Account {
 	public void setProfileId(String profileId) {
 		this.profileId = profileId;
 	}
+	/**
+	 * @return the tenantId
+	 */
+	public String getTenantId() {
+		return tenantId;
+	}
+	/**
+	 * @param tenantId the tenantId to set
+	 */
+	public void setTenantId(String tenantId) {
+		this.tenantId = tenantId;
+	}
+	/**
+	 * @return the createdDate
+	 */
+	public Date getCreatedDate() {
+		return createdDate;
+	}
+	/**
+	 * @param createdDate the createdDate to set
+	 */
+	public void setCreatedDate(Date createdDate) {
+		this.createdDate = createdDate;
+	}
+	/**
+	 * @return the createdBy
+	 */
+	public String getCreatedBy() {
+		return createdBy;
+	}
+	/**
+	 * @param createdBy the createdBy to set
+	 */
+	public void setCreatedBy(String createdBy) {
+		this.createdBy = createdBy;
+	}
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Account [accountNo=" + accountNo + ", type=" + type
+				+ ", balance=" + balance + ", currencySymbol=" + currencySymbol
+				+ ", profileId=" + profileId + ", tenantId=" + tenantId
+				+ ", createdDate=" + createdDate + ", createdBy=" + createdBy
+				+ "]";
+	}
+
 	
-	
+
 }

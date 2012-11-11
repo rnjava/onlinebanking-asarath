@@ -14,7 +14,7 @@ public class GuidUtil {
 	private static Logger log = LoggerFactory.getLogger(GuidUtil.class);
 	
     public static String generateGuid (){
-        return UUID.randomUUID().toString();
+        return UUID.randomUUID().toString().toUpperCase();
     }
     
 	public static String generateMD5Hash(String plainText) {

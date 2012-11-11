@@ -12,5 +12,9 @@ public interface AccountDAO {
 	List<Transaction> getTransactionByAccountId(String accountId, String tenantId);
 	
 	Account getAccountByAccountNo(String accountNo, String tenantId);
+	
+	void saveAccount(Account account);
+	
+	String getMaxAccountNo(String tenantId);
 
 }

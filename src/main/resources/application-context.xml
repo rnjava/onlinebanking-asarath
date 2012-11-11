@@ -63,5 +63,10 @@
     	<property name="accountService" ref="accountService"/>
     	<property name="profileService" ref="profileService"/>
     </bean>
-        
+
+    <bean id="staffController" class="com.openbank.onlinebanking.controller.staff.StaffController">
+    	<property name="accountService" ref="accountService"/>
+    	<property name="profileService" ref="profileService"/>
+    	<property name="loginService" ref="loginService"/>
+    </bean>
 </beans>

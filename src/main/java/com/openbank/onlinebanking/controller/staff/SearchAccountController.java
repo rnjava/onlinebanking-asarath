@@ -1,5 +1,7 @@
 package com.openbank.onlinebanking.controller.staff;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,43 +21,48 @@ public class SearchAccountController {
 
 	private AccountService accountService;
 	private ProfileService profileService;
+	private static Logger log = LoggerFactory.getLogger(SearchAccountController.class);
 	
 	@RequestMapping(value="/searchaccount",  headers = "content-type=application/x-www-form-urlencoded", method=RequestMethod.POST)
 	public ModelAndView getAccountDtails(@ModelAttribute SearchResultForm searchResultForm ) {
-				
-				Account account = accountService.getAccountByAccountNo(searchResultForm.getAccountNo(), searchResultForm.getTenantId());
-				if(account != null ) {
-					Profile profile = profileService.getProfileById(account.getProfileId(), searchResultForm.getTenantId());
-					searchResultForm.setUserProfileId(profile.getProfileId());
-					searchResultForm.setUserFirstName(profile.getFirstName());
-					searchResultForm.setUserLastName(profile.getLastName());
-				} else {
-					
-				}
-			
-				ModelAndView modelAndView = new ModelAndView("searchsuccess");
-				modelAndView.addObject("form", searchResultForm);
-				return modelAndView;
+
+		log.debug("Entering - SearchResultForm : {}", searchResultForm.toString());
+		Account account = accountService.getAccountByAccountNo(searchResultForm.getAccountNo(), searchResultForm.getTenantId());
+		
+		if(account != null ) {
+			log.debug("Account found {}", account.toString());
+			Profile profile = profileService.getProfileById(account.getProfileId(), searchResultForm.getTenantId());
+			searchResultForm.setUserProfileId(profile.getProfileId());
+			searchResultForm.setUserFirstName(profile.getFirstName());
+			searchResultForm.setUserLastName(profile.getLastName());
+		} else {
+			log.debug("Account not found");
 		}
+		ModelAndView modelAndView = new ModelAndView("searchsuccess");
+		modelAndView.addObject("form", searchResultForm);
+		log.debug("Existing..........");
+		return modelAndView;
+	}
 	
 	
 	@RequestMapping(value="/staffloginsuccess",  method=RequestMethod.GET)
 	public ModelAndView getStaffLogin(@RequestParam(value = "profileid") String profileId, @RequestParam (value = "tenantid") String tenantId ) {
-				
-				ModelAndView modelAndView = null;
-				modelAndView = new ModelAndView("staffloginsuccess");
+		log.debug("Entering : (Profileid:{}, TenantId: {})", new Object[]{profileId, tenantId});
+		ModelAndView modelAndView = null;
+		modelAndView = new ModelAndView("staffloginsuccess");
 
-				CustomerSearchForm customerSearchForm = new CustomerSearchForm();
-				customerSearchForm.setTenantId(tenantId);
-				Profile profile = profileService.getProfileById(profileId, tenantId);
-				if(profile != null) {
-					customerSearchForm.setProfileId(profile.getProfileId());
-					customerSearchForm.setFirstName(profile.getFirstName());
-					customerSearchForm.setLastName(profile.getLastName());
-				}
-				modelAndView.addObject("form", customerSearchForm);
-				return modelAndView;
+		CustomerSearchForm customerSearchForm = new CustomerSearchForm();
+		customerSearchForm.setTenantId(tenantId);
+		Profile profile = profileService.getProfileById(profileId, tenantId);
+		if(profile != null) {
+			customerSearchForm.setStaffProfileId(profile.getProfileId());
+			customerSearchForm.setStaffFirstName(profile.getFirstName());
+			customerSearchForm.setStaffLastName(profile.getLastName());
 		}
+		modelAndView.addObject("form", customerSearchForm);
+		log.debug("Existing..........");
+		return modelAndView;
+	}
 
 	/**
 	 * @param accountService the accountService to set
