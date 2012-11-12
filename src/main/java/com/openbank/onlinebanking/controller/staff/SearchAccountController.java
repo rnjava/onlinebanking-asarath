@@ -24,7 +24,7 @@ public class SearchAccountController {
 	private static Logger log = LoggerFactory.getLogger(SearchAccountController.class);
 	
 	@RequestMapping(value="/searchaccount",  headers = "content-type=application/x-www-form-urlencoded", method=RequestMethod.POST)
-	public ModelAndView getAccountDtails(@ModelAttribute SearchResultForm searchResultForm ) {
+	public ModelAndView getAccountDetails(@ModelAttribute SearchResultForm searchResultForm ) {
 
 		log.debug("Entering - SearchResultForm : {}", searchResultForm.toString());
 		Account account = accountService.getAccountByAccountNo(searchResultForm.getAccountNo(), searchResultForm.getTenantId());
@@ -46,7 +46,7 @@ public class SearchAccountController {
 	
 	
 	@RequestMapping(value="/staffloginsuccess",  method=RequestMethod.GET)
-	public ModelAndView getStaffLogin(@RequestParam(value = "profileid") String profileId, @RequestParam (value = "tenantid") String tenantId ) {
+	public ModelAndView loadStaffLoginSuccess(@RequestParam(value = "profileid") String profileId, @RequestParam (value = "tenantid") String tenantId ) {
 		log.debug("Entering : (Profileid:{}, TenantId: {})", new Object[]{profileId, tenantId});
 		ModelAndView modelAndView = null;
 		modelAndView = new ModelAndView("staffloginsuccess");
