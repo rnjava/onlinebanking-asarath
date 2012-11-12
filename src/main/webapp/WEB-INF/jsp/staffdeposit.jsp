@@ -84,7 +84,6 @@
 
 					<ul>
 						<li><a id="Accounts_topnav" name="Accounts_topnav_borneo_AO"
-							class="selected"
 							href="staffloginsuccess?profileid=<core:out value="${form.staffProfileId}"/>&tenantid=<core:out value="${form.tenantId}"/>"
 							title="Accounts Overview">Search Account</a></li>
 						<li><a id="Account_Details_topnav"
@@ -92,6 +91,7 @@
 							href="staffwithdrawal?profileid=<core:out value="${form.staffProfileId}"/>&tenantid=<core:out value="${form.tenantId}"/>&accountno=<core:out value="${form.accountNo}"/>"
 							title="Account Details">Withdraw Funds</a></li>
 						<li><a id="Alerts_topnav" name="Alerts_topnav"
+							class="selected"
 							href="staffdeposit?profileid=<core:out value="${form.staffProfileId}"/>&tenantid=<core:out value="${form.tenantId}"/>&accountno=<core:out value="${form.accountNo}"/>"
 							title="Alerts">DepositFunds</a></li>
 					</ul>
@@ -107,9 +107,6 @@
 						<div class="h2-bold-14">
 						</div>
 						<div class="h2-bold-14">
-						    Account Information of - 
-							<core:out value="${form.userFirstName}" />&nbsp;
-							<core:out value="${form.userLastName}" /> 
 						</div>
 						<!-- div class="f-11">
 							Protect your accounts and information, <a
@@ -126,15 +123,38 @@
 
 		<div class="olb-account-listing-module">
 					<div class="thick-border-module">
+		<form:form method="post" action="staffdepositsubmit" commandName="form"  onsubmit="return true;" name="staffDeposit">					
 	        <table>
+		     	            <tr>
+	             	<td colspan="4" align="center">
+	             	 	<core:if test="${not empty errorMessage}">
+    						<div class="clsError">${errorMessage}</div>
+						</core:if>
+						<core:if test="${not empty successMessage}">
+    						<div class="clsSuccess" >${successMessage}</div>
+						</core:if>
+	             	</td>
+	            </tr>
 		        <tr>
-		        	<td><label id="recipient-last-name_label" for="recipient-last-name">Account No. *</label></td>
-		        	<td><core:out value="${form.accountNo}"/></td>
-		        	<td></td>
-		        	
-					<form:hidden path="form.tenantId" value="${form.tenantId}"/>
+		        	<td><label id="trans-mode-label" for="trans-mode-label">Transaction Mode</label></td>
+		        	<td><form:input path="mode" maxlength="50" value=""/></td>
+		        	<td><label id="trans-amount-label" for="trans-amount-label">Total Amount *</label></td>
+		        	<td><form:input path="amount" maxlength="50" value=""/></td>
+		        </tr>
+		        <tr>	
+		        	<td colspan="4" align="right">
+		        		<a class="button" href="javascript:document.staffDeposit.submit();" title="staffDeposit">
+							<span>Submit</span></a>
+						<a class="button" 
+							href="staffdeposit?profileid=<core:out value="${form.staffProfileId}"/>&tenantid=<core:out value="${form.tenantId}"/>&accountno=<core:out value="${form.accountNo}"/>" 
+							title="Cancel"><span>Cancel</span></a>
+					</td>
+		        	<form:hidden path="staffProfileId" value="${form.staffProfileId}"/>
+					<form:hidden path="tenantId" value="${form.tenantId}"/>
+					<form:hidden path="accountNo" value="${form.accountNo}"/>
 		        </tr>
 	        </table>
+	        </form:form>
 				<div class="clearboth"></div>				
 			</div>
 	 </div>

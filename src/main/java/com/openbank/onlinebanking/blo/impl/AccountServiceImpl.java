@@ -29,6 +29,15 @@ public class AccountServiceImpl implements AccountService {
 		accountDAO.saveAccount(account);
 		return accountNO;
 	}
+	
+	
+	public void updateAccount(Account account) {
+		accountDAO.updateAccount(account);
+	}
+	
+	public void saveTransaction(Transaction transaction) {
+		accountDAO.saveTransaction(transaction);
+	}
 
 	/**
 	 * @param accountDAO the accountDAO to set

@@ -16,5 +16,10 @@ public interface AccountDAO {
 	void saveAccount(Account account);
 	
 	String getMaxAccountNo(String tenantId);
+	
+
+	public void updateAccount(Account account);
+
+	void saveTransaction(Transaction transaction);
 
 }
