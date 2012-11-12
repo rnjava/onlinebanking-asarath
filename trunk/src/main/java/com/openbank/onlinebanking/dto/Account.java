@@ -3,6 +3,7 @@ package com.openbank.onlinebanking.dto;
 
 import java.util.Date;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
@@ -17,6 +18,8 @@ public class Account {
 	private String tenantId;
     private Date createdDate;
     private String createdBy;
+    @Id
+    private String id;
 
 	  
 	
@@ -116,6 +119,18 @@ public class Account {
 	public void setCreatedBy(String createdBy) {
 		this.createdBy = createdBy;
 	}
+	/**
+	 * @return the id
+	 */
+	public String getId() {
+		return id;
+	}
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(String id) {
+		this.id = id;
+	}
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
@@ -125,9 +140,8 @@ public class Account {
 				+ ", balance=" + balance + ", currencySymbol=" + currencySymbol
 				+ ", profileId=" + profileId + ", tenantId=" + tenantId
 				+ ", createdDate=" + createdDate + ", createdBy=" + createdBy
-				+ "]";
+				+ ", id=" + id + "]";
 	}
-
 	
-
+	
 }

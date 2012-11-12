@@ -10,8 +10,8 @@ public class Transaction {
 	private String type;
 	private String mode;
 	private String status;
-	private String amount;
-	private String availableBalance;
+	private Double amount;
+	private Double availableBalance;
 	
 	
 	/**
@@ -89,28 +89,25 @@ public class Transaction {
 	/**
 	 * @return the amount
 	 */
-	public String getAmount() {
+	public Double getAmount() {
 		return amount;
 	}
 	/**
 	 * @param amount the amount to set
 	 */
-	public void setAmount(String amount) {
+	public void setAmount(Double amount) {
 		this.amount = amount;
 	}
 	/**
 	 * @return the availableBalance
 	 */
-	public String getAvailableBalance() {
+	public Double getAvailableBalance() {
 		return availableBalance;
 	}
 	/**
 	 * @param availableBalance the availableBalance to set
 	 */
-	public void setAvailableBalance(String availableBalance) {
+	public void setAvailableBalance(Double availableBalance) {
 		this.availableBalance = availableBalance;
 	}
-	
-	
-
 }

@@ -1,10 +1,10 @@
 package com.openbank.onlinebanking.form.staff;
 
-public class DepositForm extends StaffBaseForm {
-	
+public class WithdrawalForm extends StaffBaseForm {
+
 	private String accountNo;
 	private Double amount;
-	private String mode;
+	private String withDrawalType;
 	private boolean isApprovalNeeded;
 	/**
 	 * @return the accountNo
@@ -30,7 +30,18 @@ public class DepositForm extends StaffBaseForm {
 	public void setAmount(Double amount) {
 		this.amount = amount;
 	}
-
+	/**
+	 * @return the withDrawalType
+	 */
+	public String getWithDrawalType() {
+		return withDrawalType;
+	}
+	/**
+	 * @param withDrawalType the withDrawalType to set
+	 */
+	public void setWithDrawalType(String withDrawalType) {
+		this.withDrawalType = withDrawalType;
+	}
 	/**
 	 * @return the isApprovalNeeded
 	 */
@@ -43,19 +54,6 @@ public class DepositForm extends StaffBaseForm {
 	public void setApprovalNeeded(boolean isApprovalNeeded) {
 		this.isApprovalNeeded = isApprovalNeeded;
 	}
-	/**
-	 * @return the mode
-	 */
-	public String getMode() {
-		return mode;
-	}
-	/**
-	 * @param mode the mode to set
-	 */
-	public void setMode(String mode) {
-		this.mode = mode;
-	}
 	
 	
-
 }

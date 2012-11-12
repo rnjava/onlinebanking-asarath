@@ -14,5 +14,8 @@ public interface AccountService {
 	Account getAccountByAccountNo(String accountNo, String tenantId);
 	
 	String saveAccount(Account account);
-
+	
+	public void updateAccount(Account account);
+	
+	public void saveTransaction(Transaction transaction);
 }

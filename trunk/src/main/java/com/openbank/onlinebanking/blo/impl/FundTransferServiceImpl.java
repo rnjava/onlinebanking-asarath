@@ -8,7 +8,7 @@ public class FundTransferServiceImpl implements FundTransferService {
 	
 	private FundTransferDAO fundTransferDAO; 
 
-	@Override
+	
 	public void createFundRecipient(FundRecipient fundRecipient) {
 		fundTransferDAO.save(fundRecipient);
 	}

@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Order;
 import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.Update;
 
 import com.openbank.onlinebanking.doa.AccountDAO;
 import com.openbank.onlinebanking.doa.BaseDAO;
@@ -47,6 +48,7 @@ public class AccountDAOImpl extends BaseDAO implements AccountDAO  {
 		return account;
 	}
 
+	@SuppressWarnings("deprecation")
 	public String getMaxAccountNo(String tenantId) {
 		
 		String accountNo = null;
@@ -61,6 +63,17 @@ public class AccountDAOImpl extends BaseDAO implements AccountDAO  {
 		}
 		return accountNo;	
 	}
+	
+	public void saveTransaction(Transaction transaction) {
+		mongoTemplate.save(transaction, TRANSACTION_COLLECTION_NAME);
+	}
+
+	public void updateAccount(Account account) {
+		query = new Query(Criteria.where("_id").is(account.getId()));
+		log.debug("Query : " + query);
+		mongoTemplate.updateFirst(query, new Update().set("balance", account.getBalance()), ACCOUNT_COLLECTION_NAME);
+	}
+	
 	public void saveAccount(Account account) {
 		log.debug("Entering .........");
 		mongoTemplate.save(account, ACCOUNT_COLLECTION_NAME);
