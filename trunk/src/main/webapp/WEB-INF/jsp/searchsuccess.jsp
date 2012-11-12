@@ -13,6 +13,9 @@
 			href="<%=contextPath%>/css/pipad-jawr.css"
 			rel="stylesheet" type="text/css" media="all"/>
 		<link
+			href="<%=contextPath%>/css/style.css"
+			rel="stylesheet" type="text/css" media="all"/>	
+		<link
 			href="<%=contextPath%>/css/pipad-jawr-print.css"
 			rel="stylesheet" type="text/css" media="print"/>
 
@@ -127,6 +130,17 @@
 		<div class="olb-account-listing-module">
 					<div class="thick-border-module">
 	        <table>
+	        	<tr>
+	             	<td colspan="4" align="center">
+	             	 	<core:if test="${not empty errorMessage}">
+    						<div class="clsError">${errorMessage}</div>
+						</core:if>
+						<core:if test="${not empty successMessage}">
+    						<div class="clsSuccess" >${successMessage}</div>
+						</core:if>
+	             	</td>
+	            </tr>
+	        	
 		        <tr>
 		        	<td><label id="recipient-last-name_label" for="recipient-last-name">Account No. *</label></td>
 		        	<td><core:out value="${form.accountNo}"/></td>

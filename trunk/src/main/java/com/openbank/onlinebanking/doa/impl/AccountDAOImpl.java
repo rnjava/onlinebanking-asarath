@@ -2,6 +2,7 @@ package com.openbank.onlinebanking.doa.impl;
 
 import java.util.List;
 
+import org.bson.types.ObjectId;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -69,7 +70,7 @@ public class AccountDAOImpl extends BaseDAO implements AccountDAO  {
 	}
 
 	public void updateAccount(Account account) {
-		query = new Query(Criteria.where("_id").is(account.getId()));
+		query = new Query(Criteria.where("_id").is(new ObjectId(account.getId())));
 		log.debug("Query : " + query);
 		mongoTemplate.updateFirst(query, new Update().set("balance", account.getBalance()), ACCOUNT_COLLECTION_NAME);
 	}

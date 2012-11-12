@@ -72,5 +72,6 @@
     
     <bean id="staffTransactionController" class="com.openbank.onlinebanking.controller.staff.StaffTransactionController">
     	<property name="accountService" ref="accountService"/>
+    	<property name="searchAccountController" ref="searchAccountController"/>
     </bean>    
 </beans>

@@ -15,6 +15,9 @@
 		<link
 			href="<%=contextPath%>/css/pipad-jawr-print.css"
 			rel="stylesheet" type="text/css" media="print"/>
+		<link
+			href="<%=contextPath%>/css/style.css"
+			rel="stylesheet" type="text/css" media="all"/>	
 
 	<style>
 		body {
@@ -125,7 +128,7 @@
 					<div class="thick-border-module">
 		<form:form method="post" action="staffdepositsubmit" commandName="form"  onsubmit="return true;" name="staffDeposit">					
 	        <table>
-		     	            <tr>
+		     	 <tr>
 	             	<td colspan="4" align="center">
 	             	 	<core:if test="${not empty errorMessage}">
     						<div class="clsError">${errorMessage}</div>

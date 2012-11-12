@@ -20,6 +20,7 @@ import com.openbank.onlinebanking.form.staff.DepositForm;
 public class StaffTransactionController {
 	
 	private AccountService accountService;
+	private SearchAccountController searchAccountController;
 	
 	private static Logger log = LoggerFactory.getLogger(StaffTransactionController.class);
 	
@@ -32,6 +33,7 @@ public class StaffTransactionController {
 		DepositForm depositForm = new DepositForm();
 		depositForm.setTenantId(tenantId);
 		depositForm.setStaffProfileId(profileId);
+		depositForm.setAccountNo(accountNo);
 		ModelAndView modelAndView = new ModelAndView("staffdeposit");
 		modelAndView.addObject("form", depositForm);
 		log.debug("Existing..........");
@@ -58,10 +60,10 @@ public class StaffTransactionController {
 		accountService.updateAccount(account);
 		
 		
-		modelAndView.addObject("successMessage", "Transfer Success !!!");
+		modelAndView.addObject("successMessage", "Transfer Success. New Availabe balance is "+newBalance+ "!!!");
 		//resetForm(createAccountForm);
 		modelAndView.addObject("form", depositForm);
-		log.debug("Existing..........");
+		log.debug("Exiting..........");
 		return modelAndView;
 
 	}	
@@ -101,6 +103,16 @@ public class StaffTransactionController {
 	public void setAccountService(AccountService accountService) {
 		this.accountService = accountService;
 	}
+
+
+	/**
+	 * @param searchAccountController the searchAccountController to set
+	 */
+	public void setSearchAccountController(
+			SearchAccountController searchAccountController) {
+		this.searchAccountController = searchAccountController;
+	}
+	
 	
 	
 }

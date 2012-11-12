@@ -12,7 +12,7 @@
 		<link
 			href="<%=contextPath%>/css/pipad-jawr.css"
 			rel="stylesheet" type="text/css" media="all"/>
-				<link
+		<link
 			href="<%=contextPath%>/css/style.css"
 			rel="stylesheet" type="text/css" media="all"/>	
 		<link
