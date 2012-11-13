@@ -144,6 +144,12 @@
 		        	<td><label id="trans-amount-label" for="trans-amount-label">Total Amount *</label></td>
 		        	<td><form:input path="amount" maxlength="50" value=""/></td>
 		        </tr>
+		        <tr>
+		        	<td><label id="trans-desc-label" for="trans-desc-label">Transaction Description</label></td>
+		        	<td><form:input path="description" maxlength="50" value=""/></td>
+		        	<td></td>
+		        	<td></td>
+		        </tr>
 		        <tr>	
 		        	<td colspan="4" align="right">
 		        		<a class="button" href="javascript:document.staffDeposit.submit();" title="staffDeposit">

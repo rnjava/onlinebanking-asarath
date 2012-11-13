@@ -2,12 +2,13 @@ package com.openbank.onlinebanking.controller.user;
 
 import java.util.Map;
 
-import javax.validation.Valid;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.Errors;
+import org.springframework.validation.ObjectError;
+import org.springframework.validation.ValidationUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -38,24 +39,35 @@ public class LoginController {
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
-	public ModelAndView processForm(@Valid LoginForm loginForm, BindingResult result) {
-			
-			ModelAndView modelAndView = null;
+	public ModelAndView processForm(LoginForm loginForm, BindingResult result) {
+		ModelAndView modelAndView = null;
+		boolean isSuccess = false;
+		validate(loginForm, result);	
+		if (!result.hasErrors()) {
 			User user = loginService.login(loginForm.getUserName(), loginForm.getTenantId(), loginForm.getPassword());
-			
-			//log.debug("ProfileId for userId [{}] is [{}]", loginForm.getUserName(), profileId);
-			
 			if (user != null && user.getProfileId() != null) {
-				modelAndView = accountController.getAccountOverview(user.getProfileId(), loginForm.getTenantId()); 
+				modelAndView = accountController.getAccountOverview(user.getProfileId(), loginForm.getTenantId());
+				isSuccess = true;
 			} else {
-				modelAndView = new ModelAndView("login");
-				loginForm = new LoginForm();
-				modelAndView.addObject("form", loginForm);
+				result.addError(new ObjectError("password", "Username or Password is wrong"));
 			}
-			
-			return modelAndView;
 		}
+		if(!isSuccess) {
+			modelAndView = new ModelAndView("login");
+			//loginForm = new LoginForm();
+			loginForm.setPassword(null);
+			loginForm.setUserName(null);
+			modelAndView.addObject("form", loginForm);
+		}
+		return modelAndView;
+	}
 
+
+	  public void validate(Object target, Errors errors) {
+	    ValidationUtils.rejectIfEmptyOrWhitespace(errors, "password", "","Password cannot be blank");
+	    ValidationUtils.rejectIfEmptyOrWhitespace(errors, "userName", "", "User name cannot be blank");
+	  }
+	
 	/**
 	 * @param loginService the loginService to set
 	 */

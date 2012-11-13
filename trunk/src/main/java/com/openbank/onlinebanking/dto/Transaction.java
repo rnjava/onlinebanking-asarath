@@ -1,5 +1,6 @@
 package com.openbank.onlinebanking.dto;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Transaction {
@@ -12,7 +13,7 @@ public class Transaction {
 	private String status;
 	private Double amount;
 	private Double availableBalance;
-	
+	private String tenantId;
 	
 	/**
 	 * @return the accountNo
@@ -110,4 +111,26 @@ public class Transaction {
 	public void setAvailableBalance(Double availableBalance) {
 		this.availableBalance = availableBalance;
 	}
+	/**
+	 * @return the tenantId
+	 */
+	public String getTenantId() {
+		return tenantId;
+	}
+	/**
+	 * @param tenantId the tenantId to set
+	 */
+	public void setTenantId(String tenantId) {
+		this.tenantId = tenantId;
+	}
+	/**
+	 * @return the formattedDate
+	 */
+	public String getFormattedDate() {
+		SimpleDateFormat formatter = new SimpleDateFormat("EEE, d MMM yyyy HH:mm:ss");
+		return formatter.format(this.date);
+	}
+
+	
+	
 }

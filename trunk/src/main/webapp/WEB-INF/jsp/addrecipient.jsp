@@ -16,6 +16,9 @@
 			href="<%=contextPath%>/css/pipad-jawr.css"
 			rel="stylesheet" type="text/css" media="all"/>
 		<link
+			href="<%=contextPath%>/css/style.css"
+			rel="stylesheet" type="text/css" media="all"/>	
+		<link
 			href="<%=contextPath%>/css/pipad-jawr-print.css"
 			rel="stylesheet" type="text/css" media="print"/>
 
@@ -106,7 +109,15 @@
 			
 			<div class="separator-top"></div>
 			<div class="first-heading">Add a New Recipient</div>
-			<p class="req-txt">* =required</p>
+			<!-- p class="req-txt">* =required</p-->
+			<div>
+	    	 	<core:if test="${not empty errorMessage}">
+	 						<div class="clsError">${errorMessage}</div>
+				</core:if>
+				<core:if test="${not empty successMessage}">
+	 						<div class="clsSuccess" >${successMessage}</div>
+				</core:if>
+			</div>			
 			<form:form method="post" action="addNewRecipient" commandName="form"  onsubmit="return true;" name="addNewRecipient">
 				<div class="data-label">
 					 <label id="recipient-last-name_label" for="recipient-last-name">Last name *</label>

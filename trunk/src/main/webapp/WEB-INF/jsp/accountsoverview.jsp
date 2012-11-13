@@ -118,13 +118,13 @@
 							<core:out value="${form.profile.lastName}" /> 
 							- Personal Accounts
 						</div>
-						<div class="f-11">
+						<!-- div class="f-11">
 							Protect your accounts and information, <a
 								id="visit_the_Security_Center" name="visit_the_Security_Center"
 								class="bold"
 								href=""
 								title="visit the Security Center">visit the Security Center</a>
-						</div>
+						</div-->
 					</div>
 					<div class="fl-rt">Last sign in: 10/12/2012 at 02:56 AM ET</div>
 					<div class="clearboth"></div>

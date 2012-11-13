@@ -54,8 +54,17 @@ public class FundTransferController {
 		fundTransferService.createFundRecipient(fundRecipient);
 		
 		ModelAndView modelAndView = new ModelAndView("addrecipient");
+		resetTransferForm(form);
+		modelAndView.addObject("successMessage", "Recipient Added Successfully!!!");
 		modelAndView.addObject("form", form);
 		return modelAndView;
+	}
+
+	private void resetTransferForm(TransferForm form) {
+		form.setLastName(null);
+		form.setNickName(null);
+		form.setRecipientAccountNo(null);
+		
 	}
 
 	/**
