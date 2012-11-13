@@ -9,6 +9,8 @@ public class AccountDetailsForm {
 	private String tenantId;
 	private String profileId;
 	private String accountNo;
+	private Double availableBalance;
+	private String accountType;
 	private List<Transaction> transactionList;
 	/**
 	 * @return the tenantId
@@ -60,5 +62,28 @@ public class AccountDetailsForm {
 	public void setTransactionList(List<Transaction> transactionList) {
 		this.transactionList = transactionList;
 	}
-		
+	/**
+	 * @return the availableBalance
+	 */
+	public Double getAvailableBalance() {
+		return availableBalance;
+	}
+	/**
+	 * @param availableBalance the availableBalance to set
+	 */
+	public void setAvailableBalance(Double availableBalance) {
+		this.availableBalance = availableBalance;
+	}
+	/**
+	 * @return the accountType
+	 */
+	public String getAccountType() {
+		return accountType;
+	}
+	/**
+	 * @param accountType the accountType to set
+	 */
+	public void setAccountType(String accountType) {
+		this.accountType = accountType;
+	}
 }

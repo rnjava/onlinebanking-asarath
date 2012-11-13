@@ -40,9 +40,6 @@ public class StaffTransactionController {
 		return modelAndView;
 	}
 
-	
-	//staffdepositsubmit
-	
 	@RequestMapping(value="/staffdepositsubmit",  method=RequestMethod.POST)
 	public ModelAndView depositFormSubmit(@ModelAttribute DepositForm depositForm ) {
 		
@@ -61,13 +58,21 @@ public class StaffTransactionController {
 		
 		
 		modelAndView.addObject("successMessage", "Transfer Success. New Availabe balance is "+newBalance+ "!!!");
-		//resetForm(createAccountForm);
+		resetForm(depositForm);
 		modelAndView.addObject("form", depositForm);
 		log.debug("Exiting..........");
 		return modelAndView;
 
 	}	
 	
+	
+	
+	private void resetForm(DepositForm depositForm) {
+		depositForm.setAmount(null);
+		depositForm.setApprovalNeeded(false);
+		depositForm.setMode(null);
+	}
+
 	private Transaction createTransaction(DepositForm depositForm) {
 		Transaction transaction = new Transaction();
 		transaction.setAccountNo(depositForm.getAccountNo());
@@ -76,6 +81,7 @@ public class StaffTransactionController {
 		transaction.setMode(depositForm.getMode());
 		transaction.setDate(new Date());
 		transaction.setStatus("Processed");
+		transaction.setTenantId(depositForm.getTenantId());
 		return transaction;
 		
 	}

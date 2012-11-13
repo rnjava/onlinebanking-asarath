@@ -111,7 +111,7 @@
 				<div class="page-title-control">
 					<a name="skip-to-main-content"></a>
 						<h1 class="short-page-title page-title-head" id="skip-to-h1">
-						<span class="TL_NPI_AcctName">MyAccess Checking - 7257</span>
+						<span class="TL_NPI_AcctName"><core:out value="${form.accountType}"/> - <core:out value="${form.accountNo}"/></span>
 						</a></h1><a href="javascript:void(0);" name="page_title_acct_switcher_0">
 				</a>
 				</div>
@@ -127,7 +127,7 @@
           <div class="fl-lt">
           	Available balance (as of today):
           </div>
-          <div class="fl-rt bold  TL_NPI_Amt">$2,529.44</div>		  
+          <div class="fl-rt bold  TL_NPI_Amt"><core:out value="${form.availableBalance}"/></div>		  
     	  
           <div class="clearboth"></div>
           </div>
@@ -150,7 +150,7 @@
 			 <core:forEach items="${form.transactionList}" var="transaction">
 				<tr class="record transType-transfer cleared">
 					<td class="date-action" rel="49">
-						<span><core:out value="${transaction.date}" /></span>
+						<span><core:out value="${transaction.formattedDate}" /></span>
 					</td>
 					<td class="description TL_NPI_TransDesc" rel="12">
 					<span class="transTitleForEditDesc"><core:out value="${transaction.description}" /></span> 

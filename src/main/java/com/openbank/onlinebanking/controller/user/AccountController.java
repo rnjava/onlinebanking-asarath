@@ -8,6 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.openbank.onlinebanking.blo.AccountService;
 import com.openbank.onlinebanking.blo.ProfileService;
+import com.openbank.onlinebanking.dto.Account;
 import com.openbank.onlinebanking.form.AccountDetailsForm;
 import com.openbank.onlinebanking.form.AccountOverviewForm;
 
@@ -40,6 +41,9 @@ public class AccountController {
 				form.setTenantId(tenantId);
 				form.setProfileId(profileId);
 				form.setAccountNo(accountId);
+				Account account = accountService.getAccountByAccountNo(accountId, tenantId);
+				form.setAccountType(account.getType());
+				form.setAvailableBalance(account.getBalance());
 				form.setTransactionList(accountService.getTransactionByAccountId(accountId, tenantId));
 				ModelAndView modelAndView = new ModelAndView("accountdetails");
 				modelAndView.addObject("form", form);
