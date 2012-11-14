@@ -46,9 +46,9 @@
             </tr>
 
 			<tr>
-			<td colspan="4" class="clsError" scope="col"> 
-			<!--  Show the error message here -->
-			</td>
+				<td colspan="4" class="clsError" scope="col" align="center"> 
+		      		<form:errors path="*" cssClass="error" />
+		      	</td>
 			</tr>
 
             <tr>
