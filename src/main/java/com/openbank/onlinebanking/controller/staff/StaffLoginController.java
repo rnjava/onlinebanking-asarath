@@ -2,12 +2,13 @@ package com.openbank.onlinebanking.controller.staff;
 
 import java.util.Map;
 
-import javax.validation.Valid;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.Errors;
+import org.springframework.validation.ObjectError;
+import org.springframework.validation.ValidationUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -42,43 +43,57 @@ public class StaffLoginController {
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
-	public ModelAndView processForm(@Valid LoginForm loginForm, BindingResult result) {
+	public ModelAndView processForm(LoginForm loginForm, BindingResult result) {
 		log.debug("Entering processForm - loginForm = {}", loginForm.toString());
 		ModelAndView modelAndView = null;
 
-		User user = loginService.login(loginForm.getUserName(), loginForm.getTenantId(), loginForm.getPassword());
-		if (user != null && user.getProfileId() != null) {
-			if("STAFF".equalsIgnoreCase(user.getRole().getPrimary())) {
-				log.debug("User is a STAFF - {}", user.toString());
-				modelAndView = new ModelAndView("staffloginsuccess");
-				CustomerSearchForm customerSearchForm = new CustomerSearchForm();
-				customerSearchForm.setTenantId(loginForm.getTenantId());
-				Profile profile = profileService.getProfileById(user.getProfileId(), loginForm.getTenantId());
-				if(profile != null) {
-					customerSearchForm.setStaffProfileId(profile.getProfileId());
-					customerSearchForm.setStaffFirstName(profile.getFirstName());
-					customerSearchForm.setStaffLastName(profile.getLastName());
+		boolean isSuccess = false;
+		validate(loginForm, result);	
+		if (!result.hasErrors()) {
+			User user = loginService.login(loginForm.getUserName(), loginForm.getTenantId(), loginForm.getPassword());
+			if (user != null && user.getProfileId() != null) {
+				if("STAFF".equalsIgnoreCase(user.getRole().getPrimary())) {
+					log.debug("User is a STAFF - {}", user.toString());
+					modelAndView = new ModelAndView("staffloginsuccess");
+					CustomerSearchForm customerSearchForm = new CustomerSearchForm();
+					customerSearchForm.setTenantId(loginForm.getTenantId());
+					Profile profile = profileService.getProfileById(user.getProfileId(), loginForm.getTenantId());
+					if(profile != null) {
+						customerSearchForm.setStaffProfileId(profile.getProfileId());
+						customerSearchForm.setStaffFirstName(profile.getFirstName());
+						customerSearchForm.setStaffLastName(profile.getLastName());
+					}
+					modelAndView.addObject("form", customerSearchForm);
+					isSuccess = true;
+				} else {
+					log.debug("The user don't have a STAFF ROLE");
+					result.addError(new ObjectError("role", "You are not authorized to login"));
 				}
-				
-				modelAndView.addObject("form", customerSearchForm);
-				
 			} else {
-				System.out.println("Not a staff");
-				modelAndView = new ModelAndView("stafflogin");
-				loginForm = new LoginForm();
-				modelAndView.addObject("form", loginForm);
+				log.debug("User not logged in");
+				result.addError(new ObjectError("password", "Username or Password is wrong"));
 			}
 			
-			//modelAndView = accountController.getAccountOverview(profileId, loginForm.getTenantId()); 
-		} else {
+		}
+		
+		if(!isSuccess) {
 			modelAndView = new ModelAndView("stafflogin");
-			loginForm = new LoginForm();
+			loginForm.setPassword(null);
+			loginForm.setUserName(null);
 			modelAndView.addObject("form", loginForm);
 		}
+
+		
 		log.debug("exiting processForm");
 		return modelAndView;
-		}
+	}
 
+	public void validate(Object target, Errors errors) {
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "password", "","Password cannot be blank");
+	    ValidationUtils.rejectIfEmptyOrWhitespace(errors, "userName", "", "User name cannot be blank");
+	}
+
+	
 	/**
 	 * @param loginService the loginService to set
 	 */
