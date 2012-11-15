@@ -78,7 +78,7 @@
 					<li><a id="Transfers_topnav" name="Transfers_topnav"
 						rel="nav-mod-content3"
 						href="staffcreateaccount?profileid=<core:out value="${form.staffProfileId}"/>&tenantid=<core:out value="${form.tenantId}"/>"
-						title="Create New Accounts">Create New Account</a></li>
+						title="Create New Accounts">Open New Account</a></li>
 				</ul>
 			</div>
 

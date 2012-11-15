@@ -18,7 +18,7 @@
 		<link
 			href="<%=contextPath%>/css/pipad-jawr-print.css"
 			rel="stylesheet" type="text/css" media="print"/>
-
+		<link href="<%=contextPath%>/css/nokia.css" rel="stylesheet" type="text/css">
 	<style>
 		body {
 			display: none;
@@ -76,7 +76,7 @@
 					<li><a id="Transfers_topnav" name="Transfers_topnav"
 						class="modal-link selected rel="nav-mod-content3"
 						href="staffcreateaccount?profileid=<core:out value="${form.staffProfileId}"/>&tenantid=<core:out value="${form.tenantId}"/>"
-						title="Create New Accounts">Create New Account</a></li>
+						title="Create New Accounts">Open New Account</a></li>
 				</ul>
 			</div>
 
@@ -110,7 +110,7 @@
 				<div class="default-skin">
 					<div class="fl-lt">
 						<a class="ada-hidden" name="skip_to_main_content"></a>
-						<h1 class="ada-hidden">Create Account</h1>
+						<h1 class="ada-hidden">Open Account</h1>
 						<div class="h2-bold-14">
 						</div>
 						<div class="h2-bold-14">
@@ -132,20 +132,34 @@
 				</div>
 			</div>
 
-		<div class="olb-account-listing-module">
+			<div class="olb-account-listing-module">
 					<div class="thick-border-module">
+						<div class="alt-dark-blue-title">
+							<h2>
+								<span class="title-text">Open New Account</span>
+							</h2>
+						</div>
+			<div class="db-inner-module">	
 		  <form:form method="post" action="staffcreateaccount" commandName="form"  onsubmit="return true;" name="createAccount">
 	        <table>
 	            <tr>
 	             	<td colspan="4" align="center">
-	             	 	<core:if test="${not empty errorMessage}">
-    						<div class="clsError">${errorMessage}</div>
-						</core:if>
+    						<div class="clsError"><form:errors path="*" cssClass="error" /></div>
 						<core:if test="${not empty successMessage}">
     						<div class="clsSuccess" >${successMessage}</div>
 						</core:if>
 	             	</td>
 	            </tr>
+		        <tr>
+		        	<td><label id="user-name-label" for="user-name-label">User Name *</label></td>
+		        	<td><form:input path="userName" maxlength="10" value=""/></td>
+		        	<td><label id="account-type-label" for="account-type-label">Account Type *</label></td>
+		        	<td> <form:select path="accountType">
+   							<form:option value="NONE" label="--- Select ---"/>
+   							<form:options items="${accountTypeList}" />
+							</form:select>
+					</td>		
+			        </tr>
 		        <tr>
 		        	<td><label id="first-name-label" for="first-name-label">First Name *</label></td>
 		        	<td><form:input path="firstName" maxlength="50" value=""/></td>
@@ -154,16 +168,21 @@
 		        </tr>
 		        <tr>
 		        	<td><label id="sex-label" for="sex-label">Sex *</label></td>
-		        	<td><form:input path="sex" maxlength="1" value=""/></td>
+		        	<td><form:radiobutton path="sex" value="M"/> Male <form:radiobutton path="sex" value="F"/> Female</td>
 		        	<td><label id="dob-label" for="dob-label">Date of Birth *</label></td>
-		        	<td><form:input path="dateOfBirth" maxlength="50" value=""/></td>
+		        	<td><form:input path="dateOfBirth" maxlength="10" value=""/></td>
 		        </tr>
 		        <tr>
-		        	<td><label id="user-name-label" for="user-name-label">User Name *</label></td>
-		        	<td><form:input path="userName" maxlength="50" value=""/></td>
-		        	<td><label id="account-type-label" for="account-type-label">Account Type *</label></td>
-		        	<td><form:input path="accountType" maxlength="50" value=""/></td>
-		        </tr>
+		        	<td><label id="phone-label" for="phone-label">Phone *</label></td>
+		        	<td><form:input path="phoneNo" maxlength="15" value=""/></td>
+		        	<td><label id="email-label" for="email-label">Email Address *</label></td>
+		        	<td><form:input path="emailAddress" maxlength="30" value=""/></td>		
+			    </tr>
+		        <tr>
+		        	<td><label id="address-label" for="address-label">Address *</label></td>
+		        	<td><form:textarea path="address" rows="5" cols="0" /></td>
+		        	<td colspan="2"></td>		
+			    </tr>
 		        
 		        <tr>	
 		        	<td colspan="4" align="right">
@@ -179,7 +198,7 @@
 	        </table>
 				<div class="clearboth"></div>				
 			</form:form>
-
+		</div>
 			</div>
 	 </div>
 </td>
