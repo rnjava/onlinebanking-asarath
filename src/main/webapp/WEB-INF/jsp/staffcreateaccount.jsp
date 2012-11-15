@@ -18,7 +18,7 @@
 		<link
 			href="<%=contextPath%>/css/pipad-jawr-print.css"
 			rel="stylesheet" type="text/css" media="print"/>
-		<link href="<%=contextPath%>/css/nokia.css" rel="stylesheet" type="text/css">
+		<!-- link href="<%=contextPath%>/css/nokia.css" rel="stylesheet" type="text/css"-->
 	<style>
 		body {
 			display: none;
@@ -144,7 +144,7 @@
 	        <table>
 	            <tr>
 	             	<td colspan="4" align="center">
-    						<div class="clsError"><form:errors path="*" cssClass="error" /></div>
+    						<div class="clsError"><form:errors path="*" cssClass="error"/></div>
 						<core:if test="${not empty successMessage}">
     						<div class="clsSuccess" >${successMessage}</div>
 						</core:if>

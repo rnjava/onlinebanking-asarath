@@ -55,7 +55,7 @@ public class StaffController {
 	}
 
 	@RequestMapping(value="/staffcreateaccount",  method=RequestMethod.POST)
-	public ModelAndView createAccountFormSubmit(@ModelAttribute CreateAccountForm createAccountForm, BindingResult result) {
+	public ModelAndView createAccountFormSubmit(@ModelAttribute("form") CreateAccountForm createAccountForm, BindingResult result) {
 
 		log.debug("Entering - CreateAccountForm : {}", createAccountForm.toString());
 		ModelAndView modelAndView = new ModelAndView("staffcreateaccount");

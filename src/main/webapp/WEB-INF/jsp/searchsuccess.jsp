@@ -126,14 +126,19 @@
 					<div class="clearboth"></div>
 				</div>
 			</div>
-
-		<div class="olb-account-listing-module">
+			<div class="olb-account-listing-module">
 					<div class="thick-border-module">
-	        <table>
+						<div class="alt-dark-blue-title">
+							<h2>
+								<span class="title-text">Account <core:out value="${form.accountNo}"/> Found</span>
+							</h2>
+						</div>
+			<div class="db-inner-module">	
+			  <table>
 	        	<tr>
 	             	<td colspan="4" align="center">
 	             	 	<core:if test="${not empty errorMessage}">
-    						<div class="clsError">${errorMessage}</div>
+    						<div class="clsError"><span class="error">${errorMessage}</span></div>
 						</core:if>
 						<core:if test="${not empty successMessage}">
     						<div class="clsSuccess" >${successMessage}</div>
@@ -142,15 +147,24 @@
 	            </tr>
 	        	
 		        <tr>
-		        	<td><label id="recipient-last-name_label" for="recipient-last-name">Account No. *</label></td>
-		        	<td><core:out value="${form.accountNo}"/></td>
-		        	<td></td>
-		        	
+		        	<td><label id="recipient-last-name_label" for="recipient-last-name">Account Type.</label></td>
+		        	<td><core:out value="${account.type}"/></td>
+		        	<td><label id="balance-label" for="balance-label">Available Balance</label></td>
+		        	<td><core:out value="${account.balance}"/></td>
 					<form:hidden path="form.tenantId" value="${form.tenantId}"/>
 		        </tr>
+		        <tr>
+		        	<td><label id="recipient-last-name_label" for="recipient-last-name">First Name</label></td>
+		        	<td><core:out value="${profile.firstName}"/></td>
+		        	<td><label id="balance-label" for="balance-label">Last Name</label></td>
+		        	<td><core:out value="${profile.lastName}"/></td>
+					<form:hidden path="form.tenantId" value="${form.tenantId}"/>
+		        </tr>
+		        
 	        </table>
 				<div class="clearboth"></div>				
 			</div>
+	 </div>
 	 </div>
 </td>
 </tr>

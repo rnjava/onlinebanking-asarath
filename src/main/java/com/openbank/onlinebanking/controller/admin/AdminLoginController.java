@@ -27,9 +27,9 @@ public class AdminLoginController {
 	private LoginService loginService;
 		
 	@RequestMapping(method = RequestMethod.GET )
-	public String showForm(Map<String, LoginForm> model, @RequestParam(value = "tenantid") String tenantId) {
+	public String showForm(Map<String, LoginForm> model) {
 			LoginForm loginForm = new LoginForm();
-			loginForm.setTenantId(tenantId);
+			//loginForm.setTenantId(tenantId);
 			model.put("loginForm", loginForm);
 			return "adminlogin";
 	}
