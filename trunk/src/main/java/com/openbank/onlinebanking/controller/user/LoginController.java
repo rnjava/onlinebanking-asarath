@@ -46,8 +46,14 @@ public class LoginController {
 		if (!result.hasErrors()) {
 			User user = loginService.login(loginForm.getUserName(), loginForm.getTenantId(), loginForm.getPassword());
 			if (user != null && user.getProfileId() != null) {
-				modelAndView = accountController.getAccountOverview(user.getProfileId(), loginForm.getTenantId());
-				isSuccess = true;
+				if("CUSTOMER".equals(user.getRole().getPrimary())) {
+					modelAndView = accountController.getAccountOverview(user.getProfileId(), loginForm.getTenantId());
+					isSuccess = true;
+				} else {
+					log.debug("The user don't have a CUSTOMER ROLE");
+					result.addError(new ObjectError("role", "You are not authorized to login"));
+	
+				}
 			} else {
 				result.addError(new ObjectError("password", "Username or Password is wrong"));
 			}

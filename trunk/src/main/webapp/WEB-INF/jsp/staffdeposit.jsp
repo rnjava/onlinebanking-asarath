@@ -88,7 +88,7 @@
 					<ul>
 						<li><a id="Accounts_topnav" name="Accounts_topnav_borneo_AO"
 							href="staffloginsuccess?profileid=<core:out value="${form.staffProfileId}"/>&tenantid=<core:out value="${form.tenantId}"/>"
-							title="Accounts Overview">Search Account</a></li>
+							title="Accounts Overview">Find Customer</a></li>
 						<li><a id="Account_Details_topnav"
 							name="Account_Details_topnav"
 							href="staffwithdrawal?profileid=<core:out value="${form.staffProfileId}"/>&tenantid=<core:out value="${form.tenantId}"/>&accountno=<core:out value="${form.accountNo}"/>"
@@ -124,34 +124,42 @@
 				</div>
 			</div>
 
-		<div class="olb-account-listing-module">
+			<div class="olb-account-listing-module">
 					<div class="thick-border-module">
+						<div class="alt-dark-blue-title">
+							<h2>
+								<span class="title-text">Depost Funds</span>
+							</h2>
+						</div>
+			<div class="db-inner-module">	
 		<form:form method="post" action="staffdepositsubmit" commandName="form"  onsubmit="return true;" name="staffDeposit">					
 	        <table>
 		     	 <tr>
 	             	<td colspan="4" align="center">
-	             	 	<core:if test="${not empty errorMessage}">
-    						<div class="clsError">${errorMessage}</div>
-						</core:if>
+    						<div class="clsError"><form:errors path="*" cssClass="error" /></div>
 						<core:if test="${not empty successMessage}">
     						<div class="clsSuccess" >${successMessage}</div>
 						</core:if>
 	             	</td>
 	            </tr>
 		        <tr>
-		        	<td><label id="trans-mode-label" for="trans-mode-label">Transaction Mode</label></td>
-		        	<td><form:input path="mode" maxlength="50" value=""/></td>
+		        	<td><label id="trans-mode-label" for="trans-mode-label">Transaction Mode *</label></td>
+		        	<td><form:select path="mode">
+   							<form:option value="NONE" label="--- Select ---"/>
+   							<form:options items="${transModelist}" />
+							</form:select>
+					</td>
 		        	<td><label id="trans-amount-label" for="trans-amount-label">Total Amount *</label></td>
 		        	<td><form:input path="amount" maxlength="50" value=""/></td>
 		        </tr>
 		        <tr>
 		        	<td><label id="trans-desc-label" for="trans-desc-label">Transaction Description</label></td>
-		        	<td><form:input path="description" maxlength="50" value=""/></td>
+		        	<td><form:textarea path="description" rows="5" cols="0" /></td>
 		        	<td></td>
 		        	<td></td>
 		        </tr>
 		        <tr>	
-		        	<td colspan="4" align="right">
+		        	<td colspan="4" align="center">
 		        		<a class="button" href="javascript:document.staffDeposit.submit();" title="staffDeposit">
 							<span>Submit</span></a>
 						<a class="button" 
@@ -164,6 +172,7 @@
 		        </tr>
 	        </table>
 	        </form:form>
+	   		</div>			
 				<div class="clearboth"></div>				
 			</div>
 	 </div>

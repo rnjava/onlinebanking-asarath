@@ -18,6 +18,8 @@
 
 	<bean id="fundTransferController" class="com.openbank.onlinebanking.controller.user.FundTransferController">
 		<property name="fundTransferService" ref="fundTransferService"/>
+		<property name="accountService" ref="accountService"/>
+    	<property name="profileService" ref="profileService"/>
     </bean>
 	
 	<bean id="loginController" class="com.openbank.onlinebanking.controller.user.LoginController">

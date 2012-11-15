@@ -7,7 +7,7 @@
 	<%
 		String contextPath = request.getContextPath();
 	%>
-		<title>Online Banking | Staff</title>
+		<title>Online Banking | Customer Transaction | Funds Withdrawal</title>
 		<link rel="shortcut icon" href="href="<%=contextPath%>/images/favicon.ico" type="image/ico"/>
 		<link
 			href="<%=contextPath%>/css/pipad-jawr.css"
@@ -15,11 +15,9 @@
 		<link
 			href="<%=contextPath%>/css/pipad-jawr-print.css"
 			rel="stylesheet" type="text/css" media="print"/>
-		<link href="<%=contextPath%>/css/nokia.css" rel="stylesheet" type="text/css"/>
-				<link
+		<link
 			href="<%=contextPath%>/css/style.css"
 			rel="stylesheet" type="text/css" media="all"/>	
-					
 
 	<style>
 		body {
@@ -69,6 +67,7 @@
 				</div>
 
 
+
 			<div id="nav-tier-2-module" class="nav-tier-2-module no_print">
 				<ul class="nav2">
 					<li><a id="Accounts_topnav" name="Accounts_topnav"
@@ -78,7 +77,7 @@
 					<li><a id="Transfers_topnav" name="Transfers_topnav"
 						rel="nav-mod-content3"
 						href="staffcreateaccount?profileid=<core:out value="${form.staffProfileId}"/>&tenantid=<core:out value="${form.tenantId}"/>"
-						title="Create New Accounts">Create New Account</a></li>
+						title="Create New Accounts">Create Account</a></li>
 				</ul>
 			</div>
 
@@ -88,21 +87,16 @@
 
 					<ul>
 						<li><a id="Accounts_topnav" name="Accounts_topnav_borneo_AO"
-							class="selected"
 							href="staffloginsuccess?profileid=<core:out value="${form.staffProfileId}"/>&tenantid=<core:out value="${form.tenantId}"/>"
 							title="Accounts Overview">Find Customer</a></li>
-<!-- 
 						<li><a id="Account_Details_topnav"
 							name="Account_Details_topnav"
-							href=""
-							title="Account Details">Transfer Funds</a></li>
-
-						<li><a
-							href=""
-							title="Statements &amp; Documents">Statements &amp; Documents</a></li>
+							class="selected"
+							href="staffwithdrawal?profileid=<core:out value="${form.staffProfileId}"/>&tenantid=<core:out value="${form.tenantId}"/>&accountno=<core:out value="${form.accountNo}"/>"
+							title="Account Details">Withdraw Funds</a></li>
 						<li><a id="Alerts_topnav" name="Alerts_topnav"
-							href=""
-							title="Alerts">Alerts</a></li>-->
+							href="staffdeposit?profileid=<core:out value="${form.staffProfileId}"/>&tenantid=<core:out value="${form.tenantId}"/>&accountno=<core:out value="${form.accountNo}"/>"
+							title="Alerts">DepositFunds</a></li>
 					</ul>
 				</div>
 			</div>
@@ -116,9 +110,6 @@
 						<div class="h2-bold-14">
 						</div>
 						<div class="h2-bold-14">
-						    Welcome - 
-							<core:out value="${form.staffFirstName}" />&nbsp;
-							<core:out value="${form.staffLastName}" /> 
 						</div>
 						<!-- div class="f-11">
 							Protect your accounts and information, <a
@@ -133,36 +124,56 @@
 				</div>
 			</div>
 
-		<div class="olb-account-listing-module">
+			<div class="olb-account-listing-module">
 					<div class="thick-border-module">
 						<div class="alt-dark-blue-title">
 							<h2>
-								<span class="title-text">Search By AccountNo</span>
+								<span class="title-text">Withdraw Funds</span>
 							</h2>
 						</div>
-		<div class="db-inner-module">						
-			<form:form method="post" action="searchaccount" commandName="form"  onsubmit="return true;" name="searchAccount">
-				<div class="clearboth"></div><br/>
-				<core:if test="${not empty errorMessage}">
-    				<div class="clsError" align="center">${errorMessage}</div>
-				</core:if>
-				
-				<div class="data-label">
-					 <label id="accountNo_label" for="recipient-nick-name">&nbsp;&nbsp;&nbsp;Account No. *</label>
-					<form:input path="accountNo" maxlength="40" cssClass="data-input"/>
-				</div><br/>
-				<div class="button-cont">
-					<a id="add-account-continue-button" class="button mrt-15" href="javascript:document.searchAccount.submit();" title="Search Account">
-							<span>Search Account</span></a>
-					<a id="add-account-cancel-button" class="button" href="staffloginsuccess?profileid=<core:out value="${form.staffProfileId}"/>&tenantid=<core:out value="${form.tenantId}"/>" title="Cancel">
-						<span>Cancel</span></a>
-				</div>				
-	        	<form:hidden path="staffProfileId" value="${form.staffProfileId}"/>
-				<form:hidden path="tenantId" value="${form.tenantId}"/>
+			<div class="db-inner-module">	
+		<form:form method="post" action="staffwithdrawalsubmit" commandName="form"  onsubmit="return true;" name="staffWithdrawal">					
+	        <table>
+		     	 <tr>
+	             	<td colspan="4" align="center">
+    						<div class="clsError"><form:errors path="*" cssClass="error" /></div>
+						<core:if test="${not empty successMessage}">
+    						<div class="clsSuccess" >${successMessage}</div>
+						</core:if>
+	             	</td>
+	            </tr>
+		        <tr>
+		        	<td><label id="trans-mode-label" for="trans-mode-label">Transaction Mode *</label></td>
+		        	<td><form:select path="mode">
+   							<form:option value="NONE" label="--- Select ---"/>
+   							<form:options items="${transModelist}" />
+							</form:select>
+					</td>
+		        	<td><label id="trans-amount-label" for="trans-amount-label">Total Amount *</label></td>
+		        	<td><form:input path="amount" maxlength="50" value=""/></td>
+		        </tr>
+		        <tr>
+		        	<td><label id="trans-desc-label" for="trans-desc-label">Transaction Description</label></td>
+		        	<td><form:textarea path="description" rows="5" cols="0" /></td>
+		        	<td></td>
+		        	<td></td>
+		        </tr>
+		        <tr>	
+		        	<td colspan="4" align="center">
+		        		<a class="button" href="javascript:document.staffWithdrawal.submit();" title="staffWithdrawal">
+							<span>Submit</span></a>
+						<a class="button" 
+							href="staffwithdrawal?profileid=<core:out value="${form.staffProfileId}"/>&tenantid=<core:out value="${form.tenantId}"/>&accountno=<core:out value="${form.accountNo}"/>" 
+							title="Cancel"><span>Cancel</span></a>
+					</td>
+		        	<form:hidden path="staffProfileId" value="${form.staffProfileId}"/>
+					<form:hidden path="tenantId" value="${form.tenantId}"/>
+					<form:hidden path="accountNo" value="${form.accountNo}"/>
+		        </tr>
+	        </table>
+	        </form:form>
+	   		</div>			
 				<div class="clearboth"></div>				
-			</form:form>
-			</div>
-
 			</div>
 	 </div>
 </td>

@@ -52,14 +52,14 @@
 			</tr>
 
             <tr>
-              <td width="45%" class="clsLabel"  scope="col"> <div align="right">User ID</div></td>
+              <td width="45%" class="clsLabel"  scope="col"> <div align="right">User ID *</div></td>
               <td width="55%" class="tableLeftAlign" ><span class="contentverylightbrown">
 			   <form:input path="userName" cssStyle="clsTextMandatory" />
               </span> </td>
             </tr>
 
 			<tr>
-              <td width="45%" class="clsLabel"  scope="col"> <div align="right">Password</div></td>
+              <td width="45%" class="clsLabel"  scope="col"> <div align="right">Password *</div></td>
               <td width="55%" class="tableLeftAlign" ><span class="contentverylightbrown">
                  <form:password path="password" cssStyle="clsTextMandatory" />
               	</span>
