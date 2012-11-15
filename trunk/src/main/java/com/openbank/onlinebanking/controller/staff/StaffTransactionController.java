@@ -98,7 +98,7 @@ public class StaffTransactionController {
 	}
 
 	public void validate(DepositForm target,BindingResult result) {
-		if(target.getMode() == null || target.getMode().trim().isEmpty()) {
+		if(target.getMode() == null || target.getMode().trim().isEmpty() || target.getMode().equals("NONE") ) {
 			result.addError(new ObjectError("mode", "Select the transaction mode"));
 		}
 		
