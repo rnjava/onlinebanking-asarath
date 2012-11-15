@@ -118,7 +118,7 @@
 			</div>			
 			<form:form method="post" action="addNewRecipient" commandName="form"  onsubmit="return true;" name="addNewRecipient">
 			
-			<div class="clsError"><form:errors path="*" cssClass="error" /></div>
+				<div class="clsError"><form:errors path="*" cssClass="error" /></div>
 				<div class="data-label">
 					 <label id="recipient-last-name_label" for="recipient-last-name">Last name *</label>
 				</div>

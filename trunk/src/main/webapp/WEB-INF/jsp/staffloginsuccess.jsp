@@ -15,8 +15,7 @@
 		<link
 			href="<%=contextPath%>/css/pipad-jawr-print.css"
 			rel="stylesheet" type="text/css" media="print"/>
-		<link href="<%=contextPath%>/css/nokia.css" rel="stylesheet" type="text/css"/>
-				<link
+		<link
 			href="<%=contextPath%>/css/style.css"
 			rel="stylesheet" type="text/css" media="all"/>	
 					
@@ -144,7 +143,7 @@
 			<form:form method="post" action="searchaccount" commandName="form"  onsubmit="return true;" name="searchAccount">
 				<div class="clearboth"></div><br/>
 				<core:if test="${not empty errorMessage}">
-    				<div class="clsError" align="center">${errorMessage}</div>
+    				<div class="clsError" align="center"><span class="error">${errorMessage}</span></div>
 				</core:if>
 				
 				<div class="data-label">
@@ -158,6 +157,8 @@
 						<span>Cancel</span></a>
 				</div>				
 	        	<form:hidden path="staffProfileId" value="${form.staffProfileId}"/>
+	        	<form:hidden path="staffFirstName" value="${form.staffFirstName}"/>
+	        	<form:hidden path="staffLastName" value="${form.staffLastName}"/>
 				<form:hidden path="tenantId" value="${form.tenantId}"/>
 				<div class="clearboth"></div>				
 			</form:form>

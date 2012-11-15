@@ -102,6 +102,14 @@ A {
 	COLOR: #778d95; TEXT-DECORATION: none
 }
 
+.error {
+	font-family: Century Gothic;
+	font-size: 11pt;
+	font-weight: bold;
+	color	: red;
+	text-align: justify;
+}
+
 A:hover {
 	COLOR: #800080; TEXT-DECORATION: none
 }

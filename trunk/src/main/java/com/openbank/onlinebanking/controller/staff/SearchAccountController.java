@@ -3,7 +3,6 @@ package com.openbank.onlinebanking.controller.staff;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -38,6 +37,8 @@ public class SearchAccountController {
 				searchResultForm.setUserProfileId(profile.getProfileId());
 				searchResultForm.setUserFirstName(profile.getFirstName());
 				searchResultForm.setUserLastName(profile.getLastName());
+				searchResultForm.setProfile(profile);
+				searchResultForm.setAccount(account);
 				modelAndView = new ModelAndView("searchsuccess");
 				
 
@@ -49,7 +50,8 @@ public class SearchAccountController {
 		} else {
 			modelAndView.addObject("errorMessage", "Please enter the account number");
 		}
-			
+		
+		
 		
 		modelAndView.addObject("form", searchResultForm);
 		log.debug("Existing..........");

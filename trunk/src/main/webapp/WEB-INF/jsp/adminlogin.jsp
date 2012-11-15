@@ -3,7 +3,7 @@
 
 <html>
 <head>
-<title>Online Banking | Customer Login</title>
+<title>Online Banking | Tenant Admin Login</title>
 <%
 	String contextPath = request.getContextPath();
 %>
@@ -11,14 +11,14 @@
 <link href="<%=contextPath%>/css/nokia.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<form:form method="post" action="login" commandName="loginForm">
+<form:form method="post" action="adminlogin" commandName="loginForm">
   <table width="100%"  border="0">
     <tr>
       <td height="28">
         <table width="100%"  border="0" align="center">
 
           <tr>
-            <th width="22%" scope="col"><img src="<%=contextPath%>/images/${loginForm.tenantId}.gif" width="178" height="31"></th>
+            <th width="22%" scope="col"></th>
             <th width="78%" align="left" scope="col"><table width="100%"  border="0" cellpadding="0" cellspacing="0">
                 <tr>
                   <th width="27%" scope="col"><div align="left" class="clsLabel"></div></th>
@@ -31,7 +31,7 @@
                 </tr>
             </table></th>
           </tr>
-          <form:hidden path="tenantId" value="${loginForm.tenantId}"/>
+          
           <tr>
             <th ></th>
           </tr>
@@ -42,7 +42,7 @@
       <td height="20%" >
           <table width="50%" class="tableColorLigthGrey" align ="center" >
             <tr class="tableHeader">
-              <td colspan="4"  scope="col"><strong>Please Login here</strong></td>
+              <td colspan="4"  scope="col"><strong>Tenant Administrator Login</strong></td>
             </tr>
 
 			<tr>
@@ -52,14 +52,14 @@
 			</tr>
 
             <tr>
-              <td width="45%" class="clsLabel"  scope="col"> <div align="right">User ID</div></td>
+              <td width="45%" class="clsLabel"  scope="col"> <div align="right">User ID *</div></td>
               <td width="55%" class="tableLeftAlign" ><span class="contentverylightbrown">
 			   <form:input path="userName" cssStyle="clsTextMandatory" />
               </span> </td>
             </tr>
 
 			<tr>
-              <td width="45%" class="clsLabel"  scope="col"> <div align="right">Password</div></td>
+              <td width="45%" class="clsLabel"  scope="col"> <div align="right">Password *</div></td>
               <td width="55%" class="tableLeftAlign" ><span class="contentverylightbrown">
                  <form:password path="password" cssStyle="clsTextMandatory" />
               	</span>
