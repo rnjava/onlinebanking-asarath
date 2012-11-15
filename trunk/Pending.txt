@@ -4,3 +4,10 @@ Create an tenat page and admin account creation.
 Profile editor
 
 Search by name aacounts
+
+Account overview clean up.
+
+Tranfer.
+
+Tenant Adminstrator
+Staff super admin
