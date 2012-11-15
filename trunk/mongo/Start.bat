@@ -1,0 +1,1 @@
+mongod -logpath mongo.log
