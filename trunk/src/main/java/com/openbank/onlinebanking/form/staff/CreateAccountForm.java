@@ -11,6 +11,11 @@ public class CreateAccountForm extends StaffBaseForm {
 	private String sex;
 	private String dateOfBirth;
 	private String userName;
+	private String address;
+	private String emailAddress;
+	private String phoneNo;
+	
+	
 	
 	/**
 	 * @return the accountNo
@@ -118,6 +123,42 @@ public class CreateAccountForm extends StaffBaseForm {
 				+ firstName + ", lastName=" + lastName + ", sex=" + sex
 				+ ", dateOfBirth=" + dateOfBirth + ", userName=" + userName
 				+ "]";
+	}
+	/**
+	 * @return the address
+	 */
+	public String getAddress() {
+		return address;
+	}
+	/**
+	 * @param address the address to set
+	 */
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	/**
+	 * @return the emailAddress
+	 */
+	public String getEmailAddress() {
+		return emailAddress;
+	}
+	/**
+	 * @param emailAddress the emailAddress to set
+	 */
+	public void setEmailAddress(String emailAddress) {
+		this.emailAddress = emailAddress;
+	}
+	/**
+	 * @return the phoneNo
+	 */
+	public String getPhoneNo() {
+		return phoneNo;
+	}
+	/**
+	 * @param phoneNo the phoneNo to set
+	 */
+	public void setPhoneNo(String phoneNo) {
+		this.phoneNo = phoneNo;
 	}
 	
 	

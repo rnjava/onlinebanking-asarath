@@ -48,7 +48,7 @@ public class StaffTransactionController {
 	}
 
 	@RequestMapping(value="/staffdepositsubmit",  method=RequestMethod.POST)
-	public ModelAndView depositFormSubmit(@ModelAttribute DepositForm depositForm, BindingResult result) {
+	public ModelAndView depositFormSubmit(DepositForm depositForm, BindingResult result) {
 		
 		log.debug("Entering - depositFormSubmit : {}", depositForm.toString());
 		ModelAndView modelAndView = new ModelAndView("staffdeposit");
@@ -80,6 +80,7 @@ public class StaffTransactionController {
 		depositForm.setAmount(null);
 		depositForm.setApprovalNeeded(false);
 		depositForm.setMode(null);
+		depositForm.setDescription(null);
 	}
 
 	private Transaction createTransaction(DepositForm depositForm) {

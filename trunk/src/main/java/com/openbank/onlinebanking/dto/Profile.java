@@ -12,6 +12,9 @@ public class Profile {
      private String tenantId;
      private Date createdDate;
      private String createdBy;
+     private String phone;
+     private String address;
+     private String emailAddress;
      
      
 
@@ -121,5 +124,42 @@ public class Profile {
 				+ ", sex=" + sex + ", tenantId=" + tenantId + ", createdDate="
 				+ createdDate + ", createdBy=" + createdBy + "]";
 	}
+	/**
+	 * @return the phone
+	 */
+	public String getPhone() {
+		return phone;
+	}
+	/**
+	 * @param phone the phone to set
+	 */
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+	/**
+	 * @return the address
+	 */
+	public String getAddress() {
+		return address;
+	}
+	/**
+	 * @param address the address to set
+	 */
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	/**
+	 * @return the emailAddress
+	 */
+	public String getEmailAddress() {
+		return emailAddress;
+	}
+	/**
+	 * @param emailAddress the emailAddress to set
+	 */
+	public void setEmailAddress(String emailAddress) {
+		this.emailAddress = emailAddress;
+	}
 
+	
 }
