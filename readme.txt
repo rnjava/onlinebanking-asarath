@@ -23,6 +23,10 @@ http://localhost:8080/onlinebanking/staff/stafflogin?tenantid=CCCEDA89EC74479AB5
 
 
 
+Admin
+http://localhost:8080/onlinebanking/admin/adminlogin
+
+
 
 
 
