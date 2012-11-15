@@ -3,6 +3,7 @@ package com.openbank.onlinebanking.controller.staff;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -24,21 +25,32 @@ public class SearchAccountController {
 	private static Logger log = LoggerFactory.getLogger(SearchAccountController.class);
 	
 	@RequestMapping(value="/searchaccount",  headers = "content-type=application/x-www-form-urlencoded", method=RequestMethod.POST)
-	public ModelAndView getAccountDetails(@ModelAttribute SearchResultForm searchResultForm ) {
+	public ModelAndView getAccountDetails(@ModelAttribute SearchResultForm searchResultForm) {
 
 		log.debug("Entering - SearchResultForm : {}", searchResultForm.toString());
-		Account account = accountService.getAccountByAccountNo(searchResultForm.getAccountNo(), searchResultForm.getTenantId());
-		
-		if(account != null ) {
-			log.debug("Account found {}", account.toString());
-			Profile profile = profileService.getProfileById(account.getProfileId(), searchResultForm.getTenantId());
-			searchResultForm.setUserProfileId(profile.getProfileId());
-			searchResultForm.setUserFirstName(profile.getFirstName());
-			searchResultForm.setUserLastName(profile.getLastName());
+		Account account = null;
+		ModelAndView modelAndView = new ModelAndView("staffloginsuccess");
+		if(searchResultForm.getAccountNo() != null) {
+			account = accountService.getAccountByAccountNo(searchResultForm.getAccountNo(), searchResultForm.getTenantId());
+			if(account != null ) {
+				log.debug("Account found {}", account.toString());
+				Profile profile = profileService.getProfileById(account.getProfileId(), searchResultForm.getTenantId());
+				searchResultForm.setUserProfileId(profile.getProfileId());
+				searchResultForm.setUserFirstName(profile.getFirstName());
+				searchResultForm.setUserLastName(profile.getLastName());
+				modelAndView = new ModelAndView("searchsuccess");
+				
+
+			} else {
+				log.debug("Account not found");
+				modelAndView.addObject("errorMessage", "Customer not found");
+			}
+
 		} else {
-			log.debug("Account not found");
+			modelAndView.addObject("errorMessage", "Please enter the account number");
 		}
-		ModelAndView modelAndView = new ModelAndView("searchsuccess");
+			
+		
 		modelAndView.addObject("form", searchResultForm);
 		log.debug("Existing..........");
 		return modelAndView;

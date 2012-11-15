@@ -6,6 +6,8 @@ public class DepositForm extends StaffBaseForm {
 	private Double amount;
 	private String mode;
 	private boolean isApprovalNeeded;
+	private String description;
+	
 	/**
 	 * @return the accountNo
 	 */
@@ -54,6 +56,18 @@ public class DepositForm extends StaffBaseForm {
 	 */
 	public void setMode(String mode) {
 		this.mode = mode;
+	}
+	/**
+	 * @return the description
+	 */
+	public String getDescription() {
+		return description;
+	}
+	/**
+	 * @param description the description to set
+	 */
+	public void setDescription(String description) {
+		this.description = description;
 	}
 	
 	

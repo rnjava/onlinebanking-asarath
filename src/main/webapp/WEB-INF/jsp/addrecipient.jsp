@@ -108,17 +108,17 @@
 			<div class="clearboth"></div>
 			
 			<div class="separator-top"></div>
-			<div class="first-heading">Add a New Recipient</div>
+			<div class="first-heading">Add a New Recipient</div><br/> <br/>
 			<!-- p class="req-txt">* =required</p-->
 			<div>
-	    	 	<core:if test="${not empty errorMessage}">
-	 						<div class="clsError">${errorMessage}</div>
-				</core:if>
+					
 				<core:if test="${not empty successMessage}">
 	 						<div class="clsSuccess" >${successMessage}</div>
 				</core:if>
 			</div>			
 			<form:form method="post" action="addNewRecipient" commandName="form"  onsubmit="return true;" name="addNewRecipient">
+			
+			<div class="clsError"><form:errors path="*" cssClass="error" /></div>
 				<div class="data-label">
 					 <label id="recipient-last-name_label" for="recipient-last-name">Last name *</label>
 				</div>
