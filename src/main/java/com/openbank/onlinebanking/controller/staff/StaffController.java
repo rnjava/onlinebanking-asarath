@@ -61,7 +61,7 @@ public class StaffController {
 		ModelAndView modelAndView = new ModelAndView("staffcreateaccount");
 		boolean isSuccess = true;
 		validate(createAccountForm, result);
-		if(createAccountForm.getPhoneNo()!= null) {
+		if(createAccountForm.getDateOfBirth()!= null) {
 			if(!AppUtil.isAValidDDMMYYYYDate(createAccountForm.getDateOfBirth())) {
 				log.error("Invalid date format " + createAccountForm.getDateOfBirth()); 
 				isSuccess = false;

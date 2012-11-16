@@ -53,6 +53,23 @@
 
 	<bean id="adminLoginController" class="com.openbank.onlinebanking.controller.admin.AdminLoginController">
     	<property name="loginService" ref="loginService"/>
+    	<property name="profileService" ref="profileService"/>
+    </bean>
+    
+
+	<bean id="tenantAdministrationController" class="com.openbank.onlinebanking.controller.admin.TenantAdministrationController">
+    	<property name="profileService" ref="profileService"/>
+    	<property name="tenantService" ref="tenantService"/>
+    </bean>
+    
+	<bean id="userManagementConroller" class="com.openbank.onlinebanking.controller.UserManagementConroller">
+    	<property name="profileService" ref="profileService"/>
+    	<property name="tenantService" ref="tenantService"/>
+    	<property name="loginService" ref="loginService"/>
+    </bean>
+        
+   <bean id="tenantService" class="com.openbank.onlinebanking.blo.impl.TenantServiceImpl">
+    	<property name="tenantDAO" ref="tenantDAO"/>
     </bean>
     
 <!-- ==================================   STAFF  =============================================== -->    

@@ -20,6 +20,7 @@ import com.openbank.onlinebanking.dto.Profile;
 import com.openbank.onlinebanking.dto.User;
 import com.openbank.onlinebanking.form.LoginForm;
 import com.openbank.onlinebanking.form.staff.CustomerSearchForm;
+import static com.openbank.onlinebanking.util.ApplicationConstants.STAFF_ROLE;
 
 
 @Controller
@@ -53,7 +54,7 @@ public class StaffLoginController {
 		if (!result.hasErrors()) {
 			User user = loginService.login(loginForm.getUserName(), loginForm.getTenantId(), loginForm.getPassword());
 			if (user != null && user.getProfileId() != null) {
-				if("STAFF".equalsIgnoreCase(user.getRole().getPrimary())) {
+				if(STAFF_ROLE.equalsIgnoreCase(user.getRole().getPrimary())) {
 					log.debug("User is a STAFF - {}", user.toString());
 					modelAndView = new ModelAndView("staffloginsuccess");
 					CustomerSearchForm customerSearchForm = new CustomerSearchForm();
