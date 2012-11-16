@@ -305,7 +305,7 @@ public class StaffController {
 	
 	private Map<String,String> loadRoleMap() {
 		Map<String,String> modeMap = new LinkedHashMap<String,String>();
-			modeMap.put(STAFF_ADMIN_ROLE, "Staff");
+			modeMap.put(STAFF_ROLE, "Staff");
 			modeMap.put(STAFF_ADMIN_ROLE, "Admin");
 		return modeMap;
 	}	
