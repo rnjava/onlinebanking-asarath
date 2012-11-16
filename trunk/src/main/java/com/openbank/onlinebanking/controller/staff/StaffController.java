@@ -200,7 +200,7 @@ public class StaffController {
 	public ModelAndView createUserSubmit(@ModelAttribute("form") UserForm userForm, BindingResult result) {
 
 		log.debug("Entering....");
-		ModelAndView modelAndView = new ModelAndView("adminusercreation");
+		ModelAndView modelAndView = new ModelAndView("staffcreatenewuser");
 		
 		boolean isSuccess = true;
 		validateUserForm(userForm, result);
