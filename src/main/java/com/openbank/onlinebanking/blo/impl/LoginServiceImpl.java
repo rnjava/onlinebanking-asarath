@@ -46,4 +46,14 @@ public class LoginServiceImpl implements LoginService {
 	public void setLoginDAO(LoginDAO loginDAO) {
 		this.loginDAO = loginDAO;
 	}
+
+
+	public User getUserByProfileId(String tenantId, String profileId) {
+		return loginDAO.getUserByProfileId(tenantId, profileId);
+	}
+
+
+	public void updateUser(User user) {
+		loginDAO.updateUser(user);
+	}
 }

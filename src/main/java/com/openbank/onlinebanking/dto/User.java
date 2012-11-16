@@ -2,6 +2,8 @@ package com.openbank.onlinebanking.dto;
 
 import java.util.Date;
 
+import org.springframework.data.annotation.Id;
+
 public class User {
 
 	
@@ -11,8 +13,9 @@ public class User {
     Date createdDate;
     String createdBy;
     String tenantId;
-    
     Role role;
+    @Id
+    private String id;
 
 	/**
 	 * @return the userId
@@ -110,5 +113,18 @@ public class User {
 				+ ", createdBy=" + createdBy + ", tenantId=" + tenantId
 				+ ", role=" + role + "]";
 	}
+	/**
+	 * @return the id
+	 */
+	public String getId() {
+		return id;
+	}
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(String id) {
+		this.id = id;
+	}
 
+	
 }

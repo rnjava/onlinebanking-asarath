@@ -73,10 +73,10 @@
 						class="modal-link selected" rel="nav-mod-content1"
 						href="adminloginsuccess?profileid=<core:out value="${form.staffProfileId}"/>&tenantid=<core:out value="${form.tenantId}"/>"
 						title="Customer Transaction">Tenant Administration</a></li>
-					<li><a id="Transfers_topnav" name="Transfers_topnav"
+					<!-- li><a id="Transfers_topnav" name="Transfers_topnav"
 						rel="nav-mod-content3"
-						href="createuser?profileid=<core:out value="${form.staffProfileId}"/>&tenantid=<core:out value="${form.tenantId}"/>"
-						title="Create New Accounts">User Management</a></li>
+						href="changepassword?profileid=<core:out value="${form.staffProfileId}"/>&tenantid=<core:out value="${form.tenantId}"/>"
+						title="Create New Accounts">User Management</a></li> -->
 				</ul>
 			</div>
 

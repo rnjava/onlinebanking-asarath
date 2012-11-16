@@ -1,6 +1,7 @@
 package com.openbank.onlinebanking.controller;
 
 import static com.openbank.onlinebanking.util.ApplicationConstants.DATE_FORMAT;
+import static com.openbank.onlinebanking.util.ApplicationConstants.STAFF_ADMIN_ROLE;
 import static com.openbank.onlinebanking.util.ApplicationConstants.STAFF_ROLE;
 
 import java.util.Date;
@@ -57,7 +58,7 @@ public class UserManagementConroller {
 	
 	
 	@RequestMapping(value="/createusersubmit",  method=RequestMethod.POST)
-	public ModelAndView createAccountSubmit(@ModelAttribute("form") UserForm userForm, BindingResult result) {
+	public ModelAndView createUserSubmit(@ModelAttribute("form") UserForm userForm, BindingResult result) {
 
 		log.debug("Entering....");
 		ModelAndView modelAndView = new ModelAndView("adminusercreation");
@@ -112,8 +113,8 @@ public class UserManagementConroller {
 	
 	private Map<String,String> loadRoleMap() {
 		Map<String,String> modeMap = new LinkedHashMap<String,String>();
-			modeMap.put("STAFF", "Staff");
-			modeMap.put("ADMIN", "Admin");
+			modeMap.put(STAFF_ADMIN_ROLE, "Staff");
+			modeMap.put(STAFF_ADMIN_ROLE, "Admin");
 		return modeMap;
 	}	
 	
@@ -163,7 +164,7 @@ public class UserManagementConroller {
 		profile.setAddress(form.getAddress());
 		profile.setEmailAddress(form.getEmailAddress());
 		profile.setPhone(form.getPhoneNo());
-		profile.setTenantId(form.getTenantId());
+		profile.setTenantId(form.getUserTenandId());
 		profile.setSex(form.getSex());
 		profile.setCreatedBy(form.getStaffFirstName() +" "+ form.getStaffLastName());
 		profile.setCreatedDate(new Date());
