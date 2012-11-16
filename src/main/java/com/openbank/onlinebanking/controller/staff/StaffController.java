@@ -196,7 +196,7 @@ public class StaffController {
 		return modelAndView;
 	}
 	
-	@RequestMapping(value="/staffcreatenewuser",  method=RequestMethod.POST)
+	@RequestMapping(value="/staffcreatenewusersubmit",  method=RequestMethod.POST)
 	public ModelAndView createUserSubmit(@ModelAttribute("form") UserForm userForm, BindingResult result) {
 
 		log.debug("Entering....");
