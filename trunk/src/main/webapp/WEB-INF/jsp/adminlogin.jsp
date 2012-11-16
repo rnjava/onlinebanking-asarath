@@ -10,7 +10,7 @@
 <link href="<%=contextPath%>/css/style.css" rel="stylesheet" type="text/css">
 <link href="<%=contextPath%>/css/nokia.css" rel="stylesheet" type="text/css">
 </head>
-<body>
+<body bgcolor="#000000">
 <form:form method="post" action="adminlogin" commandName="loginForm">
   <table width="100%"  border="0">
     <tr>

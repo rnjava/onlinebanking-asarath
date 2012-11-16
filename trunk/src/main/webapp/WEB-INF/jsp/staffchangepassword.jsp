@@ -150,6 +150,10 @@
 		<div class="db-inner-module">						
 			<form:form method="post" action="staffchangepasswordsubmit" commandName="form"  onsubmit="return true;" name="submitPassword">
 				<div class="clsError" align="center"><form:errors path="*" cssClass="error" /></div>
+						<core:if test="${not empty successMessage}">
+    						<div class="clsSuccess" >${successMessage}</div>
+						</core:if>
+	
 				<div class="data-label">&nbsp;
 					 <label id="recipient-last-name_label" for="recipient-last-name">Current Password *</label>
 				</div>
