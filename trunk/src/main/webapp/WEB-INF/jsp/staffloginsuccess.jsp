@@ -78,6 +78,11 @@
 						rel="nav-mod-content3"
 						href="staffcreateaccount?profileid=<core:out value="${form.staffProfileId}"/>&tenantid=<core:out value="${form.tenantId}"/>"
 						title="Create New Accounts">Open New Account</a></li>
+					<li><a id="Transfers_topnav" name="Transfers_topnav"
+						rel="nav-mod-content3"
+						href="staffchangepassword?profileid=<core:out value="${form.staffProfileId}"/>&tenantid=<core:out value="${form.tenantId}"/>"
+						title="Create New Accounts">User Management</a></li>
+						
 				</ul>
 			</div>
 

@@ -7,7 +7,7 @@
 	<%
 		String contextPath = request.getContextPath();
 	%>
-		<title>Online Banking | Tenant Administration</title>
+		<title>Online Banking | Staff</title>
 		<link rel="shortcut icon" href="href="<%=contextPath%>/images/favicon.ico" type="image/ico"/>
 		<link
 			href="<%=contextPath%>/css/pipad-jawr.css"
@@ -56,7 +56,8 @@
 							</div>
 							<div class="sign-off">
 								<a id="Sign_Off_header" name="Sign_Off_header"
-									href="adminlogin" title="Sign Off">Sign Off</a>
+									href="stafflogin?tenantid=<core:out value="${form.tenantId}"/>"
+									title="Sign Off">Sign Off</a>
 							</div>
 						</div>
 						<div class="clearboth"></div>
@@ -70,13 +71,18 @@
 			<div id="nav-tier-2-module" class="nav-tier-2-module no_print">
 				<ul class="nav2">
 					<li><a id="Accounts_topnav" name="Accounts_topnav"
-						class="modal-link selected" rel="nav-mod-content1"
-						href="adminloginsuccess?profileid=<core:out value="${form.staffProfileId}"/>&tenantid=<core:out value="${form.tenantId}"/>"
-						title="Customer Transaction">Tenant Administration</a></li>
-					<!-- <li><a id="Transfers_topnav" name="Transfers_topnav"
+						class="modal-link" rel="nav-mod-content1"
+						href="staffloginsuccess?profileid=<core:out value="${form.staffProfileId}"/>&tenantid=<core:out value="${form.tenantId}"/>"
+						title="Customer Transaction">Customer Transaction</a></li>
+					<li><a id="Transfers_topnav" name="Transfers_topnav"
 						rel="nav-mod-content3"
-						href="createuser?profileid=<core:out value="${form.staffProfileId}"/>&tenantid=<core:out value="${form.tenantId}"/>"
-						title="Create New Accounts">User Management</a></li>  -->
+						href="staffcreateaccount?profileid=<core:out value="${form.staffProfileId}"/>&tenantid=<core:out value="${form.tenantId}"/>"
+						title="Create New Accounts">Open New Account</a></li>
+					<li><a id="Transfers_topnav" name="Transfers_topnav"
+						rel="nav-mod-content3 selected"
+						href="staffchangepassword?profileid=<core:out value="${form.staffProfileId}"/>&tenantid=<core:out value="${form.tenantId}"/>"
+						title="Create New Accounts">User Management</a></li>
+						
 				</ul>
 			</div>
 
@@ -86,15 +92,13 @@
 
 					<ul>
 						<li><a id="Accounts_topnav" name="Accounts_topnav_borneo_AO"
+							href="staffchangepassword?profileid=<core:out value="${form.staffProfileId}"/>&tenantid=<core:out value="${form.tenantId}"/>"
+							title="Accounts Overview">Change Password</a></li>
+						<li><a id="Accounts_topnav" name="Accounts_topnav_borneo_AO"
 							class="selected"
-							href="adminloginsuccess?profileid=<core:out value="${form.staffProfileId}"/>&tenantid=<core:out value="${form.tenantId}"/>"
-							title="Add New Tenant">Add New Tenant</a></li>
-							<li><a id="Accounts_topnav" name="Accounts_topnav_borneo_AO"
-							href="searchtenant?profileid=<core:out value="${form.staffProfileId}"/>&tenantid=<core:out value="${form.tenantId}"/>"
-							title="Search Tenant">Search Tenant</a></li>
-							<li><a id="Accounts_topnav" name="Accounts_topnav_borneo_AO"
-							href="createuser?profileid=<core:out value="${form.staffProfileId}"/>&tenantid=<core:out value="${form.tenantId}"/>"
-							title="Create Tenant User">Create Tenant User</a></li>															
+							href="staffcreatenewuser?profileid=<core:out value="${form.staffProfileId}"/>&tenantid=<core:out value="${form.tenantId}"/>"
+							title="Accounts Overview">Create User</a></li>
+							
 <!-- 
 						<li><a id="Account_Details_topnav"
 							name="Account_Details_topnav"
@@ -120,9 +124,6 @@
 						<div class="h2-bold-14">
 						</div>
 						<div class="h2-bold-14">
-						    Welcome - 
-							<core:out value="${form.staffFirstName}" />&nbsp;
-							<core:out value="${form.staffLastName}" /> 
 						</div>
 						<!-- div class="f-11">
 							Protect your accounts and information, <a
@@ -141,11 +142,11 @@
 					<div class="thick-border-module">
 						<div class="alt-dark-blue-title">
 							<h2>
-								<span class="title-text">Add New Tenant</span>
+								<span class="title-text">Create New Tenant User</span>
 							</h2>
 						</div>
 			<div class="db-inner-module">	
-		<form:form method="post" action="addnewtenantsubmit" commandName="form"  onsubmit="return true;" name="addnewtenant">					
+		<form:form method="post" action="staffcreatenewusersubmit" commandName="form"  onsubmit="return true;" name="createusersubmit">					
 	        <table>
 		     	 <tr>
 	             	<td colspan="4" align="center">
@@ -156,29 +157,44 @@
 	             	</td>
 	            </tr>
 		        <tr>
-		        	<td><label id="trans-mode-label" for="trans-mode-label">Tenant Name *</label></td>
-		        	<td><form:input path="tenantName" maxlength="100" value=""/></td>
-		        	<td><label id="trans-mode-label" for="trans-mode-label">Primary Contact Person*</label></td>
-		        	<td><form:input path="primaryContact" maxlength="50" value=""/></td>
-		        </tr>
-		        <tr>
-		        	<td><label id="trans-mode-label" for="trans-mode-label">Phone No *</label></td>
-		        	<td><form:input path="phoneNo" maxlength="15" value=""/></td>
-		        	<td><label id="trans-mode-label" for="trans-mode-label">Email Address *</label></td>
-		        	<td><form:input path="emailAddress" maxlength="50" value=""/></td>
-		        </tr>
-		        <tr>
-		        	<td><label id="trans-desc-label" for="trans-desc-label">Tenant Address</label></td>
-		        	<td><form:textarea path="address" rows="5" cols="0" /></td>
-		        	<td></td>
-		        	<td></td>
-		        </tr>
-		        <tr>	
+		        	<td><label id="user-name-label" for="user-name-label">User Name *</label></td>
+		        	<td><form:input path="userName" maxlength="10" value=""/></td>
+		        	<td><label id="account-type-label" for="account-type-label">Role *</label></td>
+		        	<td> <form:select path="role">
+   							<form:option value="NONE" label="--- Select ---"/>
+   							<form:options items="${roleType}" />
+							</form:select>
+					</td>		
+			        </tr>
+			        <tr>
+			        	<td><label id="first-name-label" for="first-name-label">First Name *</label></td>
+			        	<td><form:input path="firstName" maxlength="50" value=""/></td>
+			        	<td><label id="last-name-label" for="last-name-label">Last Name *</label></td>
+			        	<td><form:input path="lastName" maxlength="50" value=""/></td>
+			        </tr>
+			        <tr>
+			        	<td><label id="sex-label" for="sex-label">Sex *</label></td>
+			        	<td><form:radiobutton path="sex" value="M"/> Male <form:radiobutton path="sex" value="F"/> Female</td>
+			        	<td><label id="dob-label" for="dob-label">Date of Birth *</label></td>
+			        	<td><form:input path="dateOfBirth" maxlength="10" value=""/></td>
+			        </tr>
+			        <tr>
+			        	<td><label id="phone-label" for="phone-label">Phone *</label></td>
+			        	<td><form:input path="phoneNo" maxlength="15" value=""/></td>
+			        	<td><label id="email-label" for="email-label">Email Address *</label></td>
+			        	<td><form:input path="emailAddress" maxlength="30" value=""/></td>		
+				    </tr>
+			        <tr>
+			        	<td><label id="address-label" for="address-label">Address *</label></td>
+			        	<td><form:textarea path="address" rows="5" cols="0" /></td>
+			        	<td></td>
+				    </tr>
+			        <tr>	
 		        	<td colspan="4" align="center">
-		        		<a class="button" href="javascript:document.addnewtenant.submit();" title="Add Tenant">
+		        		<a class="button" href="javascript:document.createusersubmit.submit();" title="Add Staff User">
 							<span>Submit</span></a>
 						<a class="button" 
-							href="adminloginsuccess?profileid=<core:out value="${form.staffProfileId}"/>&tenantid=<core:out value="${form.tenantId}"/>" 
+							href="staffcreatenewuser?profileid=<core:out value="${form.staffProfileId}"/>&tenantid=<core:out value="${form.tenantId}"/>" 
 							title="Cancel"><span>Cancel</span></a>
 					</td>
 		        	<form:hidden path="staffProfileId" value="${form.staffProfileId}"/>
