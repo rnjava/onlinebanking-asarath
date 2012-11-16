@@ -7,6 +7,7 @@ public class BaseDAO {
 	protected MongoTemplate mongoTemplate;
 	
 	protected static final String USERS_COLLECTION_NAME = "users";
+	protected static final String TENANT_COLLECTION_NAME = "tenants";
 	
 
 	/**

@@ -21,6 +21,8 @@
      
       <bean id="accountDAO" class=" com.openbank.onlinebanking.doa.impl.AccountDAOImpl"/>
       
+      <bean id="tenantDAO" class=" com.openbank.onlinebanking.doa.impl.TenantDOAImpl"/>
+      
       <bean id="fundTransferDAO" class=" com.openbank.onlinebanking.doa.impl.FundTransferDAOImpl"/>
         
      <bean id="baseDAO" class=" com.openbank.onlinebanking.doa.BaseDAO">

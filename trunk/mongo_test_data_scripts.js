@@ -8,6 +8,12 @@ db.users.save({ userId : 'sraj1', password:'password', lastLoginDate:'10/12/2009
     "primary" : "CUSTOMER"
   }});
 
+  db.users.save({ userId : 'admin', password:'password', lastLoginDate:'10/12/2009', lastLoginTime:'10:24 AM ET',profileId:'C3B62A95-2F72-4253-90F2-8A971B54A63C', tenantId:'039E8ED1-313A-412B-9ED4-DEE675FF544A', createdDate:new Date('03/28/2009'), createdBy:'syam', "role" : {
+    "primary" : "TENANT-ADMIN"
+  }});
+  
+ db.profile.save({ profileId:'C3B789KK95-2F72-4253-90F2-8A971B54A63C', firstName:'Syam', lastName:'Raj', dateOfBirth:new Date('08/02/1981'), sex:'M', tenantId:'039E8ED1-313A-412B-9ED4-DEE675FF544A', createdDate:new Date('03/28/2009'), createdBy:'syam' });
+ 
  db.users.save( 
 {
   "userId" : "sraj2",
