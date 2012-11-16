@@ -266,7 +266,7 @@ public class StaffController {
 		User user = new User();
 		user.setUserId(form.getUserName());
 		user.setProfileId(profileId);
-		user.setTenantId(form.getUserTenandId());
+		user.setTenantId(form.getTenantId());
 		user.setCreatedBy(form.getStaffFirstName() +" "+ form.getStaffLastName());
 		user.setCreatedDate(new Date());
 		Role role = new Role();
