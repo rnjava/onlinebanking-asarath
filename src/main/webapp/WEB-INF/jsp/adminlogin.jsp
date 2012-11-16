@@ -40,9 +40,9 @@
     </tr>
     <tr>
       <td height="20%" >
-          <table width="50%" class="tableColorLigthGrey" align ="center" >
+          <table width="25%" class="tableColorLigthGrey" align ="center" >
             <tr class="tableHeader">
-              <td colspan="4"  scope="col"><strong>Tenant Administrator Login</strong></td>
+              <td colspan="4"  scope="col" align="center"><strong>Tenant Administrator Login</strong></td>
             </tr>
 
 			<tr>
