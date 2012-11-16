@@ -73,10 +73,10 @@
 						class="modal-link selected" rel="nav-mod-content1"
 						href="adminloginsuccess?profileid=<core:out value="${form.staffProfileId}"/>&tenantid=<core:out value="${form.tenantId}"/>"
 						title="Customer Transaction">Tenant Administration</a></li>
-					<li><a id="Transfers_topnav" name="Transfers_topnav"
+					<!-- <li><a id="Transfers_topnav" name="Transfers_topnav"
 						rel="nav-mod-content3"
 						href="createuser?profileid=<core:out value="${form.staffProfileId}"/>&tenantid=<core:out value="${form.tenantId}"/>"
-						title="Create New Accounts">User Management</a></li>
+						title="Create New Accounts">User Management</a></li> -->
 				</ul>
 			</div>
 
@@ -155,9 +155,9 @@
 	            </tr>
 		        <tr>
 		        	<td><label id="trans-mode-label" for="trans-mode-label"><strong>&nbsp;Tenant Name: </strong></label></td>
-		        	<td><form:input path="searchName" maxlength="100" value=""/></td>
+		        	<td><form:input path="searchName" maxlength="100" /></td>
 		        	<td><label id="trans-mode-label" for="trans-mode-label"><strong>&nbsp;Tenant ID : </strong></label></td>
-		        	<td><form:input path="searchTenantId" maxlength="50" value=""/></td>
+		        	<td><form:input path="searchTenantId" maxlength="50"/></td>
 		        </tr>
 		        <tr>	
 		        	<td colspan="4" align="center">
