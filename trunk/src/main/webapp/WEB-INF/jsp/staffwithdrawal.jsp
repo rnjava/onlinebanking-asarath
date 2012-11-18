@@ -145,7 +145,7 @@
 		        <tr>
 		        	<td><label id="trans-mode-label" for="trans-mode-label">Transaction Mode *</label></td>
 		        	<td><form:select path="mode">
-   							<form:option value="NONE" label="--- Select ---"/>
+   							<form:option value="" label="--- Select ---"/>
    							<form:options items="${transModelist}" />
 							</form:select>
 					</td>

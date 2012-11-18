@@ -161,7 +161,7 @@
 		        	<td><form:input path="userName" maxlength="10" value=""/></td>
 		        	<td><label id="account-type-label" for="account-type-label">Role *</label></td>
 		        	<td> <form:select path="role">
-   							<form:option value="NONE" label="--- Select ---"/>
+   							<form:option value="" label="--- Select ---"/>
    							<form:options items="${roleType}" />
 							</form:select>
 					</td>		

@@ -1,8 +1,7 @@
 package com.openbank.onlinebanking.form.admin;
 
-import java.util.List;
+import org.springframework.web.multipart.MultipartFile;
 
-import com.openbank.onlinebanking.dto.Tenant;
 import com.openbank.onlinebanking.form.staff.StaffBaseForm;
 
 public class AdministrationForm extends StaffBaseForm {
@@ -14,6 +13,7 @@ public class AdministrationForm extends StaffBaseForm {
 	private String address;
 	private String searchTenantId;
 	private String searchName;
+	MultipartFile file;
 	
 	
 	/**
@@ -99,6 +99,18 @@ public class AdministrationForm extends StaffBaseForm {
 	 */
 	public void setSearchName(String searchName) {
 		this.searchName = searchName;
+	}
+	/**
+	 * @return the file
+	 */
+	public MultipartFile getFile() {
+		return file;
+	}
+	/**
+	 * @param file the file to set
+	 */
+	public void setFile(MultipartFile file) {
+		this.file = file;
 	}
 	
 	
