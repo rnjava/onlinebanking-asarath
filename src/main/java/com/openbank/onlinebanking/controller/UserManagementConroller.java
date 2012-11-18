@@ -181,6 +181,8 @@ public class UserManagementConroller {
 	    ValidationUtils.rejectIfEmptyOrWhitespace(errors, "address", "", "Address cannot be blank");
 	    ValidationUtils.rejectIfEmptyOrWhitespace(errors, "emailAddress", "", "Email Address cannot be blank");
 	    ValidationUtils.rejectIfEmptyOrWhitespace(errors, "phoneNo", "", "Phone cannot be blank");
+	    ValidationUtils.rejectIfEmptyOrWhitespace(errors, "role", "", "Role cannot be blank");
+
 	    
 	}
 

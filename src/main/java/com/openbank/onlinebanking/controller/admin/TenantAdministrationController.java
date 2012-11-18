@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.openbank.onlinebanking.blo.ProfileService;
@@ -85,11 +86,13 @@ public class TenantAdministrationController {
 		return modelAndView;
 	}
 
-	@RequestMapping(value="/addnewtenantsubmit",  method=RequestMethod.POST)
+	@RequestMapping(value="/addnewtenantsubmit",  headers = "content-type=multipart/form-data", method=RequestMethod.POST) 
 	public ModelAndView createNewTenant(@ModelAttribute("form") AdministrationForm administrationForm, BindingResult result) {
 
 		log.debug("Entering.....");
 		ModelAndView modelAndView = new ModelAndView("adminloginsuccess");
+		MultipartFile multipartFile = administrationForm.getFile();
+		
 		validate(administrationForm, result);
 		if (!result.hasErrors()) {
 			Tenant tenant = new Tenant();

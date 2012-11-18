@@ -157,7 +157,7 @@
 		        	<td><form:input path="userName" maxlength="10" value=""/></td>
 		        	<td><label id="account-type-label" for="account-type-label">Role *</label></td>
 		        	<td> <form:select path="role">
-   							<form:option value="NONE" label="--- Select ---"/>
+   							<form:option value="" label="--- Select ---"/>
    							<form:options items="${roleType}" />
 							</form:select>
 					</td>		
@@ -185,7 +185,7 @@
 			        	<td><form:textarea path="address" rows="5" cols="0" /></td>
 		        		<td><label id="account-type-label" for="account-type-label">Tenant Name *</label></td>
 		        			<td> <form:select path="userTenandId">
-   							<form:option value="NONE" label="--- Select ---"/>
+   							<form:option value="" label="--- Select ---"/>
    							<form:options items="${tenantList}" />
 							</form:select>
 						</td>	

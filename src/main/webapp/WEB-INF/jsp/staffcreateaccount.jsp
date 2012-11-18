@@ -155,7 +155,7 @@
 		        	<td><form:input path="userName" maxlength="10" value=""/></td>
 		        	<td><label id="account-type-label" for="account-type-label">Account Type *</label></td>
 		        	<td> <form:select path="accountType">
-   							<form:option value="NONE" label="--- Select ---"/>
+   							<form:option value="" label="--- Select ---"/>
    							<form:options items="${accountTypeList}" />
 							</form:select>
 					</td>		

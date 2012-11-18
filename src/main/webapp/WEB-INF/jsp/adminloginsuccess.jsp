@@ -145,7 +145,7 @@
 							</h2>
 						</div>
 			<div class="db-inner-module">	
-		<form:form method="post" action="addnewtenantsubmit" commandName="form"  onsubmit="return true;" name="addnewtenant">					
+		<form:form method="post" action="addnewtenantsubmit" commandName="form"  onsubmit="return true;" name="addnewtenant" enctype="multipart/form-data">					
 	        <table>
 		     	 <tr>
 	             	<td colspan="4" align="center">
@@ -170,8 +170,12 @@
 		        <tr>
 		        	<td><label id="trans-desc-label" for="trans-desc-label">Tenant Address</label></td>
 		        	<td><form:textarea path="address" rows="5" cols="0" /></td>
-		        	<td></td>
-		        	<td></td>
+			        <tr>
+			        	<td><label id="address-label" for="address-label">Upload Logo*</label></td>
+			        	<td><input type="file" name="file" /></td>
+			        	<td></td>
+			        	<td></td>
+				    </tr>
 		        </tr>
 		        <tr>	
 		        	<td colspan="4" align="center">
