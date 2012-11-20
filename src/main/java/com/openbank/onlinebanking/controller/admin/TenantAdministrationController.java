@@ -130,6 +130,13 @@ public class TenantAdministrationController {
 				log.debug("Error uploading file" + e);
 			}
 			
+			Profile profile = profileService.getProfileById(administrationForm.getStaffProfileId(), tenantId);
+			if(profile != null) {
+				administrationForm.setStaffProfileId(profile.getProfileId());
+				administrationForm.setStaffFirstName(profile.getFirstName());
+				administrationForm.setStaffLastName(profile.getLastName());
+			}
+
 			modelAndView.addObject("successMessage", "Tenant '"+tenantId+"' successfully created !!!");
 		}
 		modelAndView.addObject("form", administrationForm);
