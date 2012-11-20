@@ -44,9 +44,9 @@
 			<div class="olb-header-module">
 				<div class="olb-skin">
 					<div class="common-img-container print">
-						<img alt=" Logo"
-							src="<%=contextPath%>/images/${form.tenantId}.gif"
-							title="logo"/>
+						<img alt="Logo"
+							src="<%=contextPath%>/logos/${form.tenantId}.gif"
+							title=" logo"/>
 					</div>
 					<div class="fl-rt no_print">
 						<div class="common-margin">
@@ -172,7 +172,7 @@
 		        	<td><form:textarea path="address" rows="5" cols="0" /></td>
 			        <tr>
 			        	<td><label id="address-label" for="address-label">Upload Logo*</label></td>
-			        	<td><input type="file" name="file" /></td>
+			        	<td><input type="file" name="file" size="512000" accept="image/gif"/></td>
 			        	<td></td>
 			        	<td></td>
 				    </tr>
