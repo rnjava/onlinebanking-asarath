@@ -13,7 +13,7 @@
        http://www.springframework.org/schema/data/mongo/spring-mongo-1.0.xsd"
 	default-autowire="byName">
 
-    <!-- util:properties id="application-properties" location="classpath:application.properties"/-->
+    
 
 	 <bean id="loginDAO" class=" com.openbank.onlinebanking.doa.impl.LoginDAOImpl"/>
     

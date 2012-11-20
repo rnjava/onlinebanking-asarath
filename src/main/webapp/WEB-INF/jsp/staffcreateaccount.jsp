@@ -43,9 +43,9 @@
 			<div class="olb-header-module">
 				<div class="olb-skin">
 					<div class="common-img-container print">
-						<img alt=" Logo"
-							src="<%=contextPath%>/images/${form.tenantId}.gif"
-							title="logo"/>
+						<img alt="Logo"
+							src="<%=contextPath%>/logos/${form.tenantId}.gif"
+							title=" logo"/>
 					</div>
 					<div class="fl-rt no_print">
 						<div class="common-margin">

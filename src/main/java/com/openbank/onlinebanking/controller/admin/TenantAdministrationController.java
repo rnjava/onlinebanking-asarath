@@ -1,8 +1,10 @@
 package com.openbank.onlinebanking.controller.admin;
 
+import java.io.File;
 import java.util.Date;
 import java.util.List;
 
+import org.apache.commons.io.FileUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -23,6 +25,7 @@ import com.openbank.onlinebanking.dto.Profile;
 import com.openbank.onlinebanking.dto.Tenant;
 import com.openbank.onlinebanking.form.admin.AdministrationForm;
 import com.openbank.onlinebanking.util.GuidUtil;
+import com.openbank.onlinebanking.util.PropertyLoader;
 
 @Controller
 public class TenantAdministrationController {
@@ -31,6 +34,7 @@ public class TenantAdministrationController {
 	private static Logger log = LoggerFactory.getLogger(TenantAdministrationController.class);
 	private ProfileService profileService;
 	private TenantService tenantService;
+	
 	
 	
 	
@@ -92,9 +96,10 @@ public class TenantAdministrationController {
 		log.debug("Entering.....");
 		ModelAndView modelAndView = new ModelAndView("adminloginsuccess");
 		MultipartFile multipartFile = administrationForm.getFile();
-		
 		validate(administrationForm, result);
+		validateMultiPart(multipartFile, result);
 		if (!result.hasErrors()) {
+			
 			Tenant tenant = new Tenant();
 			String tenantId = GuidUtil.generateGuid();
 			tenant.setAddress(administrationForm.getAddress());
@@ -107,6 +112,24 @@ public class TenantAdministrationController {
 			tenant.setTenantId(tenantId);
 			tenantService.createTenant(tenant);
 			resetAdministrationForm(administrationForm);
+			File file = null;
+			try {
+				log.debug("Uploaded file : {} ", multipartFile.getOriginalFilename());
+				String fileName = tenantId+".gif";
+				String tomcatFolder = PropertyLoader.tomcatFolder;
+				String projectFolder = PropertyLoader.projectFolder;
+				
+				log.debug("Tomcat path {}{}", tomcatFolder, fileName);
+				file = new File(tomcatFolder+fileName);
+				FileUtils.writeByteArrayToFile(file, multipartFile.getBytes());
+			    
+				log.debug("Project path {}{}", projectFolder, fileName);
+				file = new File(projectFolder+fileName);
+				FileUtils.writeByteArrayToFile(file, multipartFile.getBytes());
+			} catch (Exception e) {
+				log.debug("Error uploading file" + e);
+			}
+			
 			modelAndView.addObject("successMessage", "Tenant '"+tenantId+"' successfully created !!!");
 		}
 		modelAndView.addObject("form", administrationForm);
@@ -115,6 +138,23 @@ public class TenantAdministrationController {
 	}
 	
 	
+	private void validateMultiPart(MultipartFile multipartFile, BindingResult result) {
+		if(multipartFile != null) {
+			log.debug("File size {}", multipartFile.getSize());
+			if(multipartFile.getSize() > 512000) {
+				result.addError(new ObjectError("multipartFile", "File size cannot be greater than 500KB"));
+			}
+			
+			if(!multipartFile.getOriginalFilename().endsWith("gif")) {
+				result.addError(new ObjectError("multipartFile", "Wrong file type. Only gif is allowed"));
+			}
+			
+		} else {
+			result.addError(new ObjectError("multipartFile", "Please upload a tenant logo"));
+		}
+	}
+
+
 	private void resetAdministrationForm(AdministrationForm administrationForm) {
 		administrationForm.setAddress(null);
 		administrationForm.setEmailAddress(null);
@@ -130,6 +170,7 @@ public class TenantAdministrationController {
 	    ValidationUtils.rejectIfEmptyOrWhitespace(errors, "phoneNo", "", "Phone Number cannot be blank");
 	    ValidationUtils.rejectIfEmptyOrWhitespace(errors, "emailAddress", "", "Email Address cannot be blank");
 	    ValidationUtils.rejectIfEmptyOrWhitespace(errors, "address", "", "Address cannot be blank");
+	    ValidationUtils.rejectIfEmptyOrWhitespace(errors, "file", "", "Please upload tenant's logo");
 	}
 
 	/**
@@ -145,6 +186,39 @@ public class TenantAdministrationController {
 	public void setTenantService(TenantService tenantService) {
 		this.tenantService = tenantService;
 	}
-	
+
+
+//	/**
+//	 * @param tomcatFolder the tomcatFolder to set
+//	 */
+//	public void setTomcatFolder(String tomcatFolder) {
+//		this.tomcatFolder = tomcatFolder;
+//	}
+//
+//
+//	/**
+//	 * @param projectFolder the projectFolder to set
+//	 */
+//	public void setProjectFolder(String projectFolder) {
+//		this.projectFolder = projectFolder;
+//	}
+//
+//
+//	/**
+//	 * @return the queueCapacity
+//	 */
+//	public String getQueueCapacity() {
+//		return queueCapacity;
+//	}
+//
+//
+//	/**
+//	 * @param queueCapacity the queueCapacity to set
+//	 */
+//	public void setQueueCapacity(String queueCapacity) {
+//		System.out.println("***********queueCapacity" +queueCapacity);
+//		this.queueCapacity = queueCapacity;
+//	}
+//	
 	
 }
