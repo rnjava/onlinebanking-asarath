@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="core" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US" class="chrome chrome-22 webkit">
 	<head>
@@ -95,6 +96,49 @@
 				</div>
 			</div>
 			<div class="clearboth"></div>
+			<br/>
+			<div class="separator-top"></div>
+			<div class="first-heading"><b></>Make Transfer</b></div><br/>
+			<!-- p class="req-txt">* =required</p-->
+			<div>
+					
+				<core:if test="${not empty successMessage}">
+	 						<div class="clsSuccess" >${successMessage}</div>
+				</core:if>
+			</div>			
+			<form:form method="post" action="addNewRecipient" commandName="form"  onsubmit="return true;" name="addNewRecipient">
+			
+				<div class="clsError"><form:errors path="*" cssClass="error" /></div>
+				<div class="data-label">
+					 <label id="recipient-last-name_label" for="recipient-last-name">Last name *</label>
+				</div>
+				<div class="data-input">
+					<form:input path="lastName" maxlength="40" value=""/>
+				</div>
+				<div class="data-label">
+					 <label id="recipient-nick-name_label" for="recipient-nick-name">Nickname *</label>
+				</div>
+				<div class="data-input">
+					<form:input path="nickName" maxlength="20" value=""/>
+				</div>
+				<div class="data-label">
+					 <label id="recipient-account-number_label" for="recipient-account-number">Account number *</label>
+				</div>
+				<div class="data-input">
+					<form:input path="recipientAccountNo" value=""/>
+				</div>
+				<form:hidden path="profileId" value="${form.profileId}"/>
+				<form:hidden path="tenantId" value="${form.tenantId}"/>
+				<div class="button-cont">
+					<a id="add-account-continue-button" class="button mrt-15" href="javascript:document.addNewRecipient.submit();" title="Add Recipient">
+							<span>Add Recipient</span>
+					</a>
+					<a id="add-account-cancel-button" class="button" href="maketransfer?profileid=<core:out value="${form.profileId}"/>&tenantid=<core:out value="${form.tenantId}"/>" title="Cancel">
+						<span>Cancel</span></a>
+				</div>
+				<div class="clearboth"></div>				
+				
+			</form:form>
 			
 		</td>
 	</tr>

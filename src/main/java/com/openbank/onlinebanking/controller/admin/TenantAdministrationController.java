@@ -107,7 +107,7 @@ public class TenantAdministrationController {
 			tenant.setCreatedDate(new Date());
 			tenant.setEmailAddress(administrationForm.getEmailAddress());
 			tenant.setPhoneNo(administrationForm.getPhoneNo());
-			tenant.setPrimaryContact(administrationForm.getPhoneNo());
+			tenant.setPrimaryContact(administrationForm.getPrimaryContact());
 			tenant.setTenantName(administrationForm.getTenantName());
 			tenant.setTenantId(tenantId);
 			tenantService.createTenant(tenant);

@@ -7,6 +7,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ObjectError;
 import org.springframework.validation.ValidationUtils;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -58,7 +59,7 @@ public class FundTransferController {
 	
 	
 	@RequestMapping(value="/addNewRecipient", method=RequestMethod.POST)
-	public ModelAndView addNewRecipient(TransferForm form,  BindingResult result) {
+	public ModelAndView addNewRecipient(@ModelAttribute("form")TransferForm form,  BindingResult result) {
 		log.debug("Entering.....");
 		ModelAndView modelAndView = new ModelAndView("addrecipient");
 		validate(form, result);
@@ -75,6 +76,8 @@ public class FundTransferController {
 					fundRecipient.setTenantId(form.getTenantId());
 					
 					fundTransferService.createFundRecipient(fundRecipient);
+					resetTransferForm(form);
+
 					modelAndView.addObject("successMessage", "Recipient Added Successfully!!!");
 					
 				} else {
@@ -87,7 +90,6 @@ public class FundTransferController {
 			}
 		}
 
-		resetTransferForm(form);
 		modelAndView.addObject("form", form);
 		log.debug("Exiting.....");
 		return modelAndView;
@@ -102,6 +104,7 @@ public class FundTransferController {
 	
 	public void validate(Object target, Errors errors) {
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "lastName", "","LastName cannot be blank");
+	    ValidationUtils.rejectIfEmptyOrWhitespace(errors, "nickName", "", "Nick Name cannot be blank");
 	    ValidationUtils.rejectIfEmptyOrWhitespace(errors, "recipientAccountNo", "", "Account number cannot be blank");
 	}
 
