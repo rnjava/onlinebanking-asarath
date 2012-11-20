@@ -16,6 +16,9 @@
 		<link
 			href="<%=contextPath%>/css/pipad-jawr-print.css"
 			rel="stylesheet" type="text/css" media="print"/>
+	<link
+			href="<%=contextPath%>/css/style.css"
+			rel="stylesheet" type="text/css" media="all"/>				
 
 	<style>
 		body {
@@ -42,7 +45,7 @@
 				<div class="olb-skin">
 					<div class="common-img-container print">
 						<img alt=" Logo"
-							src="<%=contextPath%>/images/${form.tenantId}.gif"
+							src="<%=contextPath%>/logos/${form.tenantId}.gif"
 							title=" logo"/>
 					</div>
 					<div class="fl-rt no_print">
@@ -105,34 +108,41 @@
 				<core:if test="${not empty successMessage}">
 	 						<div class="clsSuccess" >${successMessage}</div>
 				</core:if>
-			</div>			
-			<form:form method="post" action="addNewRecipient" commandName="form"  onsubmit="return true;" name="addNewRecipient">
+			</div>	
+			<form:form method="post" action="submitTransfer" commandName="form"  onsubmit="return true;" name="submitTransfer">
 			
 				<div class="clsError"><form:errors path="*" cssClass="error" /></div>
 				<div class="data-label">
-					 <label id="recipient-last-name_label" for="recipient-last-name">Last name *</label>
+					 <label id="recipient-last-name_label" for="recipient-last-name">Recipient Nick Name *</label>
 				</div>
 				<div class="data-input">
-					<form:input path="lastName" maxlength="40" value=""/>
+					<form:select path="recipientAccountNo">
+ 						<form:option value="" label="--- Select ---"/>
+   						<form:options items="${recipientList}" />
+					</form:select>
 				</div>
 				<div class="data-label">
-					 <label id="recipient-nick-name_label" for="recipient-nick-name">Nickname *</label>
+					 <label id="recipient-last-name_label" for="recipient-last-name">From Account *</label>
 				</div>
 				<div class="data-input">
-					<form:input path="nickName" maxlength="20" value=""/>
+					<form:select path="accountNo">
+ 						<form:option value="" label="--- Select ---"/>
+   						<form:options items="${accountList}" />
+					</form:select>
 				</div>
 				<div class="data-label">
-					 <label id="recipient-account-number_label" for="recipient-account-number">Account number *</label>
+					 <label id="recipient-nick-name_label" for="recipient-nick-name">Amount *</label>
 				</div>
 				<div class="data-input">
-					<form:input path="recipientAccountNo" value=""/>
+					<form:input path="amount" maxlength="50"/>
 				</div>
 				<form:hidden path="profileId" value="${form.profileId}"/>
 				<form:hidden path="tenantId" value="${form.tenantId}"/>
 				<div class="button-cont">
-					<a id="add-account-continue-button" class="button mrt-15" href="javascript:document.addNewRecipient.submit();" title="Add Recipient">
-							<span>Add Recipient</span>
+					<a id="add-account-continue-button" class="button mrt-15" href="javascript:document.submitTransfer.submit();" title="Transfer Fund">
+							<span>Transfer</span>
 					</a>
+					
 					<a id="add-account-cancel-button" class="button" href="maketransfer?profileid=<core:out value="${form.profileId}"/>&tenantid=<core:out value="${form.tenantId}"/>" title="Cancel">
 						<span>Cancel</span></a>
 				</div>

@@ -116,31 +116,34 @@
 	 						<div class="clsSuccess" >${successMessage}</div>
 				</core:if>
 			</div>			
-			<form:form method="post" action="submitTransfer" commandName="form"  onsubmit="return true;" name="submitTransfer">
+			<form:form method="post" action="addNewRecipient" commandName="form"  onsubmit="return true;" name="addNewRecipient">
 			
 				<div class="clsError"><form:errors path="*" cssClass="error" /></div>
 				<div class="data-label">
-					 <label id="recipient-last-name_label" for="recipient-last-name">Recipient Nick Name *</label>
+					 <label id="recipient-last-name_label" for="recipient-last-name">Last name *</label>
 				</div>
 				<div class="data-input">
-					<form:select path="recipientAccountNo">
- 						<form:option value="" label="--- Select ---"/>
-   						<form:options items="${recipientList}" />
-					</form:select>
+					<form:input path="lastName" maxlength="40" value=""/>
 				</div>
 				<div class="data-label">
-					 <label id="recipient-nick-name_label" for="recipient-nick-name">Amount *</label>
+					 <label id="recipient-nick-name_label" for="recipient-nick-name">Nickname *</label>
 				</div>
 				<div class="data-input">
-					<form:input path="nickName" maxlength="50"/>
+					<form:input path="nickName" maxlength="20" value=""/>
+				</div>
+				<div class="data-label">
+					 <label id="recipient-account-number_label" for="recipient-account-number">Account number *</label>
+				</div>
+				<div class="data-input">
+					<form:input path="recipientAccountNo" value=""/>
 				</div>
 				<form:hidden path="profileId" value="${form.profileId}"/>
 				<form:hidden path="tenantId" value="${form.tenantId}"/>
 				<div class="button-cont">
-					<a id="add-account-continue-button" class="button mrt-15" href="javascript:document.submitTransfer.submit();" title="Transfer Fund">
-							<span>Transfer</span>
+					<a id="add-account-continue-button" class="button mrt-15" href="javascript:document.addNewRecipient.submit();" title="Add Recipient">
+							<span>Add Recipient</span>
 					</a>
-					<a id="add-account-cancel-button" class="button" href="addrecipient?profileid=<core:out value="${form.profileId}"/>&tenantid=<core:out value="${form.tenantId}"/>" title="Cancel">
+						<a id="add-account-cancel-button" class="button" href="addrecipient?profileid=<core:out value="${form.profileId}"/>&tenantid=<core:out value="${form.tenantId}"/>" title="Cancel">
 						<span>Cancel</span></a>
 				</div>
 				<div class="clearboth"></div>				
