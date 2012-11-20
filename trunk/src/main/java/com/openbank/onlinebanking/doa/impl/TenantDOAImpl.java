@@ -25,9 +25,11 @@ public class TenantDOAImpl  extends BaseDAO  implements TenantDAO {
 	public List<Tenant> findTenant(String tenantName, String tenantId) {
 		
 		if(tenantId != null && !tenantId.trim().isEmpty()) {
-			query = new Query(Criteria.where("tenantId").is(tenantId));
+			query = new Query(Criteria.where("tenantId").is(tenantId.trim()));
 		} else {
-			query = new Query(Criteria.where("tenantName").regex("/*"+tenantName+"*/"));
+			//query = new Query(Criteria.where("tenantName").regex("/*"+tenantName+"*/"));
+			
+			query = new Query(Criteria.where("tenantName").is(tenantName.trim()));
 		}
 		log.debug("Query : " + query);
 		List<Tenant> tenantList = mongoTemplate.find(query, Tenant.class, TENANT_COLLECTION_NAME);
