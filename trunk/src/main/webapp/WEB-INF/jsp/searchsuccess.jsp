@@ -130,11 +130,11 @@
 					<div class="thick-border-module">
 						<div class="alt-dark-blue-title">
 							<h2>
-								<span class="title-text">Account <core:out value="${form.accountNo}"/> Found</span>
+								<span class="title-text">Account <b><core:out value="${form.accountNo}"/></b> Found</span>
 							</h2>
 						</div>
 			<div class="db-inner-module">	
-			  <table>
+			  <table cellpadding="2" border="1" cellspacing="0">
 	        	<tr>
 	             	<td colspan="4" align="center">
 	             	 	<core:if test="${not empty errorMessage}">
@@ -147,17 +147,17 @@
 	            </tr>
 	        	
 		        <tr>
-		        	<td><label id="recipient-last-name_label" for="recipient-last-name">Account Type.</label></td>
-		        	<td><core:out value="${account.type}"/></td>
-		        	<td><label id="balance-label" for="balance-label">Available Balance</label></td>
-		        	<td><core:out value="${account.balance}"/></td>
+		        	<td><label id="recipient-last-name_label" for="recipient-last-name"><b></>Account Type : </b></label></td>
+		        	<td><core:out value="${form.account.type}"/></td>
+		        	<td><label id="balance-label" for="balance-label"><b>Available Balance : </label></b></td>
+		        	<td><core:out value="${form.account.balance}"/></td>
 					<form:hidden path="form.tenantId" value="${form.tenantId}"/>
 		        </tr>
 		        <tr>
-		        	<td><label id="recipient-last-name_label" for="recipient-last-name">First Name</label></td>
-		        	<td><core:out value="${profile.firstName}"/></td>
-		        	<td><label id="balance-label" for="balance-label">Last Name</label></td>
-		        	<td><core:out value="${profile.lastName}"/></td>
+		        	<td><label id="recipient-last-name_label" for="recipient-last-name"><b>First Name : </b></label></td>
+		        	<td><core:out value="${form.profile.firstName}"/></td>
+		        	<td><label id="balance-label" for="balance-label"><b>Last Name : </b></label></td>
+		        	<td><core:out value="${form.profile.lastName}"/></td>
 					<form:hidden path="form.tenantId" value="${form.tenantId}"/>
 		        </tr>
 		        
