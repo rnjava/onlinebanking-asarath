@@ -1,7 +1,8 @@
+
 use banking;
+db.dropDatabase();
 
-db.users.drop();
-
+use banking;
 db.users.save({
   "userId" : "admin",
   "password" : "admin",
@@ -18,7 +19,7 @@ db.users.save({
 );
 
 db.profile.save({
-  "profileId" : "15AE1B5A-ACBD-4607-A374-AC92C60C3458",
+  "profileId" : "C3B789KK95-2F72-4253-90F2-8A971B54A63C",
   "firstName" : "Anitha",
   "lastName" : "Sarath",
   "dateOfBirth" : ISODate("2012-10-10T07:00:00Z"),
@@ -31,6 +32,7 @@ db.profile.save({
   "emailAddress" : "admin@anithass.com"
 });
 
+-----------------------------------------------------------------
 
 db.tenants.save({
   "tenantId" : "C63A953AE20D404F8BB1F225CBC82CF0",
