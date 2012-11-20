@@ -30,7 +30,7 @@ public class SearchAccountController {
 		Account account = null;
 		ModelAndView modelAndView = new ModelAndView("staffloginsuccess");
 		if(searchResultForm.getAccountNo() != null) {
-			account = accountService.getAccountByAccountNo(searchResultForm.getAccountNo(), searchResultForm.getTenantId());
+			account = accountService.getAccountByAccountNo(searchResultForm.getAccountNo().trim(), searchResultForm.getTenantId());
 			if(account != null ) {
 				log.debug("Account found {}", account.toString());
 				Profile profile = profileService.getProfileById(account.getProfileId(), searchResultForm.getTenantId());
