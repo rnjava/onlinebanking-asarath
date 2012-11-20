@@ -8,6 +8,7 @@ public class TransferForm {
 	private String lastName;
 	private String nickName;
 	private String recipientAccountNo;	
+	private Double amount;
 	
 	/**
 	 * @return the tenantId
@@ -83,5 +84,19 @@ public class TransferForm {
 	public void setRecipientAccountNo(String recipientAccountNo) {
 		this.recipientAccountNo = recipientAccountNo;
 	}
+	/**
+	 * @return the amount
+	 */
+	public Double getAmount() {
+		return amount;
+	}
+	/**
+	 * @param amount the amount to set
+	 */
+	public void setAmount(Double amount) {
+		this.amount = amount;
+	}
+	
+	
 
 }
