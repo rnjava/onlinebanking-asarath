@@ -8,23 +8,24 @@
 
 URL to login for users
 
+Bank Customer
 Tenant1 - HSBC
 
-http://localhost:8080/onlinebanking/user/login?tenantid=C63A953AE20D404F8BB1F225CBC82CF0
+http://localhost:8080/onlinebanking/customer/login?tenantid=C63A953AE20D404F8BB1F225CBC82CF0
 
 
 Tenant 2 Bank of america
-http://localhost:8080/onlinebanking/user/login?tenantid=CCCEDA89EC74479AB5C20AF7ACCD789D
+http://localhost:8080/onlinebanking/customer/login?tenantid=CCCEDA89EC74479AB5C20AF7ACCD789D
 
 
-Staff
+Bank Employee (Staff & Admin)
 
-http://localhost:8080/onlinebanking/staff/stafflogin?tenantid=CCCEDA89EC74479AB5C20AF7ACCD789D
+http://localhost:8080/onlinebanking/employee/stafflogin?tenantid=CCCEDA89EC74479AB5C20AF7ACCD789D
 
 
 
-Admin
-http://localhost:8080/onlinebanking/admin/adminlogin
+Product Admininistrator
+http://localhost:8080/onlinebanking/productadmin/adminlogin
 
 
 
