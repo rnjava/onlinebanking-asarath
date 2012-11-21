@@ -73,10 +73,10 @@
 						rel="nav-mod-content3"
 						href="maketransfer?profileid=<core:out value="${form.profile.profileId}"/>&tenantid=<core:out value="${form.tenantId}"/>"
 						title="Transfers">Transfers</a></li>
-					<!-- <li><a id="Customer_Service_topnav"
-						name="Customer_Service_topnav" rel="nav-mod-content7 "
-						href="customercare"
-						title="Customer Service">Customer Service</a></li> -->
+					<li><a id="Transfers_topnav" name="Transfers_topnav"
+						rel="nav-mod-content3"
+						href="userchangepassword?profileid=<core:out value="${form.profile.profileId}"/>&tenantid=<core:out value="${form.tenantId}"/>"
+						title="Create New Accounts">Customer Service</a></li>
 				</ul>
 			</div>
 
