@@ -18,7 +18,12 @@
 		<link
 			href="<%=contextPath%>/css/style.css"
 			rel="stylesheet" type="text/css" media="all"/>	
-					
+	<script>
+		function validate(form) 
+		{
+			alert(form.searchTenantId)
+		}
+	</script>				
 
 	<style>
 		body {
@@ -154,10 +159,10 @@
 	             	</td>
 	            </tr>
 		        <tr>
-		        	<td><label id="trans-mode-label" for="trans-mode-label"><strong>&nbsp;Tenant Name: </strong></label></td>
-		        	<td><form:input path="searchName" maxlength="100" /></td>
-		        	<td><label id="trans-mode-label" for="trans-mode-label"><strong>&nbsp;Tenant ID : </strong></label></td>
-		        	<td><form:input path="searchTenantId" maxlength="50"/></td>
+		        	<td><label id="trans-mode-label" for="trans-mode-label"><strong>&nbsp;&nbsp; Search By : </strong></label></td>
+		        		<td><form:radiobutton path="searchType" value="I"/> Tenant ID</td>
+		        	<td><form:radiobutton path="searchType" value="N"/> TenantName</td>
+		        	<td>Value : <form:input path="searchText" maxlength="100"/></td>
 		        </tr>
 		        <tr>	
 		        	<td colspan="4" align="center">

@@ -45,6 +45,7 @@ public class TenantAdministrationController {
 		AdministrationForm administrationForm = new AdministrationForm();
 		administrationForm.setTenantId(tenantId);
 		administrationForm.setStaffProfileId(staffProfileId);
+		administrationForm.setSearchType("I");
 		ModelAndView modelAndView = new ModelAndView("searchtenant");
 		modelAndView.addObject("form", administrationForm);
 		log.debug("Existing..........");
@@ -56,13 +57,23 @@ public class TenantAdministrationController {
 	public ModelAndView findTenant(@ModelAttribute("form") AdministrationForm administrationForm, BindingResult result) {
 		log.debug("Entering....");
 		ModelAndView modelAndView = new ModelAndView("searchtenant");
-		if(administrationForm.getSearchName() == null && administrationForm.getSearchTenantId() == null) {
+		if(administrationForm.getSearchText() == null || administrationForm.getSearchText().trim().length() <= 0) {
 			result.addError(new ObjectError("searchName", "Please enter the Tenant Name or Tenant ID"));
 		} else {
-			List<Tenant> tenantList = tenantService.findTenant(administrationForm.getSearchName(), administrationForm.getSearchTenantId());
+			String searchTeantId = null;
+			String searchTenantName = null;
+			if("I".equals(administrationForm.getSearchType())) {
+				searchTeantId = administrationForm.getSearchText();
+			} else {
+				searchTenantName = administrationForm.getSearchText();
+			}
+			List<Tenant> tenantList = tenantService.findTenant(searchTenantName, searchTeantId);
 			modelAndView.addObject("tenantList", tenantList);	
+			
 			if(tenantList == null || tenantList.isEmpty()) {
 				modelAndView.addObject("successMessage", "No Records found");	
+			} else {
+				administrationForm.setSearchType("I");
 			}
 		} 
 		
