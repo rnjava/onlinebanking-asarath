@@ -11,8 +11,8 @@ public class AdministrationForm extends StaffBaseForm {
 	private String phoneNo;
 	private String emailAddress;
 	private String address;
-	private String searchTenantId;
-	private String searchName;
+	private String searchText;
+	private String searchType;
 	MultipartFile file;
 	
 	
@@ -76,29 +76,30 @@ public class AdministrationForm extends StaffBaseForm {
 	public void setAddress(String address) {
 		this.address = address;
 	}
+
 	/**
-	 * @return the searchTenantId
+	 * @return the searchText
 	 */
-	public String getSearchTenantId() {
-		return searchTenantId;
+	public String getSearchText() {
+		return searchText;
 	}
 	/**
-	 * @param searchTenantId the searchTenantId to set
+	 * @param searchText the searchText to set
 	 */
-	public void setSearchTenantId(String searchTenantId) {
-		this.searchTenantId = searchTenantId;
+	public void setSearchText(String searchText) {
+		this.searchText = searchText;
 	}
 	/**
-	 * @return the searchName
+	 * @return the searchType
 	 */
-	public String getSearchName() {
-		return searchName;
+	public String getSearchType() {
+		return searchType;
 	}
 	/**
-	 * @param searchName the searchName to set
+	 * @param searchType the searchType to set
 	 */
-	public void setSearchName(String searchName) {
-		this.searchName = searchName;
+	public void setSearchType(String searchType) {
+		this.searchType = searchType;
 	}
 	/**
 	 * @return the file
