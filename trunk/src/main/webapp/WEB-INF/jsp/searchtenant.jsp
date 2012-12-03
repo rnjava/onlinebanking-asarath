@@ -19,9 +19,9 @@
 			href="<%=contextPath%>/css/style.css"
 			rel="stylesheet" type="text/css" media="all"/>	
 	<script>
-		function validate(form) 
+		function clearSearchText() 
 		{
-			alert(form.searchTenantId)
+			document.getElementById('searchText').value="";
 		}
 	</script>				
 
@@ -160,8 +160,8 @@
 	            </tr>
 		        <tr>
 		        	<td><label id="trans-mode-label" for="trans-mode-label"><strong>&nbsp;&nbsp; Search By : </strong></label></td>
-		        		<td><form:radiobutton path="searchType" value="I"/> Tenant ID</td>
-		        	<td><form:radiobutton path="searchType" value="N"/> TenantName</td>
+		        		<td><form:radiobutton path="searchType" value="I" onclick="javascript:clearSearchText();"/> Tenant ID</td>
+		        	<td><form:radiobutton path="searchType" value="N" onclick="javascript:clearSearchText();"/> TenantName</td>
 		        	<td>Value : <form:input path="searchText" maxlength="100"/></td>
 		        </tr>
 		        <tr>	
