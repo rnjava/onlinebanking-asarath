@@ -164,6 +164,9 @@
 				</tr>
 				<div class="clearboth"></div>
 				</core:forEach>
+				<tr>
+					<td colspan="6" align="right"><input type="button" value="  Print   " onclick="window.print();"></td>
+				</tr>
 				</tbody>
 		</table>
 </td>
